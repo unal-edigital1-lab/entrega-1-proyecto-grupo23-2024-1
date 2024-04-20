@@ -2,6 +2,7 @@
 
 ## proyecto 
 
+
 ## Sensores
 
 
@@ -21,11 +22,13 @@ SHT75
 
 Módulo Sensor De Luz Ldr SENL
 
-#### Conersor Anàlogo-Digital 
+
+
+#### Conversor Anàlogo-Digital 
 
 PmodAD1
 
-El conversor analógico-digital de 12 bits se caracteriza por su implementación utilizando un protocolo de comunicación similar a SPI de dos canales. Este diseño permite una conversión A/D simultánea con una velocidad de hasta un MSa (muestra por segundo) por canal.
+El conversor analógico-digital de 12 bits se caracteriza por su implementación utilizando un protocolo de comunicación similar a SPI de dos canales. Este diseño permite una conversión A/D simultánea con una velocidad de hasta un MSa (muestra por segundo) por canal, tiene alimentaciòn de 2.35 a 5.25 voltios.
 
 ##### Digrama del circuito
 
