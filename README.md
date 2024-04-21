@@ -7,14 +7,14 @@ El núcleo del sistema está diseñado para simular interactivamente el cuidado 
 
 ## Sistema de Visualización:
 
-## Visualización de Información de Estado:
+### Visualización de Información de Estado:
 Matriz de Puntos 8x8: Esencial para representar visualmente el estado actual del Tamagotchi, incluyendo emociones y necesidades básicas.
 
-## Indicadores Simples:
+### Indicadores Simples:
 Display de 7 Segmentos: Utilizado para mostrar niveles y puntuaciones específicas, como el nivel de hambre o felicidad, complementando la visualización principal.
 
 ## Sistema de Botones:
-## Botones :
+### Botones :
 La interacción usuario-sistema se realizará mediante los siguientes botones configurados:
 
 Reset: Reestablece el Tamagotchi a un estado inicial conocido al mantener pulsado el botón durante al menos 5 segundos. Este estado inicial simula el despertar de la mascota con salud óptima.
