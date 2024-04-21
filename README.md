@@ -25,7 +25,7 @@ Botones de Interacción (2): Facilitan acciones directas como alimentar, jugar, 
 
 Acelerador de Tiempo: Permite modificar la velocidad del tiempo en el Tamagotchi, incrementando la rapidez de los cambios de estado para simular diferentes velocidades temporales.
 
-### Sistema de Sensado:
+## Sistema de Sensado:
 
 Sensor de Luz: Simula los ciclos de día y noche, influyendo en las rutinas de actividad y descanso de la mascota.
 
@@ -34,7 +34,7 @@ Sensor de Movimiento: Promueve la actividad física al requerir que el usuario m
 Sensor de Temperatura: Este sensor puede simular el clima y afectar el estado de ánimo y las necesidades de la mascota. Por ejemplo, si hace calor, el Tamagotchi puede necesitar más agua, mientras que en climas fríos podría necesitar una manta.
 
 
-### Estados Mínimos:
+## Estados Mínimos:
 
 El Tamagotchi operará a través de una serie de estados que reflejan las necesidades físicas y emocionales de la mascota virtual, a saber:
 
@@ -48,7 +48,7 @@ Salud: va a niveles de enfermo por el descuido en el cuidado de la mascota, requ
 
 Ánimo: Refleja el bienestar general de la mascota como resultado de satisfacer adecuadamente sus necesidades básicas.
 
-### Otros posibles casos:
+### Otros posibles estados:
 
 Crecimiento/Evolución: La mascota experimentará distintas fases de crecimiento, cada una con requisitos y comportamientos específicos, ilustrando el desarrollo y maduración de la mascota a lo largo del tiempo.
 
