@@ -1,6 +1,6 @@
 # Entrega 1 del proyecto WP01
 
-## proyecto tamagotchi
+## PROYECTO TAMAGOTCHI
 
 ## Funcionalidad Principal:
 El núcleo del sistema está diseñado para simular interactivamente el cuidado de una mascota virtual, permitiendo al usuario participar en actividades esenciales tales como alimentar, jugar, dormir y curar, a través de una interfaz visual y de un sistema de botones y sensores.
