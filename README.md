@@ -13,6 +13,8 @@ Matriz de Puntos 8x8: Esencial para representar visualmente el estado actual del
 ### Indicadores Simples:
 Display de 7 Segmentos: Utilizado para mostrar niveles y puntuaciones específicas, como el nivel de hambre o felicidad, complementando la visualización principal.
 
+### PANTALLA: LCD
+
 ## Sistema de Botones:
 ### Botones :
 La interacción usuario-sistema se realizará mediante los siguientes botones configurados:
