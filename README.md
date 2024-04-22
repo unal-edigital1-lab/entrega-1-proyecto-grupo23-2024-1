@@ -77,7 +77,7 @@ Influencia en el Estado de Animo: El estado de di�a, tarde o noche puede influ
 
 SHT75 
 
-
+![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/Captura%20desde%202024-04-22%2013-25-38.png)
 
 #### Protocolo I2c
 
