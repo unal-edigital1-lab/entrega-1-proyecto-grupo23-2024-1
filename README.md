@@ -79,13 +79,35 @@ SHT75
 
 #### Protocolo I2c
 
+El protocolo de comunicación I2C (Inter-Integrated Circuit) es un puerto y protocolo de comunicación serial utilizado para transferir datos entre dos dispositivos digitales. El protocolo I2C define la trama de datos y las conexiones físicas utilizadas para transferir bits entre los dispositivos. Utiliza dos líneas de comunicación, una línea de datos (SDA) y una línea de reloj (SCL), para transmitir información de manera sincronizada.
+
+Comunicación maestro-esclavo: En el protocolo I2C, uno de los dispositivos actúa como maestro y los demás como esclavos. El maestro inicia y controla la comunicación, mientras que los esclavos responden a las solicitudes del maestro.
+
+Direcciones de dispositivo: Cada dispositivo conectado al bus I2C tiene una dirección única que lo identifica. El maestro utiliza estas direcciones para seleccionar el dispositivo con el que desea comunicarse.
+
+El protocolo I2C admite diferentes velocidades de transferencia, que van desde unos pocos kilobits por segundo hasta varios megabits por segundo. La velocidad de transferencia se configura mediante la frecuencia del reloj.
+
+![]( xxxxxxxxxx )
 
 #### Protocolo RS232
+
+El protocolo RS232, también conocido como Recommended Standard 232, es una interfaz de comunicación serial que establece una norma para el intercambio de datos binarios en serie entre un Equipo Terminal de Datos (DTE) y un Equipo Terminal de Comunicaciones (DCE). 
+
+El protocolo RS232 define los estándares eléctricos, mecánicos y funcionales para la comunicación serial. ( Ampliamente utilizado en aplicaciones de comunicación de datos, como la conexión de dispositivos periféricos a computadoras, módems, impresoras, entre otros. )
+
+Características eléctricas: El protocolo RS232 utiliza niveles de voltaje positivos y negativos para representar los bits de datos. Los niveles típicos son +12V para representar un "0" lógico y -12V para representar un "1" lógico. Sin embargo, los niveles de voltaje pueden variar según la implementación.
+
+Utiliza un conector de 9 pines o un conector de 25 pines para establecer la conexión física entre los dispositivos. Los pines se utilizan para transmitir y recibir datos, control de flujo y señales de control adicionales.
+
+El protocolo RS232 admite diferentes velocidades de transmisión, que van desde unos pocos bits por segundo hasta varios megabits por segundo. La velocidad de transmisión se configura mediante la tasa de baudios, que representa la cantidad de símbolos transmitidos por segundo.
+
+![]( xxxxxxxxxx )
+![]( xxxxxxxxxx )
 
 
 ### Sensor de Luz
 
-MÃ³dulo Sensor De Luz Ldr SENL
+Modulo Sensor De Luz Ldr SENL
 
 
 
@@ -93,7 +115,7 @@ MÃ³dulo Sensor De Luz Ldr SENL
 
 PmodAD1
 
-El conversor analagico-digital de 12 bits se caracteriza por su implementaciin utilizando un protocolo de comunicacion similar a SPI de dos canales. Este diseño permite una conversion A/D simultanea con una velocidad de hasta un MSa (muestra por segundo) por canal, tiene alimentaciÃ²n de 2.35 a 5.25 voltios.
+El conversor analagico-digital de 12 bits se caracteriza por su implementaciin utilizando un protocolo de comunicacion similar a SPI de dos canales. Este diseño permite una conversion A/D simultanea con una velocidad de hasta un MSa (muestra por segundo) por canal, tiene alimentacion de 2.35 a 5.25 voltios.
 
 ##### Digrama del circuito
 
