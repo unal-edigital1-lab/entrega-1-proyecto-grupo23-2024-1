@@ -3,7 +3,7 @@
 ## PROYECTO TAMAGOTCHI
 
 ## Funcionalidad Principal:
-El nucleo del sistema esta diseñado para simular interactivamente el cuidado de una mascota virtual, permitiendo al usuario participar en actividades esenciales tales como alimentar, jugar, dormir y curar, a traves de una interfaz visual y de un sistema de botones y sensores de manera que sea entretenido para el portador.
+El nucleo del sistema esta diseï¿½ado para simular interactivamente el cuidado de una mascota virtual, permitiendo al usuario participar en actividades esenciales tales como alimentar, jugar, dormir y curar, a traves de una interfaz visual y de un sistema de botones y sensores de manera que sea entretenido para el portador.
 
 ## Sistema de Visualizacion:
 
@@ -32,13 +32,13 @@ Acelerador de Tiempo: Permite modificar la velocidad del tiempo en el Tamagotchi
 
 ## Sistema de Sensado:
 
-Con el objetivo de crear una mascota virtual que sea mas interactiva con el portador se hace necesario usar sensores que nos permitan medir variables fisicas del entorno donde se encuentre el dueño, esto con el fin de hacer mas interesante la aplicacion y cuidado de la mascota virtual. Para esto se pueden usar sensores como los siguientes:
+Con el objetivo de crear una mascota virtual que sea mas interactiva con el portador se hace necesario usar sensores que nos permitan medir variables fisicas del entorno donde se encuentre el dueï¿½o, esto con el fin de hacer mas interesante la aplicacion y cuidado de la mascota virtual. Para esto se pueden usar sensores como los siguientes:
 
-- Sensor de Luz: Simula los ciclos de di­a y noche, influyendo en las rutinas de actividad y descanso de la mascota.
+- Sensor de Luz: Simula los ciclos de diï¿½a y noche, influyendo en las rutinas de actividad y descanso de la mascota.
 
 - Sensor de Movimiento: Promueve la actividad fisica al requerir que el usuario mueva el dispositivo para mantener en forma al Tamagotchi, ejemplo el usuario se puede desplazar y dar la sensacion de caminar para el tamagotchi.
 
-- Sensor de Temperatura: Este sensor puede simular el clima y afectar el estado de animo y las necesidades de la mascota. Por ejemplo, si hace calor, el Tamagotchi puede necesitar mas agua, mientras que en climas frios podri­a necesitar una manta.
+- Sensor de Temperatura: Este sensor puede simular el clima y afectar el estado de animo y las necesidades de la mascota. Por ejemplo, si hace calor, el Tamagotchi puede necesitar mas agua, mientras que en climas frios podriï¿½a necesitar una manta.
 
 
 ## Estados Minimos:
@@ -49,15 +49,15 @@ Hambriento: Este estado alerta sobre la necesidad de alimentar a la mascota. La 
 
 Energia: Denota la necesidad de entretenimiento de la mascota. La inactividad prolongada puede llevar a estados de aburrimiento o tristeza.
 
-Descanso: Identifica cuando la mascota requiere reposo para recuperar energia, especialmente despues de peri­odos de actividad intensa o durante la noche, limitando la interaccion del usuario durante estas fases.
+Descanso: Identifica cuando la mascota requiere reposo para recuperar energia, especialmente despues de periï¿½odos de actividad intensa o durante la noche, limitando la interaccion del usuario durante estas fases.
 
-Salud: va a niveles de enfermo por el descuido en el cuidado de la mascota, requiriendo intervenciones especi­ficas para su recuperacion.
+Salud: va a niveles de enfermo por el descuido en el cuidado de la mascota, requiriendo intervenciones especiï¿½ficas para su recuperacion.
 
 Animo: Refleja el bienestar general de la mascota como resultado de satisfacer adecuadamente sus necesidades bÃ¡sicas.
 
 ### Otros posibles estados:
 
-Crecimiento/Evolucion: La mascota experimentara distintas fases de crecimiento, cada una con requisitos y comportamientos especi­ficos, ilustrando el desarrollo y maduracion de la mascota a lo largo del tiempo.
+Crecimiento/Evolucion: La mascota experimentara distintas fases de crecimiento, cada una con requisitos y comportamientos especiï¿½ficos, ilustrando el desarrollo y maduracion de la mascota a lo largo del tiempo.
 
 Personalizacion: Permite al usuario personalizar la apariencia del Tamagotchi, como cambiar su color, agregar accesorios o modificar su entorno.
 
@@ -65,11 +65,11 @@ Logros y Recompensas: Implementa un sistema de logros y recompensas que motive a
 
 Exploracion: Introduce la capacidad de explorar diferentes entornos virtuales con el Tamagotchi. Por ejemplo, podran explorar un parque, una playa, una ciudad, entre otros.
 
-Actividades Especificas segun el Momento del Dia: Actividades que solo estan disponibles durante ciertos momentos del di­a. Por ejemplo, durante el dia, el Tamagotchi podr­a tener la opcion de jugar afuera, mientras que por la noche podri­a preferir quedarse dentro y ver la television.
+Actividades Especificas segun el Momento del Dia: Actividades que solo estan disponibles durante ciertos momentos del diï¿½a. Por ejemplo, durante el dia, el Tamagotchi podrï¿½a tener la opcion de jugar afuera, mientras que por la noche podriï¿½a preferir quedarse dentro y ver la television.
 
-Cambios Visuales en el Entorno: Modifica el entorno del Tamagotchi para reflejar el momento del dia. Por ejemplo, durante el dia, el sol podrÃ­a estar brillando y los pajaros podran estar cantando, mientras que por la noche el cielo podri­a estar estrellado y la luna podr­a brillar en el horizonte.
+Cambios Visuales en el Entorno: Modifica el entorno del Tamagotchi para reflejar el momento del dia. Por ejemplo, durante el dia, el sol podrÃ­a estar brillando y los pajaros podran estar cantando, mientras que por la noche el cielo podriï¿½a estar estrellado y la luna podrï¿½a brillar en el horizonte.
 
-Influencia en el Estado de Animo: El estado de di­a, tarde o noche puede influir en el estado de Animo y las necesidades del Tamagotchi. Por ejemplo, durante el di­a podra estar mas activo y feliz, mientras que por la noche podrÃ­a estar mas tranquilo y necesitar descansar.
+Influencia en el Estado de Animo: El estado de diï¿½a, tarde o noche puede influir en el estado de Animo y las necesidades del Tamagotchi. Por ejemplo, durante el diï¿½a podra estar mas activo y feliz, mientras que por la noche podrÃ­a estar mas tranquilo y necesitar descansar.
 
 
 ### Sensor de temperatura
@@ -77,13 +77,15 @@ https://pistaseducativas.celaya.tecnm.mx/index.php/pistas/article/view/614/549
 
 SHT75 
 
+
+
 #### Protocolo I2c
 
-El protocolo de comunicación I2C (Inter-Integrated Circuit) es un puerto y protocolo de comunicación serial utilizado para transferir datos entre dos dispositivos digitales. El protocolo I2C define la trama de datos y las conexiones físicas utilizadas para transferir bits entre los dispositivos. Utiliza dos líneas de comunicación, una línea de datos (SDA) y una línea de reloj (SCL), para transmitir información de manera sincronizada.
+El protocolo de comunicaciï¿½n I2C (Inter-Integrated Circuit) es un puerto y protocolo de comunicaciï¿½n serial utilizado para transferir datos entre dos dispositivos digitales. El protocolo I2C define la trama de datos y las conexiones fï¿½sicas utilizadas para transferir bits entre los dispositivos. Utiliza dos lï¿½neas de comunicaciï¿½n, una lï¿½nea de datos (SDA) y una lï¿½nea de reloj (SCL), para transmitir informaciï¿½n de manera sincronizada.
 
-Comunicación maestro-esclavo: En el protocolo I2C, uno de los dispositivos actúa como maestro y los demás como esclavos. El maestro inicia y controla la comunicación, mientras que los esclavos responden a las solicitudes del maestro.
+Comunicaciï¿½n maestro-esclavo: En el protocolo I2C, uno de los dispositivos actï¿½a como maestro y los demï¿½s como esclavos. El maestro inicia y controla la comunicaciï¿½n, mientras que los esclavos responden a las solicitudes del maestro.
 
-Direcciones de dispositivo: Cada dispositivo conectado al bus I2C tiene una dirección única que lo identifica. El maestro utiliza estas direcciones para seleccionar el dispositivo con el que desea comunicarse.
+Direcciones de dispositivo: Cada dispositivo conectado al bus I2C tiene una direcciï¿½n ï¿½nica que lo identifica. El maestro utiliza estas direcciones para seleccionar el dispositivo con el que desea comunicarse.
 
 El protocolo I2C admite diferentes velocidades de transferencia, que van desde unos pocos kilobits por segundo hasta varios megabits por segundo. La velocidad de transferencia se configura mediante la frecuencia del reloj.
 
@@ -91,15 +93,15 @@ El protocolo I2C admite diferentes velocidades de transferencia, que van desde u
 
 #### Protocolo RS232
 
-El protocolo RS232, también conocido como Recommended Standard 232, es una interfaz de comunicación serial que establece una norma para el intercambio de datos binarios en serie entre un Equipo Terminal de Datos (DTE) y un Equipo Terminal de Comunicaciones (DCE). 
+El protocolo RS232, tambiï¿½n conocido como Recommended Standard 232, es una interfaz de comunicaciï¿½n serial que establece una norma para el intercambio de datos binarios en serie entre un Equipo Terminal de Datos (DTE) y un Equipo Terminal de Comunicaciones (DCE). 
 
-El protocolo RS232 define los estándares eléctricos, mecánicos y funcionales para la comunicación serial. ( Ampliamente utilizado en aplicaciones de comunicación de datos, como la conexión de dispositivos periféricos a computadoras, módems, impresoras, entre otros. )
+El protocolo RS232 define los estï¿½ndares elï¿½ctricos, mecï¿½nicos y funcionales para la comunicaciï¿½n serial. ( Ampliamente utilizado en aplicaciones de comunicaciï¿½n de datos, como la conexiï¿½n de dispositivos perifï¿½ricos a computadoras, mï¿½dems, impresoras, entre otros. )
 
-Características eléctricas: El protocolo RS232 utiliza niveles de voltaje positivos y negativos para representar los bits de datos. Los niveles típicos son +12V para representar un "0" lógico y -12V para representar un "1" lógico. Sin embargo, los niveles de voltaje pueden variar según la implementación.
+Caracterï¿½sticas elï¿½ctricas: El protocolo RS232 utiliza niveles de voltaje positivos y negativos para representar los bits de datos. Los niveles tï¿½picos son +12V para representar un "0" lï¿½gico y -12V para representar un "1" lï¿½gico. Sin embargo, los niveles de voltaje pueden variar segï¿½n la implementaciï¿½n.
 
-Utiliza un conector de 9 pines o un conector de 25 pines para establecer la conexión física entre los dispositivos. Los pines se utilizan para transmitir y recibir datos, control de flujo y señales de control adicionales.
+Utiliza un conector de 9 pines o un conector de 25 pines para establecer la conexiï¿½n fï¿½sica entre los dispositivos. Los pines se utilizan para transmitir y recibir datos, control de flujo y seï¿½ales de control adicionales.
 
-El protocolo RS232 admite diferentes velocidades de transmisión, que van desde unos pocos bits por segundo hasta varios megabits por segundo. La velocidad de transmisión se configura mediante la tasa de baudios, que representa la cantidad de símbolos transmitidos por segundo.
+El protocolo RS232 admite diferentes velocidades de transmisiï¿½n, que van desde unos pocos bits por segundo hasta varios megabits por segundo. La velocidad de transmisiï¿½n se configura mediante la tasa de baudios, que representa la cantidad de sï¿½mbolos transmitidos por segundo.
 
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/RS232.jpg)
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/Protocolo%20RS232.jpg)
@@ -109,13 +111,17 @@ El protocolo RS232 admite diferentes velocidades de transmisión, que van desde u
 
 Modulo Sensor De Luz Ldr SENL
 
+![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/Captura%20desde%202024-04-22%2012-49-57.png)
 
+Sensor de luz que cuenta con una entrada de alimentaciÃ²n, una entrada a tierra, una salida anÃ loga y otra salida digital.
+
+La salida digital del sensor es de un bit, lo que quiere decir que solo hay un estado donde hay luz y otro donde no, esto se puede arreglar con un conversor analogo-digital donde obtenemos un muestreo de la salida analoga y tener diferentes niveles de paso de luz
 
 #### Conversor Analogo-Digital 
 
 PmodAD1
 
-El conversor analagico-digital de 12 bits se caracteriza por su implementaciin utilizando un protocolo de comunicacion similar a SPI de dos canales. Este diseño permite una conversion A/D simultanea con una velocidad de hasta un MSa (muestra por segundo) por canal, tiene alimentacion de 2.35 a 5.25 voltios.
+El conversor analagico-digital de 12 bits se caracteriza por su implementaciin utilizando un protocolo de comunicacion similar a SPI de dos canales. Este diseï¿½o permite una conversion A/D simultanea con una velocidad de hasta un MSa (muestra por segundo) por canal, tiene alimentacion de 2.35 a 5.25 voltios.
 
 ##### Digrama del circuito
 
@@ -127,32 +133,37 @@ El conversor analagico-digital de 12 bits se caracteriza por su implementaciin u
 
 ### Sensor de Movimiento 
 
-La implementacion de un sensor de movimiento en este proyecto seria util en aplicaciones que permitan interactuar con la mascota virtual y la persona fisica dueña del tamagotchi. 
+La implementacion de un sensor de movimiento en este proyecto seria util en aplicaciones que permitan interactuar con la mascota virtual y la persona fisica dueï¿½a del tamagotchi. 
 
-Es decir cuando la mascota virtual requiera ejercitarse el portador (dueño/propietario) puede hacerlo caminando en la vida real, Mostrando al tiempo algun ejemplo de animacion de la mascota moviendose en la pantalla para generar mas interactividad a las acciones.
+Es decir cuando la mascota virtual requiera ejercitarse el portador (dueï¿½o/propietario) puede hacerlo caminando en la vida real, Mostrando al tiempo algun ejemplo de animacion de la mascota moviendose en la pantalla para generar mas interactividad a las acciones.
 
 Para realizar estas acciones se requiere un sensor que permita detectar que el portador (persona fisica) se este moviendo en la vida rea; con este objetivo se pueden encontrar sensores en el mercado que nos permite detectar esta accion como lo es la implementacion de un acelerometro, un giroscopio o un sensor infrarojo de movimiento
 
 
 ### -> Acelerometro
 
-Es un dispositivo utilizado para medir la aceleración o vibración de un objeto o estructura. Funciona detectando los cambios en la fuerza de aceleración experimentada por el dispositivo en diferentes direcciones.
+Es un dispositivo utilizado para medir la aceleraciï¿½n o vibraciï¿½n de un objeto o estructura. Funciona detectando los cambios en la fuerza de aceleraciï¿½n experimentada por el dispositivo en diferentes direcciones.
 
-Midiendo la fuerza de aceleración en la unidad "g" (gravedad). Puede medir la aceleración en uno, dos o tres planos, dependiendo del tipo de acelerómetro.
+Midiendo la fuerza de aceleraciï¿½n en la unidad "g" (gravedad). Puede medir la aceleraciï¿½n en uno, dos o tres planos, dependiendo del tipo de acelerï¿½metro.
 
-Principio de funcionamiento: Los acelerómetros utilizan diferentes principios para medir la aceleración. Algunos acelerómetros utilizan el principio piezoeléctrico, donde la aceleración genera una carga eléctrica en un material piezoeléctrico. Otros utilizan el principio capacitivo, donde la aceleración causa cambios en la capacitancia de un capacitor. También hay acelerómetros basados en tecnología MEMS (Microelectromechanical Systems), que utilizan estructuras microscópicas para medir la aceleración.
+Principio de funcionamiento: Los acelerï¿½metros utilizan diferentes principios para medir la aceleraciï¿½n. Algunos acelerï¿½metros utilizan el principio piezoelï¿½ctrico, donde la aceleraciï¿½n genera una carga elï¿½ctrica en un material piezoelï¿½ctrico. Otros utilizan el principio capacitivo, donde la aceleraciï¿½n causa cambios en la capacitancia de un capacitor. Tambiï¿½n hay acelerï¿½metros basados en tecnologï¿½a MEMS (Microelectromechanical Systems), que utilizan estructuras microscï¿½picas para medir la aceleraciï¿½n.
 
-Acelerómetros de 3 ejes: Los acelerómetros de 3 ejes son los más utilizados.(Utilizados mayoritariamento en dispositivos celulares) Estos pueden detectar aceleraciones en tres direcciones diferentes: X, Y y Z. Esto permite medir la aceleración en cualquier dirección tridimensional.
+Acelerï¿½metros de 3 ejes: Los acelerï¿½metros de 3 ejes son los mï¿½s utilizados.(Utilizados mayoritariamento en dispositivos celulares) Estos pueden detectar aceleraciones en tres direcciones diferentes: X, Y y Z. Esto permite medir la aceleraciï¿½n en cualquier direcciï¿½n tridimensional.
 
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/acelerometro%20funcionamiento.webp)
 
+
+AcelerÃ³metro Digital de 3 Ejes ADXL345 
+
+![]()
+
 ### -> Giroscopio
 
-Es un dispositivo mecánico que se utiliza para medir, mantener o cambiar la orientación en el espacio de un objeto o vehículo.Compuesto por un cuerpo con simetría de rotación que gira alrededor de un eje. La rotación del cuerpo crea una propiedad llamada momento angular, que se mantiene constante a menos que se aplique un par externo. Esto permite al giroscopio mantener su orientación en el espacio.
+Es un dispositivo mecï¿½nico que se utiliza para medir, mantener o cambiar la orientaciï¿½n en el espacio de un objeto o vehï¿½culo.Compuesto por un cuerpo con simetrï¿½a de rotaciï¿½n que gira alrededor de un eje. La rotaciï¿½n del cuerpo crea una propiedad llamada momento angular, que se mantiene constante a menos que se aplique un par externo. Esto permite al giroscopio mantener su orientaciï¿½n en el espacio.
 
-Principio de funcionamiento: Los giroscopios utilizan el principio de conservación del momento angular para medir la rotación. Cuando el giroscopio gira, su eje de rotación tiende a mantener su dirección original debido a la conservación del momento angular.
+Principio de funcionamiento: Los giroscopios utilizan el principio de conservaciï¿½n del momento angular para medir la rotaciï¿½n. Cuando el giroscopio gira, su eje de rotaciï¿½n tiende a mantener su direcciï¿½n original debido a la conservaciï¿½n del momento angular.
 
-Hay varios tipos de giroscopios, incluyendo giroscopios mecánicos, giroscopios láser y giroscopios MEMS (sistemas microelectromecánicos). 
+Hay varios tipos de giroscopios, incluyendo giroscopios mecï¿½nicos, giroscopios lï¿½ser y giroscopios MEMS (sistemas microelectromecï¿½nicos). 
 
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/Giroscopio.jpg)
 
