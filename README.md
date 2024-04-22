@@ -87,7 +87,7 @@ Direcciones de dispositivo: Cada dispositivo conectado al bus I2C tiene una dire
 
 El protocolo I2C admite diferentes velocidades de transferencia, que van desde unos pocos kilobits por segundo hasta varios megabits por segundo. La velocidad de transferencia se configura mediante la frecuencia del reloj.
 
-![]( xxxxxxxxxx )
+![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/I2C.jpg)
 
 #### Protocolo RS232
 
@@ -101,8 +101,8 @@ Utiliza un conector de 9 pines o un conector de 25 pines para establecer la cone
 
 El protocolo RS232 admite diferentes velocidades de transmisión, que van desde unos pocos bits por segundo hasta varios megabits por segundo. La velocidad de transmisión se configura mediante la tasa de baudios, que representa la cantidad de símbolos transmitidos por segundo.
 
-![]( xxxxxxxxxx )
-![]( xxxxxxxxxx )
+![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/RS232.jpg)
+![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/Protocolo%20RS232.jpg)
 
 
 ### Sensor de Luz
