@@ -73,7 +73,7 @@ Influencia en el Estado de Animo: El estado de di�a, tarde o noche puede influ
 
 
 ### Sensor de temperatura
-https://pistaseducativas.celaya.tecnm.mx/index.php/pistas/article/view/614/549
+
 
 SHT75 
 
@@ -121,7 +121,7 @@ La salida digital del sensor es de un bit, lo que quiere decir que solo hay un e
 
 PmodAD1
 
-![]()
+![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/Captura%20desde%202024-04-22%2013-23-15.png)
 
 El conversor analagico-digital de 12 bits se caracteriza por su implementaciin utilizando un protocolo de comunicacion similar a SPI de dos canales. Este dise�o permite una conversion A/D simultanea con una velocidad de hasta un MSa (muestra por segundo) por canal, tiene alimentacion de 2.35 a 5.25 voltios.
 
