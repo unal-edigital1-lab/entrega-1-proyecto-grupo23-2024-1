@@ -34,7 +34,7 @@ Acelerador de Tiempo: Permite modificar la velocidad del tiempo en el Tamagotchi
 
 Con el objetivo de crear una mascota virtual que sea mas interactiva con el portador se hace necesario usar sensores que nos permitan medir variables fisicas del entorno donde se encuentre el due�o, esto con el fin de hacer mas interesante la aplicacion y cuidado de la mascota virtual. Para esto se pueden usar sensores como los siguientes:
 
-- Sensor de Luz: Simula los ciclos de día y noche, influyendo en las rutinas de actividad y descanso de la mascota.
+- Sensor de Luz: Simula los ciclos de di�a y noche, influyendo en las rutinas de actividad y descanso de la mascota.
 
 - Sensor de Movimiento: Promueve la actividad fisica al requerir que el usuario mueva el dispositivo para mantener en forma al Tamagotchi, ejemplo el usuario se puede desplazar y dar la sensacion de caminar para el tamagotchi.
 
@@ -57,25 +57,19 @@ Animo: Refleja el bienestar general de la mascota como resultado de satisfacer a
 
 ### Otros posibles estados:
 
-Crecimiento/Evolución: La mascota experimentará distintas fases de crecimiento, cada una con requisitos y comportamientos específicos, ilustrando el desarrollo y maduración de la mascota a lo largo del tiempo.
+Crecimiento/Evolucion: La mascota experimentara distintas fases de crecimiento, cada una con requisitos y comportamientos especi�ficos, ilustrando el desarrollo y maduracion de la mascota a lo largo del tiempo.
 
-Personalización: Permite al usuario personalizar la apariencia del Tamagotchi, como cambiar su color, agregar accesorios o modificar su entorno.
+Personalizacion: Permite al usuario personalizar la apariencia del Tamagotchi, como cambiar su color, agregar accesorios o modificar su entorno.
 
-Logros y Recompensas: Implementa un sistema de logros y recompensas que motive al usuario a cuidar bien de su Tamagotchi. Por ejemplo, podría desbloquear nuevas características, accesorios o juegos al alcanzar ciertos hitos
+Logros y Recompensas: Implementa un sistema de logros y recompensas que motive al usuario a cuidar bien de su Tamagotchi. Por ejemplo, podra desbloquear nuevas caracteristicas, accesorios o juegos al alcanzar ciertos hitos
 
-Exploración: Introduce la capacidad de explorar diferentes entornos virtuales con el Tamagotchi. Por ejemplo, podrían explorar un parque, una playa, una ciudad, entre otros.
+Exploracion: Introduce la capacidad de explorar diferentes entornos virtuales con el Tamagotchi. Por ejemplo, podran explorar un parque, una playa, una ciudad, entre otros.
 
-Actividades Específicas según el Momento del Día: Puedes diseñar actividades específicas que solo estén disponibles durante ciertos momentos del día. Por ejemplo, durante el día, el Tamagotchi podría tener la opción de jugar afuera, mientras que por la noche podría preferir quedarse dentro y ver la televisión.
+Actividades Especificas segun el Momento del Dia: Actividades que solo estan disponibles durante ciertos momentos del di�a. Por ejemplo, durante el dia, el Tamagotchi podr�a tener la opcion de jugar afuera, mientras que por la noche podri�a preferir quedarse dentro y ver la television.
 
-Cambios Visuales en el Entorno: Modifica el entorno del Tamagotchi para reflejar el momento del día. Por ejemplo, durante el día, el sol podría estar brillando y los pájaros podrían estar cantando, mientras que por la noche el cielo podría estar estrellado y la luna podría brillar en el horizonte.
+Cambios Visuales en el Entorno: Modifica el entorno del Tamagotchi para reflejar el momento del dia. Por ejemplo, durante el dia, el sol podría estar brillando y los pajaros podran estar cantando, mientras que por la noche el cielo podri�a estar estrellado y la luna podr�a brillar en el horizonte.
 
-Influencia en el Estado de Ánimo: El estado de día, tarde o noche puede influir en el estado de ánimo y las necesidades del Tamagotchi. Por ejemplo, durante el día podría estar más activo y feliz, mientras que por la noche podría estar más tranquilo y necesitar descansar.
-
-
-
-
-
-
+Influencia en el Estado de Animo: El estado de di�a, tarde o noche puede influir en el estado de Animo y las necesidades del Tamagotchi. Por ejemplo, durante el di�a podra estar mas activo y feliz, mientras que por la noche podría estar mas tranquilo y necesitar descansar.
 
 
 ### Sensor de temperatura
@@ -95,11 +89,11 @@ Módulo Sensor De Luz Ldr SENL
 
 
 
-#### Conversor Anàlogo-Digital 
+#### Conversor Analogo-Digital 
 
 PmodAD1
 
-El conversor analógico-digital de 12 bits se caracteriza por su implementación utilizando un protocolo de comunicación similar a SPI de dos canales. Este diseño permite una conversión A/D simultánea con una velocidad de hasta un MSa (muestra por segundo) por canal, tiene alimentaciòn de 2.35 a 5.25 voltios.
+El conversor analagico-digital de 12 bits se caracteriza por su implementaciin utilizando un protocolo de comunicacion similar a SPI de dos canales. Este dise�o permite una conversion A/D simultanea con una velocidad de hasta un MSa (muestra por segundo) por canal, tiene alimentaciòn de 2.35 a 5.25 voltios.
 
 ##### Digrama del circuito
 
@@ -128,7 +122,7 @@ Principio de funcionamiento: Los aceler�metros utilizan diferentes principios pa
 
 Aceler�metros de 3 ejes: Los aceler�metros de 3 ejes son los m�s utilizados.(Utilizados mayoritariamento en dispositivos celulares) Estos pueden detectar aceleraciones en tres direcciones diferentes: X, Y y Z. Esto permite medir la aceleraci�n en cualquier direcci�n tridimensional.
 
-(imagen acelerometro capacitivo)
+![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/acelerometro%20funcionamiento.webp)
 
 ### -> Giroscopio
 
@@ -138,7 +132,7 @@ Principio de funcionamiento: Los giroscopios utilizan el principio de conservaci
 
 Hay varios tipos de giroscopios, incluyendo giroscopios mec�nicos, giroscopios l�ser y giroscopios MEMS (sistemas microelectromec�nicos). 
 
-(imagen giroscopio)
+![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/Giroscopio.jpg)
 
 
 ## Caja negra
