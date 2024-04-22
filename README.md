@@ -121,6 +121,8 @@ La salida digital del sensor es de un bit, lo que quiere decir que solo hay un e
 
 PmodAD1
 
+![]()
+
 El conversor analagico-digital de 12 bits se caracteriza por su implementaciin utilizando un protocolo de comunicacion similar a SPI de dos canales. Este dise�o permite una conversion A/D simultanea con una velocidad de hasta un MSa (muestra por segundo) por canal, tiene alimentacion de 2.35 a 5.25 voltios.
 
 ##### Digrama del circuito
