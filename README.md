@@ -101,10 +101,19 @@ El conversor analÃ³gico-digital de 12 bits se caracteriza por su implementaciÃ³n
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/Captura%20desde%202024-04-20%2008-20-51.png)
 ##### Tabla de pines 
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/Captura%20desde%202024-04-20%2008-21-31.png)
+
 ### Sensor de Movimiento 
 
+La implementacion de un sensor de movimiento en este proyecto seria util en aplicaciones que permitan interactuar con la mascota virtual y la persona fisica dueña del tamagotchi. 
+
+Es decir cuando la mascota virtual requiera ejercitarse el portador (dueño) puede hacerlo caminando en la vida real, Mostrando al tiempo algun ejemplo de animacion de la mascota moviendose en la pantalla para generar mas interactividad a las acciones.
+
+Para realizar estas acciones se requiere un sensor que permita detectar que el portador (persona fisica) se este moviendo en la vida rea; con este objetivo se pueden encontrar sensores en el mercado que nos permite detectar esta accion como lo es la implementacion de un acelerometro, un giroscopio o un sensor infrarojo de movimiento
 
 
+#### Acelerometro
+
+#### Giroscopio
 
 
 
