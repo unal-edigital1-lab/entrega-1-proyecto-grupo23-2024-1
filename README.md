@@ -3,52 +3,57 @@
 ## PROYECTO TAMAGOTCHI
 
 ## Funcionalidad Principal:
-El nÃºcleo del sistema estÃ¡ diseÃ±ado para simular interactivamente el cuidado de una mascota virtual, permitiendo al usuario participar en actividades esenciales tales como alimentar, jugar, dormir y curar, a travÃ©s de una interfaz visual y de un sistema de botones y sensores.
+El nucleo del sistema esta diseñado para simular interactivamente el cuidado de una mascota virtual, permitiendo al usuario participar en actividades esenciales tales como alimentar, jugar, dormir y curar, a traves de una interfaz visual y de un sistema de botones y sensores de manera que sea entretenido para el portador.
 
-## Sistema de VisualizaciÃ³n:
+## Sistema de Visualizacion:
 
-### VisualizaciÃ³n de InformaciÃ³n de Estado:
-Matriz de Puntos 8x8: Esencial para representar visualmente el estado actual del Tamagotchi, incluyendo emociones y necesidades bÃ¡sicas.
+### Visualizacion de Informacion de Estado:
+
+Matriz de Puntos 8x8: Esencial para representar visualmente el estado actual del Tamagotchi, incluyendo emociones y necesidades basicas de la mascota virtual.
 
 ### Indicadores Simples:
-Display de 7 Segmentos: Utilizado para mostrar niveles y puntuaciones especÃ­ficas, como el nivel de hambre o felicidad, complementando la visualizaciÃ³n principal.
+
+Display de 7 Segmentos: Utilizado para mostrar niveles y puntuaciones especificas, como el nivel de hambre o felicidad, complementando la visualizacion principal.
 
 ### PANTALLA: LCD
 
 ## Sistema de Botones:
+
 ### Botones :
-La interacciÃ³n usuario-sistema se realizarÃ¡ mediante los siguientes botones configurados:
+La interaccion usuario-sistema se realizara mediante los siguientes botones configurados:
 
-Reset: Reestablece el Tamagotchi a un estado inicial conocido al mantener pulsado el botÃ³n durante al menos 5 segundos. Este estado inicial simula el despertar de la mascota con salud Ã³ptima.
+Reset: Reestablece el Tamagotchi a un estado inicial conocido al mantener pulsado el boton durante al menos 5 segundos. Este estado inicial simula el despertar de la mascota con salud optima.
 
-Test: Activa el modo de prueba al mantener pulsado por al menos 5 segundos, permitiendo al usuario navegar entre los diferentes estados del Tamagotchi con cada pulsaciÃ³n.
+Test: Activa el modo de prueba al mantener pulsado por al menos 5 segundos, permitiendo al usuario navegar entre los diferentes estados del Tamagotchi con cada pulsacion.
 
-Botones de InteracciÃ³n (2): Facilitan acciones directas como alimentar, jugar, o curar, posibilitando la implementaciÃ³n de actividades especÃ­ficas para el bienestar del Tamagotchi.
+Botones de Interaccion (2): Facilitan acciones directas como alimentar, jugar, o curar, posibilitando la implementacion de actividades especÃ­ficas para el bienestar del Tamagotchi.
 
 Acelerador de Tiempo: Permite modificar la velocidad del tiempo en el Tamagotchi, incrementando la rapidez de los cambios de estado para simular diferentes velocidades temporales.
 
 ## Sistema de Sensado:
 
-Sensor de Luz: Simula los ciclos de dÃ­a y noche, influyendo en las rutinas de actividad y descanso de la mascota.
+Con el objetivo de crear una mascota virtual que sea mas interactiva con el portador se hace necesario usar sensores que nos permitan medir variables fisicas del entorno donde se encuentre el dueño, esto con el fin de hacer mas interesante la aplicacion y cuidado de la mascota virtual. Para esto se pueden usar sensores como los siguientes:
 
-Sensor de Movimiento: Promueve la actividad fÃ­sica al requerir que el usuario mueva el dispositivo para mantener en forma al Tamagotchi, ejemplo el usuario se puede desplazar y dar la sensacion de caminar para el tamagotchi.
+- Sensor de Luz: Simula los ciclos de dÃ­a y noche, influyendo en las rutinas de actividad y descanso de la mascota.
 
-Sensor de Temperatura: Este sensor puede simular el clima y afectar el estado de Ã¡nimo y las necesidades de la mascota. Por ejemplo, si hace calor, el Tamagotchi puede necesitar mÃ¡s agua, mientras que en climas frÃ­os podrÃ­a necesitar una manta.
+- Sensor de Movimiento: Promueve la actividad fisica al requerir que el usuario mueva el dispositivo para mantener en forma al Tamagotchi, ejemplo el usuario se puede desplazar y dar la sensacion de caminar para el tamagotchi.
+
+- Sensor de Temperatura: Este sensor puede simular el clima y afectar el estado de animo y las necesidades de la mascota. Por ejemplo, si hace calor, el Tamagotchi puede necesitar mas agua, mientras que en climas frios podri­a necesitar una manta.
 
 
-## Estados MÃ­nimos:
+## Estados Minimos:
 
-El Tamagotchi operarÃ¡ a travÃ©s de una serie de estados que reflejan las necesidades fÃ­sicas y emocionales de la mascota virtual, a saber:
+El Tamagotchi operara a traves de una serie de estados que reflejan las necesidades fisicas y emocionales de la mascota virtual, para hacerle saber al portador los estados  saber:
 
-Hambriento: Este estado alerta sobre la necesidad de alimentar a la mascota. La falta de atenciÃ³n a esta necesidad puede desencadenar un estado de enfermedad.
+Hambriento: Este estado alerta sobre la necesidad de alimentar a la mascota. La falta de atencion a esta necesidad puede desencadenar un estado de enfermedad.
 
-EnergÃ­a: Denota la necesidad de entretenimiento de la mascota. La inactividad prolongada puede llevar a estados de aburrimiento o tristeza.
+Energia: Denota la necesidad de entretenimiento de la mascota. La inactividad prolongada puede llevar a estados de aburrimiento o tristeza.
 
-Descanso: Identifica cuando la mascota requiere reposo para recuperar energÃ­a, especialmente despuÃ©s de perÃ­odos de actividad intensa o durante la noche, limitando la interacciÃ³n del usuario durante estas fases.
+Descanso: Identifica cuando la mascota requiere reposo para recuperar energia, especialmente despues de peri­odos de actividad intensa o durante la noche, limitando la interaccion del usuario durante estas fases.
 
-Salud: va a niveles de enfermo por el descuido en el cuidado de la mascota, requiriendo intervenciones especÃ­ficas para su recuperaciÃ³n.
+Salud: va a niveles de enfermo por el descuido en el cuidado de la mascota, requiriendo intervenciones especi­ficas para su recuperacion.
 
-Ãnimo: Refleja el bienestar general de la mascota como resultado de satisfacer adecuadamente sus necesidades bÃ¡sicas.
+Animo: Refleja el bienestar general de la mascota como resultado de satisfacer adecuadamente sus necesidades bÃ¡sicas.
 
 ### Otros posibles estados:
 
@@ -99,22 +104,41 @@ El conversor analÃ³gico-digital de 12 bits se caracteriza por su implementaciÃ³n
 ##### Digrama del circuito
 
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/Captura%20desde%202024-04-20%2008-20-51.png)
+
 ##### Tabla de pines 
+
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/Captura%20desde%202024-04-20%2008-21-31.png)
 
 ### Sensor de Movimiento 
 
 La implementacion de un sensor de movimiento en este proyecto seria util en aplicaciones que permitan interactuar con la mascota virtual y la persona fisica dueña del tamagotchi. 
 
-Es decir cuando la mascota virtual requiera ejercitarse el portador (dueño) puede hacerlo caminando en la vida real, Mostrando al tiempo algun ejemplo de animacion de la mascota moviendose en la pantalla para generar mas interactividad a las acciones.
+Es decir cuando la mascota virtual requiera ejercitarse el portador (dueño/propietario) puede hacerlo caminando en la vida real, Mostrando al tiempo algun ejemplo de animacion de la mascota moviendose en la pantalla para generar mas interactividad a las acciones.
 
 Para realizar estas acciones se requiere un sensor que permita detectar que el portador (persona fisica) se este moviendo en la vida rea; con este objetivo se pueden encontrar sensores en el mercado que nos permite detectar esta accion como lo es la implementacion de un acelerometro, un giroscopio o un sensor infrarojo de movimiento
 
 
-#### Acelerometro
+### -> Acelerometro
 
-#### Giroscopio
+Es un dispositivo utilizado para medir la aceleración o vibración de un objeto o estructura. Funciona detectando los cambios en la fuerza de aceleración experimentada por el dispositivo en diferentes direcciones.
 
+Midiendo la fuerza de aceleración en la unidad "g" (gravedad). Puede medir la aceleración en uno, dos o tres planos, dependiendo del tipo de acelerómetro.
+
+Principio de funcionamiento: Los acelerómetros utilizan diferentes principios para medir la aceleración. Algunos acelerómetros utilizan el principio piezoeléctrico, donde la aceleración genera una carga eléctrica en un material piezoeléctrico. Otros utilizan el principio capacitivo, donde la aceleración causa cambios en la capacitancia de un capacitor. También hay acelerómetros basados en tecnología MEMS (Microelectromechanical Systems), que utilizan estructuras microscópicas para medir la aceleración.
+
+Acelerómetros de 3 ejes: Los acelerómetros de 3 ejes son los más utilizados.(Utilizados mayoritariamento en dispositivos celulares) Estos pueden detectar aceleraciones en tres direcciones diferentes: X, Y y Z. Esto permite medir la aceleración en cualquier dirección tridimensional.
+
+(imagen acelerometro capacitivo)
+
+### -> Giroscopio
+
+Es un dispositivo mecánico que se utiliza para medir, mantener o cambiar la orientación en el espacio de un objeto o vehículo.Compuesto por un cuerpo con simetría de rotación que gira alrededor de un eje. La rotación del cuerpo crea una propiedad llamada momento angular, que se mantiene constante a menos que se aplique un par externo. Esto permite al giroscopio mantener su orientación en el espacio.
+
+Principio de funcionamiento: Los giroscopios utilizan el principio de conservación del momento angular para medir la rotación. Cuando el giroscopio gira, su eje de rotación tiende a mantener su dirección original debido a la conservación del momento angular.
+
+Hay varios tipos de giroscopios, incluyendo giroscopios mecánicos, giroscopios láser y giroscopios MEMS (sistemas microelectromecánicos). 
+
+(imagen giroscopio)
 
 
 ## Caja negra
