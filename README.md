@@ -155,7 +155,20 @@ Aceler�metros de 3 ejes: Los aceler�metros de 3 ejes son los m�s utilizado
 
 Acelerómetro Digital de 3 Ejes ADXL345 
 
-![]()
+![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/Captura%20desde%202024-04-22%2013-16-30.png)
+
+Acelerómetro Digital de 3 Ejes ADXL345, utilizado principalmente en aplicaciones móviles. Se caracteriza por su bajo consumo de energí­a, dispone de sensibilidad ajustable a una resolución de 16 bits. Se puede conectar fácilmente a través de su interfaz SPI (3 o 4 hilos) e I2C.
+
+Principales Características:
+
+    Voltaje de Alimentación DC: 2V ~ 3.3V
+    Corriente de operación: 140uA
+    Interfaz: I2C - SPI (5 MHz)
+    Auto Test: Ejes X, Y, Z
+    Frecuencia de Reloj Interna: 400 KHz
+    Rangos: 2g, 4g, 8g y 16g
+    Sensibilidad: 4 LSB/g
+    Temperatura de funcionamiento: -40°C ~ 85°C
 
 ### -> Giroscopio
 
