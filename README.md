@@ -24,8 +24,6 @@ La interaccion usuario-sistema se realizara mediante los siguientes botones conf
 
 Reset: Reestablece el Tamagotchi a un estado inicial conocido al mantener pulsado el boton durante al menos 5 segundos. Este estado inicial simula el despertar de la mascota con salud optima.
 
-Test: Activa el modo de prueba al mantener pulsado por al menos 5 segundos, permitiendo al usuario navegar entre los diferentes estados del Tamagotchi con cada pulsacion.
-
 Botones de Interaccion (2): Facilitan acciones directas como alimentar, jugar, o curar, posibilitando la implementacion de actividades específicas para el bienestar del Tamagotchi.
 
 Acelerador de Tiempo: Permite modificar la velocidad del tiempo en el Tamagotchi, incrementando la rapidez de los cambios de estado para simular diferentes velocidades temporales.
