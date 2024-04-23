@@ -57,13 +57,6 @@ Animo: Refleja el bienestar general de la mascota como resultado de satisfacer a
 
 ### Otros posibles estados:
 
-Crecimiento/Evolucion: La mascota experimentara distintas fases de crecimiento, cada una con requisitos y comportamientos especi�ficos, ilustrando el desarrollo y maduracion de la mascota a lo largo del tiempo.
-
-Personalizacion: Permite al usuario personalizar la apariencia del Tamagotchi, como cambiar su color, agregar accesorios o modificar su entorno.
-
-Logros y Recompensas: Implementa un sistema de logros y recompensas que motive al usuario a cuidar bien de su Tamagotchi. Por ejemplo, podra desbloquear nuevas caracteristicas, accesorios o juegos al alcanzar ciertos hitos
-
-Exploracion: Introduce la capacidad de explorar diferentes entornos virtuales con el Tamagotchi. Por ejemplo, podran explorar un parque, una playa, una ciudad, entre otros.
 
 Actividades Especificas segun el Momento del Dia: Actividades que solo estan disponibles durante ciertos momentos del di�a. Por ejemplo, durante el dia, el Tamagotchi podr�a tener la opcion de jugar afuera, mientras que por la noche podri�a preferir quedarse dentro y ver la television.
 
