@@ -38,7 +38,8 @@ Con el objetivo de crear una mascota virtual que sea más interactiva con el por
 
 - Sensor de Movimiento: Promueve la actividad física al requerir que el usuario mueva el dispositivo para mantener en forma al Tamagotchi.
 
-- Sensor de Temperatura: Este sensor puede simular el clima y afectar el estado de ánimo y las necesidades de la mascota. 
+- Sensor de Temperatura: Este sensor puede simular el clima y afectar el estado de ánimo y las necesidades de la mascota.
+- 
 ## Estados Mínimos:
 
 El Tamagotchi operará a través de una serie de estados que reflejan las necesidades físicas y emocionales de la mascota virtual, para hacerle saber al portador los estados saber:
@@ -65,19 +66,71 @@ Influencia en el Estado de Ánimo: El estado de día, tarde o noche puede influi
 
 ### Sensor de temperatura
 
+SHT31
 
-SHT30
 
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/Captura%20desde%202024-04-23%2022-40-07.png)
-El Sensor de temperatura y humedad SHT30 es un dispositivo versátil diseñado para medir con precisión tanto la temperatura como la humedad en diversos entornos. Sus características principales son:
 
-    Voltaje de alimentación (Vcc): Puede operar en un rango de voltaje de 2.5V a 5V, lo que lo hace compatible con una amplia variedad de sistemas y microcontroladores.
+El Sensor de temperatura y humedad SHT31 es un dispositivo  diseñado para medir con precisión tanto la temperatura como la humedad. Sus características principales son:
 
-    Resolución de temperatura: Ofrece una alta precisión en la medición de la temperatura, con una resolución de ±0.3°C. Esto garantiza mediciones confiables y precisas incluso en condiciones variables.
+    Voltaje de alimentación (Vcc): Puede operar en un rango de voltaje de 2.15V a 5V con un voltaje de operacion optimo de 3.3V.
+    
+    Voltaje POR (Voltaje de encendido): Es el voltaje umbral al cual el sensor comienza a encenderse, su rango va  de 1.8V a 2.15V, despues de este umbral el sensor necesita el
+    tiempo TPU para entrar en reposo, una vez en reposo esta listo para recibir los comando del microcontrolador.
 
-    Resolución de humedad: Igualmente importante, su capacidad para medir la humedad con una resolución de ±2% asegura mediciones exactas y consistentes en entornos con diferentes niveles de humedad.
+    Consumo de corriente: Cuando el sensor se encuentra en reposo consume entre 0,2 y 2 microamperios, mientras que cuando se encuentra midiendo, el consumo aumenta a un rango de 
+    600 a 1500 microamperios.
+
+    Resolución de temperatura: Ofrece una alta precisión en la medición de la temperatura, con un margen de error de tan solo ±0.2°C en el rango de temperaturas de 0 a 90 grados.
+    
+    Tiempo de respuesta Tau: completa su primer ciclo tau del 63% a los 2 segundos.
 
     Interface: Se comunica a través de la interfaz I2C, lo que facilita su integración en sistemas electrónicos y microcontroladores compatibles con este protocolo de comunicación.
+
+Asignacion de pines:
+    ![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/assets/159670741/8c7358c4-b376-484e-8b9e-2fda3075a146)
+
+1) SDA (serial data imput/output): Linea de transmision de datos bidireccional de el microcontrolador al sensor.
+2) ADDR: Address pin: cambia la direccion I2C del sensor dependiendo de si esta en logica alta o baja.
+3) Alert: da las condiciones de alarma, no se utilizara, se deja flotando.
+4) SCL (Serial clock): Controla la transmision de datos en el SDA.
+5) Entrada de fuente de alimentacion.
+6) nReset fuerza un reseteo en el sensor.
+7) No tiene funcion electrica.
+8) Vss o ground (conexion a tierra).
+
+Serial Clock y serial data:
+
+El SCL es utilizado para sincronizar el envio de datos entre el microcontrolador y el sensor en la linea SDA, Mientras la linea del relog se encuentre alto se permitira la comunicacion entre el microcontrolador y el sensor, en cambio si la linea del relog se encuentra baja se detendra la transmision, cada secuencia de comunicacion consta de una condicion de inicio
+y su respectiva parada, el sensor puede forzar la parada y alargar el pulso del relog en bajo con la tecnica de Clock stretching en el cual indica al microcontrolador que 
+debe esperar mientras el sensor procesa los datos.
+
+El SDA se usa para transferir daos desde y hacia el sensor La línea SDA es esencial para el intercambio de información en el bus I²C. Es la línea por la cual fluyen los datos entre el microcontrolador y el sensor los cuales son el maestro y el esclavo.
+
+Dispositivo Maestro (Microcontrolador): Es el dispositivo que inicia y controla la comunicación. Puede comenzar la transferencia de datos y proporciona la señal de reloj a través de SCL.
+Dispositivo Esclavo (Sensor): Es el dispositivo que recibe las órdenes del maestro y ejecuta las instrucciones.
+
+Secuencia de comunicacion de medicion:
+
+Inicio de la Comunicación:
+Todo intercambio de datos en I²C comienza con una instruccion de inicio generada por el microcontrolador. Esta condición sucede cuando la SDA se desplaza de un nivel alto a un nivel bajo mientras SCL se mantiene en alto.
+
+Seleccion del sensor mediante dirección:
+El maestro envía una secuencia de 7 bits que contiene la dirección del esclavo con el que desea comunicarse. Estos bits se envían secuencialmente a través de la SDA con cada pulso de reloj en SCL, el sensor de temperatura tiene posibilidad mediante el bit en la linea ADDR cambiar su direccion esto en caso de que se utilice mas de un sensor con la misma dirección.
+
+Bit de Lectura/Escritura:
+Junto con la dirección, el microcontrolador también envía un bit que indica si la operación que se desea realizar si es lectura (SDA alto) o de escritura (SDA bajo).
+
+Confirmación de Recibo (ACK):
+Después de recibir 8 bits, el dispositivo receptor (Puede ser el maestro o el esclavo dependiendo de la direccion de comunicación) debe realizar la confirmación de la comunicacion. Esto se hace bajando la linea SDA durante un pulso de reloj.
+
+Transmisión de Datos:
+Los datos se transmiten en paquetes de 8 bits (un byte). Después de cada byte, se espera un ACK de confirmacion antes de continuar. Si se está escribiendo en un esclavo, el maestro coloca los datos en SDA; si se está leyendo, el esclavo coloca los datos en SDA con la medición.
+
+Condición de Parada:
+La comunicación finaliza con una "condición de parada" que el maestro genera, haciendo que SDA cambie de estado de un nivel bajo a un nivel alto mientras SCL está alto.
+   
+
 
 #### Protocolo I2c
 
