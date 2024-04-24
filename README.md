@@ -73,19 +73,19 @@ SHT31
 
 El Sensor de temperatura y humedad SHT31 es un dispositivo  diseñado para medir con precisión tanto la temperatura como la humedad. Sus características principales son:
 
-    Voltaje de alimentación (Vcc): Puede operar en un rango de voltaje de 2.15V a 5V con un voltaje de operacion optimo de 3.3V.
+ Voltaje de alimentación (Vcc): Puede operar en un rango de voltaje de 2.15V a 5V con un voltaje de operacion optimo de 3.3V.
     
-    Voltaje POR (Voltaje de encendido): Es el voltaje umbral al cual el sensor comienza a encenderse, su rango va  de 1.8V a 2.15V, despues de este umbral el sensor necesita el
-    tiempo TPU para entrar en reposo, una vez en reposo esta listo para recibir los comando del microcontrolador.
+Voltaje POR (Voltaje de encendido): Es el voltaje umbral al cual el sensor comienza a encenderse, su rango va  de 1.8V a 2.15V, despues de este umbral el sensor necesita el
+tiempo TPU para entrar en reposo, una vez en reposo esta listo para recibir los comando del microcontrolador.
 
-    Consumo de corriente: Cuando el sensor se encuentra en reposo consume entre 0,2 y 2 microamperios, mientras que cuando se encuentra midiendo, el consumo aumenta a un rango de 
-    600 a 1500 microamperios.
+Consumo de corriente: Cuando el sensor se encuentra en reposo consume entre 0,2 y 2 microamperios, mientras que cuando se encuentra midiendo, el consumo aumenta a un rango de 
+600 a 1500 microamperios.
 
-    Resolución de temperatura: Ofrece una alta precisión en la medición de la temperatura, con un margen de error de tan solo ±0.2°C en el rango de temperaturas de 0 a 90 grados.
+ Resolución de temperatura: Ofrece una alta precisión en la medición de la temperatura, con un margen de error de tan solo ±0.2°C en el rango de temperaturas de 0 a 90 grados.
     
-    Tiempo de respuesta Tau: completa su primer ciclo tau del 63% a los 2 segundos.
+Tiempo de respuesta Tau: completa su primer ciclo tau del 63% a los 2 segundos.
 
-    Interface: Se comunica a través de la interfaz I2C, lo que facilita su integración en sistemas electrónicos y microcontroladores compatibles con este protocolo de comunicación.
+Interface: Se comunica a través de la interfaz I2C, lo que facilita su integración en sistemas electrónicos y microcontroladores compatibles con este protocolo de comunicación.
 
 Asignacion de pines:
     ![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/assets/159670741/8c7358c4-b376-484e-8b9e-2fda3075a146)
