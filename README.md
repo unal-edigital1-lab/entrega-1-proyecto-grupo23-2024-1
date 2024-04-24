@@ -9,13 +9,13 @@ El núcleo del sistema está diseñado para simular interactivamente el cuidado 
 
 ### Visualización de Información de Estado:
 
-Matriz de Puntos 8x8: Esencial para representar visualmente el estado actual del Tamagotchi, incluyendo emociones y necesidades básicas de la mascota virtual.
+Pantalla LCD ILI9341: Esencial para representar visualmente el estado actual del Tamagotchi, incluyendo emociones y necesidades básicas de la mascota virtual.
 
 ### Indicadores Simples:
 
 Display de 7 Segmentos: Utilizado para mostrar niveles y puntuaciones específicas, como el nivel de hambre o felicidad, complementando la visualización principal.
 
-### PANTALLA: VGA 640x480 RGB444
+### PANTALLA: ILI9341
 
 ## Sistema de Botones:
 
@@ -172,24 +172,37 @@ Principales Características:
 ### Hambre
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/WhatsApp%20Unknown%202024-04-23%20at%205.53.41%20PM/WhatsApp%20Image%202024-04-23%20at%204.39.39%20PM.jpeg)
 
+El estado de hambre de la mascota virtual dependerá de si ha comido recientemente y del tiempo transcurrido desde su última comida. Habrá dos estados principales: uno en el que la mascota esté hambrienta y otro en el que se sienta saciada.
+La variable "tiempo" indica que ha transcurrido una cantidad específica de tiempo.
 ### Descanso
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/WhatsApp%20Unknown%202024-04-23%20at%205.53.41%20PM/WhatsApp%20Image%202024-04-23%20at%204.39.36%20PM.jpeg)
 
+El estado de descanso de la mascota virtual estará determinado por la cantidad de tiempo que ha pasado sin dormir y si ha tenido oportunidad de descansar. Sin embargo, el tiempo que la mascota pasa en estado de descanso también será relevante para su bienestar general.
+La variable "tiempo" indica que ha transcurrido una cantidad específica de tiempo.
 ### Energía
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/WhatsApp%20Unknown%202024-04-23%20at%205.53.41%20PM/WhatsApp%20Image%202024-04-23%20at%204.39.39%20PM%20(1).jpeg)
+
+La energía de la mascota virtual estará influenciada por su estado de hambre y descanso, lo que resultará en tres estados diferentes de energía. Estos estados cambiarán dinámicamente dependiendo de las entradas recibidas.
 
 ### Actividad física
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/WhatsApp%20Unknown%202024-04-23%20at%205.53.41%20PM/WhatsApp%20Image%202024-04-23%20at%204.39.37%20PM.jpeg)
 
+La actividad física de la mascota virtual dependerá de los datos recibidos del acelerómetro, los cuales determinarán cuánta actividad física realiza la mascota.
+
 ### Momento del día
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/WhatsApp%20Unknown%202024-04-23%20at%205.53.41%20PM/WhatsApp%20Image%202024-04-23%20at%204.39.46%20PM.jpeg)
+
+El momento del día para la mascota virtual estará determinado por la cantidad de luz recibida a través del sensor de luz. Esta información influirá en el estado de ánimo de la mascota, afectando su comportamiento y emociones.
 
 ### Temperatura
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/WhatsApp%20Unknown%202024-04-23%20at%205.53.41%20PM/WhatsApp%20Image%202024-04-23%20at%204.39.38%20PM%20(1).jpeg)
 
+La temperatura de la mascota virtual estará determinada por el sensor de temperatura, y será crucial para evaluar su salud. Por ejemplo, si la mascota se encuentra en un ambiente frío, podría estar en riesgo de resfriarse.
 ### Ánimo 
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/WhatsApp%20Unknown%202024-04-23%20at%205.53.41%20PM/WhatsApp%20Image%202024-04-23%20at%204.39.45%20PM.jpeg)
 
+El estado de ánimo de la mascota virtual estará influenciado principalmente por el momento del día y la energía que tenga en ese momento. Indirectamente, estos dos factores también dependerán del descanso y el hambre de la mascota.
 ### Salud
 
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/WhatsApp%20Unknown%202024-04-23%20at%205.53.41%20PM/WhatsApp%20Image%202024-04-23%20at%204.39.38%20PM.jpeg)
+El estado más importante de la mascota virtual será su salud, la cual estará determinada por tres variables principales: la actividad física, la temperatura y el estado de ánimo. Este estado de salud será el resultado de la interacción entre todas estas variables.
