@@ -3,66 +3,65 @@
 ## PROYECTO TAMAGOTCHI
 
 ## Funcionalidad Principal:
-El nucleo del sistema esta dise�ado para simular interactivamente el cuidado de una mascota virtual, permitiendo al usuario participar en actividades esenciales tales como alimentar, jugar, dormir y curar, a traves de una interfaz visual y de un sistema de botones y sensores de manera que sea entretenido para el portador.
+El núcleo del sistema está diseñado para simular interactivamente el cuidado de una mascota virtual, permitiendo al usuario participar en actividades esenciales tales como alimentar, jugar, dormir y curar, a través de una interfaz visual y de un sistema de botones y sensores de manera que sea entretenido para el portador.
 
-## Sistema de Visualizacion:
+## Sistema de Visualización:
 
-### Visualizacion de Informacion de Estado:
+### Visualización de Información de Estado:
 
-Matriz de Puntos 8x8: Esencial para representar visualmente el estado actual del Tamagotchi, incluyendo emociones y necesidades basicas de la mascota virtual.
+Matriz de Puntos 8x8: Esencial para representar visualmente el estado actual del Tamagotchi, incluyendo emociones y necesidades básicas de la mascota virtual.
 
 ### Indicadores Simples:
 
-Display de 7 Segmentos: Utilizado para mostrar niveles y puntuaciones especificas, como el nivel de hambre o felicidad, complementando la visualizacion principal.
+Display de 7 Segmentos: Utilizado para mostrar niveles y puntuaciones específicas, como el nivel de hambre o felicidad, complementando la visualización principal.
 
 ### PANTALLA: VGA 640x480 RGB444
 
 ## Sistema de Botones:
 
 ### Botones :
-La interaccion usuario-sistema se realizara mediante los siguientes botones configurados:
+La interacción usuario-sistema se realizará mediante los siguientes botones configurados:
 
-Reset: Reestablece el Tamagotchi a un estado inicial conocido al mantener pulsado el boton durante al menos 5 segundos. Este estado inicial simula el despertar de la mascota con salud optima.
+Reset: Reestablece el Tamagotchi a un estado inicial conocido al mantener pulsado el botón durante al menos 5 segundos. Este estado inicial simula el despertar de la mascota con salud óptima.
 
-comer: Permite a la mascota virtual alimentarse y subir su estado de ànimo y reducri el nivel de hambre
+comer: Permite a la mascota virtual alimentarse y subir su estado de ánimo y reducir el nivel de hambre.
 
-Descansar: Permite a la mascota descansar para aumentar su energìa 
+Descansar: Permite a la mascota descansar para aumentar su energía.
 
 Acelerador de Tiempo: Permite modificar la velocidad del tiempo en el Tamagotchi, incrementando la rapidez de los cambios de estado para simular diferentes velocidades temporales.
 
 ## Sistema de Sensado:
 
-Con el objetivo de crear una mascota virtual que sea mas interactiva con el portador se hace necesario usar sensores que nos permitan medir variables fisicas del entorno donde se encuentre el due�o, esto con el fin de hacer mas interesante la aplicacion y cuidado de la mascota virtual. Para esto se pueden usar sensores como los siguientes:
+Con el objetivo de crear una mascota virtual que sea más interactiva con el portador se hace necesario usar sensores que nos permitan medir variables físicas del entorno donde se encuentre el dueño, esto con el fin de hacer más interesante la aplicación y cuidado de la mascota virtual. Para esto se pueden usar sensores como los siguientes:
 
-- Sensor de Luz: Simula los ciclos de di�a y noche, influyendo en las rutinas de actividad y descanso de la mascota.
+- Sensor de Luz: Simula los ciclos de día y noche, influyendo en las rutinas de actividad y descanso de la mascota.
 
-- Sensor de Movimiento: Promueve la actividad fisica al requerir que el usuario mueva el dispositivo para mantener en forma al Tamagotchi, ejemplo el usuario se puede desplazar y dar la sensacion de caminar para el tamagotchi.
+- Sensor de Movimiento: Promueve la actividad física al requerir que el usuario mueva el dispositivo para mantener en forma al Tamagotchi, ejemplo el usuario se puede desplazar y dar la sensación de caminar para el tamagotchi.
 
-- Sensor de Temperatura: Este sensor puede simular el clima y afectar el estado de animo y las necesidades de la mascota. Por ejemplo, si hace calor, el Tamagotchi puede necesitar mas agua, mientras que en climas frios podri�a necesitar una manta.
+- Sensor de Temperatura: Este sensor puede simular el clima y afectar el estado de ánimo y las necesidades de la mascota. Por ejemplo, si hace calor, el Tamagotchi puede necesitar más agua, mientras que en climas fríos podría necesitar una manta.
 
+## Estados Mínimos:
 
-## Estados Minimos:
+El Tamagotchi operará a través de una serie de estados que reflejan las necesidades físicas y emocionales de la mascota virtual, para hacerle saber al portador los estados saber:
 
-El Tamagotchi operara a traves de una serie de estados que reflejan las necesidades fisicas y emocionales de la mascota virtual, para hacerle saber al portador los estados  saber:
+Hambriento: Este estado alerta sobre la necesidad de alimentar a la mascota. La falta de atención a esta necesidad puede desencadenar un estado de enfermedad.
 
-Hambriento: Este estado alerta sobre la necesidad de alimentar a la mascota. La falta de atencion a esta necesidad puede desencadenar un estado de enfermedad.
+Energía: Denota la necesidad de entretenimiento de la mascota. La inactividad prolongada puede llevar a estados de aburrimiento o tristeza.
 
-Energia: Denota la necesidad de entretenimiento de la mascota. La inactividad prolongada puede llevar a estados de aburrimiento o tristeza.
+Descanso: Identifica cuando la mascota requiere reposo para recuperar energía, especialmente después de períodos de actividad intensa o durante la noche, limitando la interacción del usuario durante estas fases.
 
-Descanso: Identifica cuando la mascota requiere reposo para recuperar energia, especialmente despues de peri�odos de actividad intensa o durante la noche, limitando la interaccion del usuario durante estas fases.
+Salud: va a niveles de enfermo por el descuido en el cuidado de la mascota, requiriendo intervenciones específicas para su recuperación.
 
-Salud: va a niveles de enfermo por el descuido en el cuidado de la mascota, requiriendo intervenciones especi�ficas para su recuperacion.
-
-Animo: Refleja el bienestar general de la mascota como resultado de satisfacer adecuadamente sus necesidades básicas.
+Ánimo: Refleja el bienestar general de la mascota como resultado de satisfacer adecuadamente sus necesidades básicas.
 
 ### Otros posibles estados:
 
 
-Actividades Especificas segun el Momento del Dia: Actividades que solo estan disponibles durante ciertos momentos del di�a. Por ejemplo, durante el dia, el Tamagotchi podr�a tener la opcion de jugar afuera, mientras que por la noche podri�a preferir quedarse dentro y ver la television.
+Actividades Específicas según el Momento del Día: Actividades que solo están disponibles durante ciertos momentos del día. Por ejemplo, durante el día, el Tamagotchi podría tener la opción de jugar afuera, mientras que por la noche podría preferir quedarse dentro y ver la televisión.
 
-Cambios Visuales en el Entorno: Modifica el entorno del Tamagotchi para reflejar el momento del dia. Por ejemplo, durante el dia, el sol podría estar brillando y los pajaros podran estar cantando, mientras que por la noche el cielo podri�a estar estrellado y la luna podr�a brillar en el horizonte.
+Cambios Visuales en el Entorno: Modifica el entorno del Tamagotchi para reflejar el momento del día. Por ejemplo, durante el día, el sol podría estar brillando y los pájaros podrían estar cantando, mientras que por la noche el cielo podría estar estrellado y la luna podría brillar en el horizonte.
 
-Influencia en el Estado de Animo: El estado de di�a, tarde o noche puede influir en el estado de Animo y las necesidades del Tamagotchi. Por ejemplo, durante el di�a podra estar mas activo y feliz, mientras que por la noche podría estar mas tranquilo y necesitar descansar.
+Influencia en el Estado de Ánimo: El estado de día, tarde o noche puede influir en el estado de Ánimo y las necesidades del Tamagotchi. Por ejemplo, durante el día podría estar más activo y feliz, mientras que por la noche podría estar más tranquilo y necesitar descansar.
 
 
 ### Sensor de temperatura
@@ -74,11 +73,11 @@ SHT75
 
 #### Protocolo I2c
 
-El protocolo de comunicaci�n I2C (Inter-Integrated Circuit) es un puerto y protocolo de comunicaci�n serial utilizado para transferir datos entre dos dispositivos digitales. El protocolo I2C define la trama de datos y las conexiones f�sicas utilizadas para transferir bits entre los dispositivos. Utiliza dos l�neas de comunicaci�n, una l�nea de datos (SDA) y una l�nea de reloj (SCL), para transmitir informaci�n de manera sincronizada.
+El protocolo de comunicación I2C (Inter-Integrated Circuit) es un puerto y protocolo de comunicación serial utilizado para transferir datos entre dos dispositivos digitales. El protocolo I2C define la trama de datos y las conexiones físicas utilizadas para transferir bits entre los dispositivos. Utiliza dos líneas de comunicación, una línea de datos (SDA) y una línea de reloj (SCL), para transmitir información de manera sincronizada.
 
-Comunicaci�n maestro-esclavo: En el protocolo I2C, uno de los dispositivos act�a como maestro y los dem�s como esclavos. El maestro inicia y controla la comunicaci�n, mientras que los esclavos responden a las solicitudes del maestro.
+Comunicación maestro-esclavo: En el protocolo I2C, uno de los dispositivos actúa como maestro y los demás como esclavos. El maestro inicia y controla la comunicación, mientras que los esclavos responden a las solicitudes del maestro.
 
-Direcciones de dispositivo: Cada dispositivo conectado al bus I2C tiene una direcci�n �nica que lo identifica. El maestro utiliza estas direcciones para seleccionar el dispositivo con el que desea comunicarse.
+Direcciones de dispositivo: Cada dispositivo conectado al bus I2C tiene una dirección única que lo identifica. El maestro utiliza estas direcciones para seleccionar el dispositivo con el que desea comunicarse.
 
 El protocolo I2C admite diferentes velocidades de transferencia, que van desde unos pocos kilobits por segundo hasta varios megabits por segundo. La velocidad de transferencia se configura mediante la frecuencia del reloj.
 
@@ -89,23 +88,23 @@ El protocolo I2C admite diferentes velocidades de transferencia, que van desde u
 
 ### Sensor de Luz
 
-Modulo Sensor De Luz Ldr SENL
+Módulo Sensor De Luz Ldr SENL
 
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/Captura%20desde%202024-04-22%2012-49-57.png)
 
-Sensor de luz que cuenta con una entrada de alimentaciòn, una entrada a tierra, una salida anàloga y otra salida digital.
+Sensor de luz que cuenta con una entrada de alimentación, una entrada a tierra, una salida analógica y otra salida digital.
 
-La salida digital del sensor es de un bit, lo que quiere decir que solo hay un estado donde hay luz y otro donde no, esto se puede arreglar con un conversor analogo-digital donde obtenemos un muestreo de la salida analoga y tener diferentes niveles de paso de luz
+La salida digital del sensor es de un bit, lo que quiere decir que solo hay un estado donde hay luz y otro donde no, esto se puede arreglar con un conversor analógico-digital donde obtenemos un muestreo de la salida analógica y tener diferentes niveles de paso de luz
 
-#### Conversor Analogo-Digital 
+#### Conversor Analógico-Digital 
 
 PmodAD1
 
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/Captura%20desde%202024-04-22%2013-23-15.png)
 
-El conversor analagico-digital de 12 bits se caracteriza por su implementaciin utilizando un protocolo de comunicacion similar a SPI de dos canales. Este dise�o permite una conversion A/D simultanea con una velocidad de hasta un MSa (muestra por segundo) por canal, tiene alimentacion de 2.35 a 5.25 voltios.
+El conversor analógico-digital de 12 bits se caracteriza por su implementación utilizando un protocolo de comunicación similar a SPI de dos canales. Este diseño permite una conversión A/D simultánea con una velocidad de hasta un MSa (muestra por segundo) por canal, tiene alimentación de 2.35 a 5.25 voltios.
 
-##### Digrama del circuito
+##### Diagrama del circuito
 
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/Captura%20desde%202024-04-20%2008-20-51.png)
 
@@ -115,22 +114,22 @@ El conversor analagico-digital de 12 bits se caracteriza por su implementaciin u
 
 ### Sensor de Movimiento 
 
-La implementacion de un sensor de movimiento en este proyecto seria util en aplicaciones que permitan interactuar con la mascota virtual y la persona fisica due�a del tamagotchi. 
+La implementación de un sensor de movimiento en este proyecto sería útil en aplicaciones que permitan interactuar con la mascota virtual y la persona física dueña del Tamagotchi. 
 
-Es decir cuando la mascota virtual requiera ejercitarse el portador (due�o/propietario) puede hacerlo caminando en la vida real, Mostrando al tiempo algun ejemplo de animacion de la mascota moviendose en la pantalla para generar mas interactividad a las acciones.
+Es decir cuando la mascota virtual requiera ejercitarse el portador (dueño/propietario) puede hacerlo caminando en la vida real, mostrando al tiempo algún ejemplo de animación de la mascota moviéndose en la pantalla para generar más interactividad a las acciones.
 
-Para realizar estas acciones se requiere un sensor que permita detectar que el portador (persona fisica) se este moviendo en la vida rea; con este objetivo se pueden encontrar sensores en el mercado que nos permite detectar esta accion como lo es la implementacion de un acelerometro, un giroscopio o un sensor infrarojo de movimiento
+Para realizar estas acciones se requiere un sensor que permita detectar que el portador (persona física) se esté moviendo en la vida real; con este objetivo se pueden encontrar sensores en el mercado que nos permite detectar esta acción como lo es la implementación de un acelerómetro, un giroscopio o un sensor infrarrojo de movimiento
 
 
-### -> Acelerometro
+### -> Acelerómetro
 
-Es un dispositivo utilizado para medir la aceleraci�n o vibraci�n de un objeto o estructura. Funciona detectando los cambios en la fuerza de aceleraci�n experimentada por el dispositivo en diferentes direcciones.
+Es un dispositivo utilizado para medir la aceleración o vibración de un objeto o estructura. Funciona detectando los cambios en la fuerza de aceleración experimentada por el dispositivo en diferentes direcciones.
 
-Midiendo la fuerza de aceleraci�n en la unidad "g" (gravedad). Puede medir la aceleraci�n en uno, dos o tres planos, dependiendo del tipo de aceler�metro.
+Midiendo la fuerza de aceleración en la unidad "g" (gravedad). Puede medir la aceleración en uno, dos o tres planos, dependiendo del tipo de acelerómetro.
 
-Principio de funcionamiento: Los aceler�metros utilizan diferentes principios para medir la aceleraci�n. Algunos aceler�metros utilizan el principio piezoel�ctrico, donde la aceleraci�n genera una carga el�ctrica en un material piezoel�ctrico. Otros utilizan el principio capacitivo, donde la aceleraci�n causa cambios en la capacitancia de un capacitor. Tambi�n hay aceler�metros basados en tecnolog�a MEMS (Microelectromechanical Systems), que utilizan estructuras microsc�picas para medir la aceleraci�n.
+Principio de funcionamiento: Los acelerómetros utilizan diferentes principios para medir la aceleración. Algunos acelerómetros utilizan el principio piezoeléctrico, donde la aceleración genera una carga eléctrica en un material piezoeléctrico. Otros utilizan el principio capacitivo, donde la aceleración causa cambios en la capacitancia de un capacitor. También hay acelerómetros basados en tecnología MEMS (Microelectromechanical Systems), que utilizan estructuras microscópicas para medir la aceleración.
 
-Aceler�metros de 3 ejes: Los aceler�metros de 3 ejes son los m�s utilizados.(Utilizados mayoritariamento en dispositivos celulares) Estos pueden detectar aceleraciones en tres direcciones diferentes: X, Y y Z. Esto permite medir la aceleraci�n en cualquier direcci�n tridimensional.
+Acelerómetros de 3 ejes: Los acelerómetros de 3 ejes son los más utilizados.(Utilizados mayoritariamente en dispositivos celulares) Estos pueden detectar aceleraciones en tres direcciones diferentes: X, Y y Z. Esto permite medir la aceleración en cualquier dirección tridimensional.
 
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/acelerometro%20funcionamiento.webp)
 
@@ -139,7 +138,7 @@ Acelerómetro Digital de 3 Ejes ADXL345
 
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/Captura%20desde%202024-04-22%2013-16-30.png)
 
-Acelerómetro Digital de 3 Ejes ADXL345, utilizado principalmente en aplicaciones móviles. Se caracteriza por su bajo consumo de energí­a, dispone de sensibilidad ajustable a una resolución de 16 bits. Se puede conectar fácilmente a través de su interfaz SPI (3 o 4 hilos) e I2C.
+Acelerómetro Digital de 3 Ejes ADXL345, utilizado principalmente en aplicaciones móviles. Se caracteriza por su bajo consumo de energía, dispone de sensibilidad ajustable a una resolución de 16 bits. Se puede conectar fácilmente a través de su interfaz SPI (3 o 4 hilos) e I2C.
 
 Principales Características:
 
@@ -165,19 +164,19 @@ Principales Características:
 ### Descanso
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/WhatsApp%20Unknown%202024-04-23%20at%205.53.41%20PM/WhatsApp%20Image%202024-04-23%20at%204.39.36%20PM.jpeg)
 
-### Energìa
+### Energía
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/WhatsApp%20Unknown%202024-04-23%20at%205.53.41%20PM/WhatsApp%20Image%202024-04-23%20at%204.39.39%20PM%20(1).jpeg)
 
-### Actividad fisica
+### Actividad física
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/WhatsApp%20Unknown%202024-04-23%20at%205.53.41%20PM/WhatsApp%20Image%202024-04-23%20at%204.39.37%20PM.jpeg)
 
-### Momento del dia
+### Momento del día
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/WhatsApp%20Unknown%202024-04-23%20at%205.53.41%20PM/WhatsApp%20Image%202024-04-23%20at%204.39.46%20PM.jpeg)
 
-### Tmperatura
+### Temperatura
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/WhatsApp%20Unknown%202024-04-23%20at%205.53.41%20PM/WhatsApp%20Image%202024-04-23%20at%204.39.38%20PM%20(1).jpeg)
 
-### ànimo 
+### Ánimo 
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/WhatsApp%20Unknown%202024-04-23%20at%205.53.41%20PM/WhatsApp%20Image%202024-04-23%20at%204.39.45%20PM.jpeg)
 
 ### Salud
