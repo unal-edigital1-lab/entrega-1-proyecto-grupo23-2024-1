@@ -39,7 +39,7 @@ Con el objetivo de crear una mascota virtual que sea más interactiva con el por
 - Sensor de Movimiento: Promueve la actividad física al requerir que el usuario mueva el dispositivo para mantener en forma al Tamagotchi.
 
 - Sensor de Temperatura: Este sensor puede simular el clima y afectar el estado de ánimo y las necesidades de la mascota.
-- 
+  
 ## Estados Mínimos:
 
 El Tamagotchi operará a través de una serie de estados que reflejan las necesidades físicas y emocionales de la mascota virtual, para hacerle saber al portador los estados saber:
@@ -64,12 +64,10 @@ Cambios Visuales en el Entorno: Modifica el entorno del Tamagotchi para reflejar
 Influencia en el Estado de Ánimo: El estado de día, tarde o noche puede influir en el estado de Ánimo y las necesidades del Tamagotchi. 
 
 
-## Sensor de temperatura
+## Sensor de temperatura SHT31
 
-SHT31
 
-![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/assets/159670741/a07e8dc9-2673-4232-b2a0-5a227322f740)
-
+![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/assets/159670741/43818e44-72c0-4f7a-9b76-75a57d9f0da7)
 
 ### Caracteristicas principales:
 
