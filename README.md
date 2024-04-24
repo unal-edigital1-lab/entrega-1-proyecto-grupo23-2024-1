@@ -67,9 +67,18 @@ Influencia en el Estado de Ánimo: El estado de día, tarde o noche puede influi
 ### Sensor de temperatura
 
 
-SHT75 
+SHT30
 
-![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/Captura%20desde%202024-04-22%2013-25-38.png)
+![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/Captura%20desde%202024-04-23%2022-40-07.png)
+El Sensor de temperatura y humedad SHT30 es un dispositivo versátil diseñado para medir con precisión tanto la temperatura como la humedad en diversos entornos. Sus características principales son:
+
+    Voltaje de alimentación (Vcc): Puede operar en un rango de voltaje de 2.5V a 5V, lo que lo hace compatible con una amplia variedad de sistemas y microcontroladores.
+
+    Resolución de temperatura: Ofrece una alta precisión en la medición de la temperatura, con una resolución de ±0.3°C. Esto garantiza mediciones confiables y precisas incluso en condiciones variables.
+
+    Resolución de humedad: Igualmente importante, su capacidad para medir la humedad con una resolución de ±2% asegura mediciones exactas y consistentes en entornos con diferentes niveles de humedad.
+
+    Interface: Se comunica a través de la interfaz I2C, lo que facilita su integración en sistemas electrónicos y microcontroladores compatibles con este protocolo de comunicación.
 
 #### Protocolo I2c
 
