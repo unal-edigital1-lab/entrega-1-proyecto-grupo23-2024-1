@@ -113,9 +113,10 @@ El SDA se usa para transferir daos desde y hacia el sensor La línea SDA es esen
 Dispositivo Maestro (Microcontrolador): Es el dispositivo que inicia y controla la comunicación. Puede comenzar la transferencia de datos y proporciona la señal de reloj a través de SCL.
 Dispositivo Esclavo (Sensor): Es el dispositivo que recibe las órdenes del maestro y ejecuta las instrucciones.
 
+
 ### Secuencia de comunicacion de medicion:
 
-![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/assets/159670741/538d9594-c0d4-4ea5-a805-39a64a22c3d5)
+![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/assets/159670741/56f88ae9-ce95-4a30-8866-8e6d52cfbcd2)
 
 
 Inicio de la Comunicación:
@@ -131,7 +132,7 @@ Confirmación de Recibo (ACK):
 Después de recibir 8 bits, el sensor debe realiza la confirmación de la comunicacion. Esto lo hace tomando el control de la linea SDA y bajando durante un pulso de reloj.
 
 Transmisión de Datos:
-Los datos se transmiten en paquetes de 8 bits (un byte). Después de cada byte, se espera un ACK de confirmacion de recibido antes de continuar. Si se está escribiendo en un esclavo, el maestro coloca los datos en SDA; si se está leyendo, el esclavo coloca los datos en SDA con la medición.
+Los datos se transmiten en paquetes de 8 bits (un byte). Después de cada byte, se espera un ACK de confirmacion de recibido antes de continuar. Si se está escribiendo en un esclavo, el maestro coloca los datos en SDA; si se está leyendo, el esclavo coloca los datos en SDA con la medición, para medir la temperatura se utilizan 2 bytes uno el mas significante, indica los valores mas grandes como son las decenas y unidades, seguido por una confirmacion ACK y posteriormente se transfiere el bit menos significativo que contendra los valores menores que serian decimas o centecimas de grado.
 
 Condición de Parada:
 La comunicación finaliza con una "condición de parada" que el maestro genera, haciendo que SDA cambie de estado de un nivel bajo a un nivel alto mientras SCL está alto.
