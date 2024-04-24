@@ -164,6 +164,8 @@ Principales Características:
 
 ## Caja negra
 
+![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/IMG_0109.jpg)
+
 ## Diagrama de estados
 
 
