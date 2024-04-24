@@ -163,15 +163,6 @@ Principales Características:
     Sensibilidad: 4 LSB/g
     Temperatura de funcionamiento: -40°C ~ 85°C
 
-### -> Giroscopio
-
-Es un dispositivo mec�nico que se utiliza para medir, mantener o cambiar la orientaci�n en el espacio de un objeto o veh�culo.Compuesto por un cuerpo con simetr�a de rotaci�n que gira alrededor de un eje. La rotaci�n del cuerpo crea una propiedad llamada momento angular, que se mantiene constante a menos que se aplique un par externo. Esto permite al giroscopio mantener su orientaci�n en el espacio.
-
-Principio de funcionamiento: Los giroscopios utilizan el principio de conservaci�n del momento angular para medir la rotaci�n. Cuando el giroscopio gira, su eje de rotaci�n tiende a mantener su direcci�n original debido a la conservaci�n del momento angular.
-
-Hay varios tipos de giroscopios, incluyendo giroscopios mec�nicos, giroscopios l�ser y giroscopios MEMS (sistemas microelectromec�nicos). 
-
-![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/Giroscopio.jpg)
 
 
 ## Caja negra
