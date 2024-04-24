@@ -67,7 +67,8 @@ Influencia en el Estado de Ánimo: El estado de día, tarde o noche puede influi
 ## Sensor de temperatura SHT31
 
 
-![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/assets/159670741/2c8a3fb4-3aa2-43fd-a9f3-7bd9aec3b0bb)
+![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/assets/159670741/23dc7a5d-b5de-4ec0-9bdd-e6523005be3e)
+
 
 
 ### Caracteristicas principales:
