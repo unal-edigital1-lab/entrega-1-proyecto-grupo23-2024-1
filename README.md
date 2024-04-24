@@ -36,32 +36,31 @@ Con el objetivo de crear una mascota virtual que sea más interactiva con el por
 
 - Sensor de Luz: Simula los ciclos de día y noche, influyendo en las rutinas de actividad y descanso de la mascota.
 
-- Sensor de Movimiento: Promueve la actividad física al requerir que el usuario mueva el dispositivo para mantener en forma al Tamagotchi, ejemplo el usuario se puede desplazar y dar la sensación de caminar para el tamagotchi.
+- Sensor de Movimiento: Promueve la actividad física al requerir que el usuario mueva el dispositivo para mantener en forma al Tamagotchi.
 
-- Sensor de Temperatura: Este sensor puede simular el clima y afectar el estado de ánimo y las necesidades de la mascota. Por ejemplo, si hace calor, el Tamagotchi puede necesitar más agua, mientras que en climas fríos podría necesitar una manta.
-
+- Sensor de Temperatura: Este sensor puede simular el clima y afectar el estado de ánimo y las necesidades de la mascota. 
 ## Estados Mínimos:
 
 El Tamagotchi operará a través de una serie de estados que reflejan las necesidades físicas y emocionales de la mascota virtual, para hacerle saber al portador los estados saber:
 
 Hambriento: Este estado alerta sobre la necesidad de alimentar a la mascota. La falta de atención a esta necesidad puede desencadenar un estado de enfermedad.
 
-Energía: Denota la necesidad de entretenimiento de la mascota. La inactividad prolongada puede llevar a estados de aburrimiento o tristeza.
+Energía: Denota la necesidad de entretenimiento de la mascota. La inactividad prolongada puede llevar a estado de tristeza.
 
-Descanso: Identifica cuando la mascota requiere reposo para recuperar energía, especialmente después de períodos de actividad intensa o durante la noche, limitando la interacción del usuario durante estas fases.
+Descanso: Identifica cuando la mascota requiere reposo para recuperar energía.
 
 Salud: va a niveles de enfermo por el descuido en el cuidado de la mascota, requiriendo intervenciones específicas para su recuperación.
 
 Ánimo: Refleja el bienestar general de la mascota como resultado de satisfacer adecuadamente sus necesidades básicas.
 
-### Otros posibles estados:
+### Otros estados:
 
 
-Actividades Específicas según el Momento del Día: Actividades que solo están disponibles durante ciertos momentos del día. Por ejemplo, durante el día, el Tamagotchi podría tener la opción de jugar afuera, mientras que por la noche podría preferir quedarse dentro y ver la televisión.
+Actividades Específicas según el Momento del Día: Actividades que solo están disponibles durante ciertos momentos del día. 
 
 Cambios Visuales en el Entorno: Modifica el entorno del Tamagotchi para reflejar el momento del día. Por ejemplo, durante el día, el sol podría estar brillando y los pájaros podrían estar cantando, mientras que por la noche el cielo podría estar estrellado y la luna podría brillar en el horizonte.
 
-Influencia en el Estado de Ánimo: El estado de día, tarde o noche puede influir en el estado de Ánimo y las necesidades del Tamagotchi. Por ejemplo, durante el día podría estar más activo y feliz, mientras que por la noche podría estar más tranquilo y necesitar descansar.
+Influencia en el Estado de Ánimo: El estado de día, tarde o noche puede influir en el estado de Ánimo y las necesidades del Tamagotchi. 
 
 
 ### Sensor de temperatura
