@@ -64,12 +64,12 @@ Cambios Visuales en el Entorno: Modifica el entorno del Tamagotchi para reflejar
 Influencia en el Estado de Ánimo: El estado de día, tarde o noche puede influir en el estado de Ánimo y las necesidades del Tamagotchi. 
 
 
-### Sensor de temperatura
+## Sensor de temperatura
 
 SHT31
 
+![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/assets/159670741/a07e8dc9-2673-4232-b2a0-5a227322f740)
 
-![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/Captura%20desde%202024-04-23%2022-40-07.png)
 
 ### Caracteristicas principales:
 
