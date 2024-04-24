@@ -71,7 +71,7 @@ SHT31
 
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/Captura%20desde%202024-04-23%2022-40-07.png)
 
-El Sensor de temperatura y humedad SHT31 es un dispositivo  diseñado para medir con precisión tanto la temperatura como la humedad. Sus características principales son:
+## Caracteristicas principales:
 
  Voltaje de alimentación (Vcc): Puede operar en un rango de voltaje de 2.15V a 5V con un voltaje de operacion optimo de 3.3V.
     
@@ -87,7 +87,9 @@ Tiempo de respuesta Tau: completa su primer ciclo tau del 63% a los 2 segundos.
 
 Interface: Se comunica a través de la interfaz I2C, lo que facilita su integración en sistemas electrónicos y microcontroladores compatibles con este protocolo de comunicación.
 
-Asignacion de pines:
+
+## Asignacion de pines:
+
     ![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/assets/159670741/8c7358c4-b376-484e-8b9e-2fda3075a146)
 
 1) SDA (serial data imput/output): Linea de transmision de datos bidireccional de el microcontrolador al sensor.
@@ -99,7 +101,8 @@ Asignacion de pines:
 7) No tiene funcion electrica.
 8) Vss o ground (conexion a tierra).
 
-Serial Clock y serial data:
+
+## Serial Clock y serial data:
 
 El SCL es utilizado para sincronizar el envio de datos entre el microcontrolador y el sensor en la linea SDA, Mientras la linea del relog se encuentre alto se permitira la comunicacion entre el microcontrolador y el sensor, en cambio si la linea del relog se encuentra baja se detendra la transmision, cada secuencia de comunicacion consta de una condicion de inicio
 y su respectiva parada, el sensor puede forzar la parada y alargar el pulso del relog en bajo con la tecnica de Clock stretching en el cual indica al microcontrolador que 
@@ -112,6 +115,9 @@ Dispositivo Esclavo (Sensor): Es el dispositivo que recibe las órdenes del maes
 
 Secuencia de comunicacion de medicion:
 
+![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/assets/159670741/538d9594-c0d4-4ea5-a805-39a64a22c3d5)
+
+
 Inicio de la Comunicación:
 Todo intercambio de datos en I²C comienza con una instruccion de inicio generada por el microcontrolador. Esta condición sucede cuando la SDA se desplaza de un nivel alto a un nivel bajo mientras SCL se mantiene en alto.
 
@@ -122,10 +128,10 @@ Bit de Lectura/Escritura:
 Junto con la dirección, el microcontrolador también envía un bit que indica si la operación que se desea realizar si es lectura (SDA alto) o de escritura (SDA bajo).
 
 Confirmación de Recibo (ACK):
-Después de recibir 8 bits, el dispositivo receptor (Puede ser el maestro o el esclavo dependiendo de la direccion de comunicación) debe realizar la confirmación de la comunicacion. Esto se hace bajando la linea SDA durante un pulso de reloj.
+Después de recibir 8 bits, el sensor debe realiza la confirmación de la comunicacion. Esto lo hace tomando el control de la linea SDA y bajando durante un pulso de reloj.
 
 Transmisión de Datos:
-Los datos se transmiten en paquetes de 8 bits (un byte). Después de cada byte, se espera un ACK de confirmacion antes de continuar. Si se está escribiendo en un esclavo, el maestro coloca los datos en SDA; si se está leyendo, el esclavo coloca los datos en SDA con la medición.
+Los datos se transmiten en paquetes de 8 bits (un byte). Después de cada byte, se espera un ACK de confirmacion de recibido antes de continuar. Si se está escribiendo en un esclavo, el maestro coloca los datos en SDA; si se está leyendo, el esclavo coloca los datos en SDA con la medición.
 
 Condición de Parada:
 La comunicación finaliza con una "condición de parada" que el maestro genera, haciendo que SDA cambie de estado de un nivel bajo a un nivel alto mientras SCL está alto.
