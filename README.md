@@ -134,6 +134,8 @@ Después de recibir 8 bits, el sensor debe realiza la confirmación de la comuni
 Transmisión de Datos:
 Los datos se transmiten en paquetes de 8 bits (un byte). Después de cada byte, se espera un ACK de confirmacion de recibido antes de continuar. Si se está escribiendo en un esclavo, el maestro coloca los datos en SDA; si se está leyendo, el esclavo coloca los datos en SDA con la medición, para medir la temperatura se utilizan 2 bytes uno el mas significante, indica los valores mas grandes como son las decenas y unidades, seguido por una confirmacion ACK y posteriormente se transfiere el bit menos significativo que contendra los valores menores que serian decimas o centecimas de grado.
 
+![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/assets/159670741/20156690-3df8-4d64-b1d5-377cb46d2e27)
+
 Condición de Parada:
 La comunicación finaliza con una "condición de parada" que el maestro genera, haciendo que SDA cambie de estado de un nivel bajo a un nivel alto mientras SCL está alto.
    
