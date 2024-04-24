@@ -15,7 +15,7 @@ Matriz de Puntos 8x8: Esencial para representar visualmente el estado actual del
 
 Display de 7 Segmentos: Utilizado para mostrar niveles y puntuaciones especificas, como el nivel de hambre o felicidad, complementando la visualizacion principal.
 
-### PANTALLA: LCD
+### PANTALLA: VGA 640x480 RGB444
 
 ## Sistema de Botones:
 
@@ -24,7 +24,9 @@ La interaccion usuario-sistema se realizara mediante los siguientes botones conf
 
 Reset: Reestablece el Tamagotchi a un estado inicial conocido al mantener pulsado el boton durante al menos 5 segundos. Este estado inicial simula el despertar de la mascota con salud optima.
 
-Botones de Interaccion (2): Facilitan acciones directas como alimentar, jugar, o curar, posibilitando la implementacion de actividades específicas para el bienestar del Tamagotchi.
+comer: Permite a la mascota virtual alimentarse y subir su estado de ànimo y reducri el nivel de hambre
+
+Descansar: Permite a la mascota descansar para aumentar su energìa 
 
 Acelerador de Tiempo: Permite modificar la velocidad del tiempo en el Tamagotchi, incrementando la rapidez de los cambios de estado para simular diferentes velocidades temporales.
 
@@ -82,20 +84,7 @@ El protocolo I2C admite diferentes velocidades de transferencia, que van desde u
 
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/I2C.jpg)
 
-#### Protocolo RS232
 
-El protocolo RS232, tambi�n conocido como Recommended Standard 232, es una interfaz de comunicaci�n serial que establece una norma para el intercambio de datos binarios en serie entre un Equipo Terminal de Datos (DTE) y un Equipo Terminal de Comunicaciones (DCE). 
-
-El protocolo RS232 define los est�ndares el�ctricos, mec�nicos y funcionales para la comunicaci�n serial. ( Ampliamente utilizado en aplicaciones de comunicaci�n de datos, como la conexi�n de dispositivos perif�ricos a computadoras, m�dems, impresoras, entre otros. )
-
-Caracter�sticas el�ctricas: El protocolo RS232 utiliza niveles de voltaje positivos y negativos para representar los bits de datos. Los niveles t�picos son +12V para representar un "0" l�gico y -12V para representar un "1" l�gico. Sin embargo, los niveles de voltaje pueden variar seg�n la implementaci�n.
-
-Utiliza un conector de 9 pines o un conector de 25 pines para establecer la conexi�n f�sica entre los dispositivos. Los pines se utilizan para transmitir y recibir datos, control de flujo y se�ales de control adicionales.
-
-El protocolo RS232 admite diferentes velocidades de transmisi�n, que van desde unos pocos bits por segundo hasta varios megabits por segundo. La velocidad de transmisi�n se configura mediante la tasa de baudios, que representa la cantidad de s�mbolos transmitidos por segundo.
-
-![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/RS232.jpg)
-![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/Protocolo%20RS232.jpg)
 
 
 ### Sensor de Luz
