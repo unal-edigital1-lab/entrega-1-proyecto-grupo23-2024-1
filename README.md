@@ -71,7 +71,7 @@ SHT31
 
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/Captura%20desde%202024-04-23%2022-40-07.png)
 
-## Caracteristicas principales:
+### Caracteristicas principales:
 
  Voltaje de alimentación (Vcc): Puede operar en un rango de voltaje de 2.15V a 5V con un voltaje de operacion optimo de 3.3V.
     
@@ -88,9 +88,9 @@ Tiempo de respuesta Tau: completa su primer ciclo tau del 63% a los 2 segundos.
 Interface: Se comunica a través de la interfaz I2C, lo que facilita su integración en sistemas electrónicos y microcontroladores compatibles con este protocolo de comunicación.
 
 
-## Asignacion de pines:
+### Asignacion de pines:
 
-    ![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/assets/159670741/8c7358c4-b376-484e-8b9e-2fda3075a146)
+![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/assets/159670741/8c7358c4-b376-484e-8b9e-2fda3075a146)
 
 1) SDA (serial data imput/output): Linea de transmision de datos bidireccional de el microcontrolador al sensor.
 2) ADDR: Address pin: cambia la direccion I2C del sensor dependiendo de si esta en logica alta o baja.
@@ -102,7 +102,7 @@ Interface: Se comunica a través de la interfaz I2C, lo que facilita su integrac
 8) Vss o ground (conexion a tierra).
 
 
-## Serial Clock y serial data:
+### Serial Clock y serial data:
 
 El SCL es utilizado para sincronizar el envio de datos entre el microcontrolador y el sensor en la linea SDA, Mientras la linea del relog se encuentre alto se permitira la comunicacion entre el microcontrolador y el sensor, en cambio si la linea del relog se encuentra baja se detendra la transmision, cada secuencia de comunicacion consta de una condicion de inicio
 y su respectiva parada, el sensor puede forzar la parada y alargar el pulso del relog en bajo con la tecnica de Clock stretching en el cual indica al microcontrolador que 
@@ -113,7 +113,7 @@ El SDA se usa para transferir daos desde y hacia el sensor La línea SDA es esen
 Dispositivo Maestro (Microcontrolador): Es el dispositivo que inicia y controla la comunicación. Puede comenzar la transferencia de datos y proporciona la señal de reloj a través de SCL.
 Dispositivo Esclavo (Sensor): Es el dispositivo que recibe las órdenes del maestro y ejecuta las instrucciones.
 
-Secuencia de comunicacion de medicion:
+### Secuencia de comunicacion de medicion:
 
 ![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/assets/159670741/538d9594-c0d4-4ea5-a805-39a64a22c3d5)
 
