@@ -49,10 +49,6 @@ Salud: va a niveles de enfermo por el descuido en el cuidado de la mascota, requ
 
 Ánimo: Refleja el bienestar general de la mascota como resultado de satisfacer adecuadamente sus necesidades básicas.
 
-### Otros estados:
-
-
-
 Cambios Visuales en el Entorno: Modifica el entorno del Tamagotchi para reflejar el momento del día. Por ejemplo, durante el día, el sol podría estar brillando y los pájaros podrían estar cantando, mientras que por la noche el cielo podría estar estrellado y la luna podría brillar en el horizonte.
 
 ## Sensor de temperatura BME280
@@ -66,9 +62,6 @@ Cambios Visuales en el Entorno: Modifica el entorno del Tamagotchi para reflejar
 
 
 
-### Asignacion de pines:
-
-![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/assets/159670741/8c7358c4-b376-484e-8b9e-2fda3075a146)
 
 
 
@@ -84,18 +77,6 @@ Dispositivo Maestro (Microcontrolador): Es el dispositivo que inicia y controla 
 Dispositivo Esclavo (Sensor): Es el dispositivo que recibe las órdenes del maestro y ejecuta las instrucciones.
 
 
-
-
-
-
-
-##### Diagrama del circuito
-
-![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/Captura%20desde%202024-04-20%2008-20-51.png)
-
-##### Tabla de pines 
-
-![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/Captura%20desde%202024-04-20%2008-21-31.png)
 
 
 
