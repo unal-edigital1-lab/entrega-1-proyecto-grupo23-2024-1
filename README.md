@@ -32,15 +32,10 @@ Acelerador de Tiempo: Permite modificar la velocidad del tiempo en el Tamagotchi
 
 ## Sistema de Sensado:
 
-Con el objetivo de crear una mascota virtual que sea más interactiva con el portador se hace necesario usar sensores que nos permitan medir variables físicas del entorno donde se encuentre el dueño, esto con el fin de hacer más interesante la aplicación y cuidado de la mascota virtual. Para esto se pueden usar sensores como los siguientes:
-
-- Sensor de Luz: Simula los ciclos de día y noche, influyendo en las rutinas de actividad y descanso de la mascota.
-
-- Sensor de Movimiento: Promueve la actividad física al requerir que el usuario mueva el dispositivo para mantener en forma al Tamagotchi.
 
 - Sensor de Temperatura: Este sensor puede simular el clima y afectar el estado de ánimo y las necesidades de la mascota.
   
-## Estados Mínimos:
+## Estados :
 
 El Tamagotchi operará a través de una serie de estados que reflejan las necesidades físicas y emocionales de la mascota virtual, para hacerle saber al portador los estados saber:
 
@@ -57,14 +52,10 @@ Salud: va a niveles de enfermo por el descuido en el cuidado de la mascota, requ
 ### Otros estados:
 
 
-Actividades Específicas según el Momento del Día: Actividades que solo están disponibles durante ciertos momentos del día. 
 
 Cambios Visuales en el Entorno: Modifica el entorno del Tamagotchi para reflejar el momento del día. Por ejemplo, durante el día, el sol podría estar brillando y los pájaros podrían estar cantando, mientras que por la noche el cielo podría estar estrellado y la luna podría brillar en el horizonte.
 
-Influencia en el Estado de Ánimo: El estado de día, tarde o noche puede influir en el estado de Ánimo y las necesidades del Tamagotchi. 
-
-
-## Sensor de temperatura SHT31
+## Sensor de temperatura BME280
 
 
 ![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/assets/159670741/23dc7a5d-b5de-4ec0-9bdd-e6523005be3e)
@@ -73,33 +64,12 @@ Influencia en el Estado de Ánimo: El estado de día, tarde o noche puede influi
 
 ### Caracteristicas principales:
 
- Voltaje de alimentación (Vcc): Puede operar en un rango de voltaje de 2.15V a 5V con un voltaje de operacion optimo de 3.3V.
-    
-Voltaje POR (Voltaje de encendido): Es el voltaje umbral al cual el sensor comienza a encenderse, su rango va  de 1.8V a 2.15V, despues de este umbral el sensor necesita el
-tiempo TPU para entrar en reposo, una vez en reposo esta listo para recibir los comando del microcontrolador.
-
-Consumo de corriente: Cuando el sensor se encuentra en reposo consume entre 0,2 y 2 microamperios, mientras que cuando se encuentra midiendo, el consumo aumenta a un rango de 
-600 a 1500 microamperios.
-
- Resolución de temperatura: Ofrece una alta precisión en la medición de la temperatura, con un margen de error de tan solo ±0.2°C en el rango de temperaturas de 0 a 90 grados.
-    
-Tiempo de respuesta Tau: completa su primer ciclo tau del 63% a los 2 segundos.
-
-Interface: Se comunica a través de la interfaz I2C, lo que facilita su integración en sistemas electrónicos y microcontroladores compatibles con este protocolo de comunicación.
 
 
 ### Asignacion de pines:
 
 ![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/assets/159670741/8c7358c4-b376-484e-8b9e-2fda3075a146)
 
-1) SDA (serial data imput/output): Linea de transmision de datos bidireccional de el microcontrolador al sensor.
-2) ADDR: Address pin: cambia la direccion I2C del sensor dependiendo de si esta en logica alta o baja.
-3) Alert: da las condiciones de alarma, no se utilizara, se deja flotando.
-4) SCL (Serial clock): Controla la transmision de datos en el SDA.
-5) Entrada de fuente de alimentacion.
-6) nReset fuerza un reseteo en el sensor.
-7) No tiene funcion electrica.
-8) Vss o ground (conexion a tierra).
 
 
 ### Serial Clock y serial data:
@@ -114,65 +84,10 @@ Dispositivo Maestro (Microcontrolador): Es el dispositivo que inicia y controla 
 Dispositivo Esclavo (Sensor): Es el dispositivo que recibe las órdenes del maestro y ejecuta las instrucciones.
 
 
-### Secuencia de comunicacion de medicion:
-
-![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/assets/159670741/56f88ae9-ce95-4a30-8866-8e6d52cfbcd2)
-
-
-Inicio de la Comunicación:
-Todo intercambio de datos en I²C comienza con una instruccion de inicio generada por el microcontrolador. Esta condición sucede cuando la SDA se desplaza de un nivel alto a un nivel bajo mientras SCL se mantiene en alto.
-
-Seleccion del sensor mediante dirección:
-El maestro envía una secuencia de 7 bits que contiene la dirección del esclavo con el que desea comunicarse. Estos bits se envían secuencialmente a través de la SDA con cada pulso de reloj en SCL, el sensor de temperatura tiene posibilidad mediante el bit en la linea ADDR cambiar su direccion esto en caso de que se utilice mas de un sensor con la misma dirección.
-
-Bit de Lectura/Escritura:
-Junto con la dirección, el microcontrolador también envía un bit que indica si la operación que se desea realizar si es lectura (SDA alto) o de escritura (SDA bajo).
-
-Confirmación de Recibo (ACK):
-Después de recibir 8 bits, el sensor debe realiza la confirmación de la comunicacion. Esto lo hace tomando el control de la linea SDA y bajando durante un pulso de reloj.
-
-Transmisión de Datos:
-Los datos se transmiten en paquetes de 8 bits (un byte). Después de cada byte, se espera un ACK de confirmacion de recibido antes de continuar. Si se está escribiendo en un esclavo, el maestro coloca los datos en SDA; si se está leyendo, el esclavo coloca los datos en SDA con la medición, para medir la temperatura se utilizan 2 bytes uno el mas significante, indica los valores mas grandes como son las decenas y unidades, seguido por una confirmacion ACK y posteriormente se transfiere el bit menos significativo que contendra los valores menores que serian decimas o centecimas de grado.
-
-![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/assets/159670741/20156690-3df8-4d64-b1d5-377cb46d2e27)
-
-Condición de Parada:
-La comunicación finaliza con una "condición de parada" que el maestro genera, haciendo que SDA cambie de estado de un nivel bajo a un nivel alto mientras SCL está alto.
-   
-
-
-#### Protocolo I2c
-
-El protocolo de comunicación I2C (Inter-Integrated Circuit) es un puerto y protocolo de comunicación serial utilizado para transferir datos entre dos dispositivos digitales. El protocolo I2C define la trama de datos y las conexiones físicas utilizadas para transferir bits entre los dispositivos. Utiliza dos líneas de comunicación, una línea de datos (SDA) y una línea de reloj (SCL), para transmitir información de manera sincronizada.
-
-Comunicación maestro-esclavo: En el protocolo I2C, uno de los dispositivos actúa como maestro y los demás como esclavos. El maestro inicia y controla la comunicación, mientras que los esclavos responden a las solicitudes del maestro.
-
-Direcciones de dispositivo: Cada dispositivo conectado al bus I2C tiene una dirección única que lo identifica. El maestro utiliza estas direcciones para seleccionar el dispositivo con el que desea comunicarse.
-
-El protocolo I2C admite diferentes velocidades de transferencia, que van desde unos pocos kilobits por segundo hasta varios megabits por segundo. La velocidad de transferencia se configura mediante la frecuencia del reloj.
-
-![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/I2C.jpg)
 
 
 
 
-### Sensor de Luz
-
-Módulo Sensor De Luz Ldr SENL
-
-![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/Captura%20desde%202024-04-22%2012-49-57.png)
-
-Sensor de luz que cuenta con una entrada de alimentación, una entrada a tierra, una salida analógica y otra salida digital.
-
-La salida digital del sensor es de un bit, lo que quiere decir que solo hay un estado donde hay luz y otro donde no, esto se puede arreglar con un conversor analógico-digital donde obtenemos un muestreo de la salida analógica y tener diferentes niveles de paso de luz
-
-#### Conversor Analógico-Digital 
-
-PmodAD1
-
-![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/Captura%20desde%202024-04-22%2013-23-15.png)
-
-El conversor analógico-digital de 12 bits se caracteriza por su implementación utilizando un protocolo de comunicación similar a SPI de dos canales. Este diseño permite una conversión A/D simultánea con una velocidad de hasta un MSa (muestra por segundo) por canal, tiene alimentación de 2.35 a 5.25 voltios.
 
 ##### Diagrama del circuito
 
@@ -181,45 +96,6 @@ El conversor analógico-digital de 12 bits se caracteriza por su implementación
 ##### Tabla de pines 
 
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/Captura%20desde%202024-04-20%2008-21-31.png)
-
-### Sensor de Movimiento 
-
-La implementación de un sensor de movimiento en este proyecto sería útil en aplicaciones que permitan interactuar con la mascota virtual y la persona física dueña del Tamagotchi. 
-
-Es decir cuando la mascota virtual requiera ejercitarse el portador (dueño/propietario) puede hacerlo caminando en la vida real, mostrando al tiempo algún ejemplo de animación de la mascota moviéndose en la pantalla para generar más interactividad a las acciones.
-
-Para realizar estas acciones se requiere un sensor que permita detectar que el portador (persona física) se esté moviendo en la vida real; con este objetivo se pueden encontrar sensores en el mercado que nos permite detectar esta acción como lo es la implementación de un acelerómetro, un giroscopio o un sensor infrarrojo de movimiento
-
-
-### -> Acelerómetro
-
-Es un dispositivo utilizado para medir la aceleración o vibración de un objeto o estructura. Funciona detectando los cambios en la fuerza de aceleración experimentada por el dispositivo en diferentes direcciones.
-
-Midiendo la fuerza de aceleración en la unidad "g" (gravedad). Puede medir la aceleración en uno, dos o tres planos, dependiendo del tipo de acelerómetro.
-
-Principio de funcionamiento: Los acelerómetros utilizan diferentes principios para medir la aceleración. Algunos acelerómetros utilizan el principio piezoeléctrico, donde la aceleración genera una carga eléctrica en un material piezoeléctrico. Otros utilizan el principio capacitivo, donde la aceleración causa cambios en la capacitancia de un capacitor. También hay acelerómetros basados en tecnología MEMS (Microelectromechanical Systems), que utilizan estructuras microscópicas para medir la aceleración.
-
-Acelerómetros de 3 ejes: Los acelerómetros de 3 ejes son los más utilizados.(Utilizados mayoritariamente en dispositivos celulares) Estos pueden detectar aceleraciones en tres direcciones diferentes: X, Y y Z. Esto permite medir la aceleración en cualquier dirección tridimensional.
-
-![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/acelerometro%20funcionamiento.webp)
-
-
-Acelerómetro Digital de 3 Ejes ADXL345 
-
-![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/Captura%20desde%202024-04-22%2013-16-30.png)
-
-Acelerómetro Digital de 3 Ejes ADXL345, utilizado principalmente en aplicaciones móviles. Se caracteriza por su bajo consumo de energía, dispone de sensibilidad ajustable a una resolución de 16 bits. Se puede conectar fácilmente a través de su interfaz SPI (3 o 4 hilos) e I2C.
-
-Principales Características:
-
-    Voltaje de Alimentación DC: 2V ~ 3.3V
-    Corriente de operación: 140uA
-    Interfaz: I2C - SPI (5 MHz)
-    Auto Test: Ejes X, Y, Z
-    Frecuencia de Reloj Interna: 400 KHz
-    Rangos: 2g, 4g, 8g y 16g
-    Sensibilidad: 4 LSB/g
-    Temperatura de funcionamiento: -40°C ~ 85°C
 
 
 
