@@ -87,8 +87,10 @@ Se debe mantener las señales de la interfaz en un nivel logico bajo cuando VDDI
 
 Si hay alimentacion en VDDIO pero no en VDD, los pines se mantendran en alta impedancia y el bus de datos se puede utilizar sin problema.
 
-Seleccion de modo,
-E
+Seleccion de modo: Se puede intercambiar de modo de operación seleccionando entre 
+
+![image](https://github.com/user-attachments/assets/77f3a2e7-180d-4573-8f4f-52ead09d122c)
+
 
 ### Serial Clock y serial data:
 
