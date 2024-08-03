@@ -54,7 +54,31 @@ En modo paralelo, los pines típicamente serán:
 * WR: Señal de escritura.
 * RD: Señal de lectura.
 * D0 - D15: Pines de datos.
-* BL: Retroiluminación.  
+* BL: Retroiluminación.
+
+### protocolo de comunicación:
+
+La pantalla ILI9225 puede comunicarse mediante dos protocolos de comunicación principales: paralelo y SPI, pero en este caso nos enfocaremos en la comunicación SPI:
+
+## Comunicación SPI (Serial Peripheral Interface)
+es un protocolo serial que usa menos pines que la comunicación paralela. Es más fácil de implementar y más común en microcontroladores con pocos pines.
+
+## Pines:
+
+* MOSI (Master Out Slave In): Datos del maestro al esclavo.
+* MISO (Master In Slave Out): Datos del esclavo al maestro (a menudo no se usa).
+* SCLK (Serial Clock): Reloj serial.
+* CS: Chip Select.
+* RST: Reset.
+* RS (o DC/A0): Register Select (para diferenciar entre comandos y datos).
+  
+## Secuencia de comunicación:
+
+* Establece CS bajo (activo).
+* Establece RS para seleccionar si es un comando (bajo) o datos (alto).
+* Envía los datos en serie mediante MOSI, sincronizados con SCLK.
+* Repite según sea necesario.
+* Establece CS alto (inactivo) cuando termines.
 
 ### Indicadores Simples:
 
