@@ -89,7 +89,8 @@ Si hay alimentacion en VDDIO pero no en VDD, los pines se mantendran en alta imp
 
 Seleccion de modo: Se puede intercambiar de modo de operación seleccionando entre 
 
-![image](https://github.com/user-attachments/assets/77f3a2e7-180d-4573-8f4f-52ead09d122c)
+![image](https://github.com/user-attachments/assets/518a7908-dc8a-4c03-9e94-2f5c345771da)
+
 
 
 ### Serial Clock y serial data:
