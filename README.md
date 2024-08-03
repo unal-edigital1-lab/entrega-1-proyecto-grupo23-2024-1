@@ -56,13 +56,21 @@ Cambios Visuales en el Entorno: Modifica el entorno del Tamagotchi para reflejar
 
 ![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/assets/159670741/23dc7a5d-b5de-4ec0-9bdd-e6523005be3e)
 
+Es un sensor de presión, temperatura y humedad optimizado para registrar bajo ruido y alta resolucion que maneja tanto el protocolo de comunicacion I2C como el SPI y se
+alimenta de voltajes entre 1.7 y 3.6 voltios otorgando mediciones exactas en todo el rango de voltajes. El BME 280 opera con 3 modos de energia, Sleep mode (inactividad), 
+Normal mode (medicion regular) y Forced mode (unica medicion).
 
 
 ### Caracteristicas principales:
 
-
-
-
+ Voltaje de alimentacion interna (VDD)   :            1.7V a 3.6V
+ Voltaje alimentacion interfaz:   (VDDIO):            1.7V a 3.6V
+ Corriente inactivo:                                  0.1μA a 0.3μA
+ Corriente Forzado:                                      0.1μA
+ Corriente medicion:                                     350μA
+ Tiempo encendido (VDD > 1.58 , VDDIO > 0.65):            2ms
+ Rango Temperatura:                                   -40 a 85 °C
+ Resolución:                                             0.1°C
 
 
 ### Serial Clock y serial data:
