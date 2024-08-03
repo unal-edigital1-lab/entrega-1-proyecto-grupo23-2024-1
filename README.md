@@ -64,16 +64,31 @@ Normal mode (medicion regular) y Forced mode (unica medicion).
 ### Caracteristicas principales:
 
  Voltaje de alimentacion interna (VDD)   :            1.7V a 3.6V
- Voltaje alimentacion interfaz:   (VDDIO):            1.7V a 3.6V
+ Vlotaje minimo activacion (VDD):                         1.58V
+ Voltaje alimentacion interfaz (VDDIO):               1.7V a 3.6V
+  Vlotaje minimo activacion (VDDIO):                      0.65V
  Corriente inactivo:                                  0.1μA a 0.3μA
  Corriente Forzado:                                      0.1μA
  Corriente medicion:                                     350μA
  Tiempo encendido (VDD > 1.58 , VDDIO > 0.65):            2ms
  Rango Temperatura:                                   -40 a 85 °C
+ Temperatura optima de medicion:                       0 a 65  °C
  Resolución:                                             0.1°C
 
 ![image](https://github.com/user-attachments/assets/ca90c08d-ea1f-4f49-a78e-5d0c4bbd40d2)
 
+Alimentación:
+
+El sensor posee 2 alimentaciones el VDD que suministra los bloques funcionales internos de el dispositivo y el VDDIO que alimenta la interfaz de comunicacion de este
+El sensor posee la funcionalidad POR que restablece los valores de los registros a un valor predeterminado cuando VDD y VDDIO se encuentran por debajo de sus voltajes
+minimos de activación.
+
+Se debe mantener las señales de la interfaz en un nivel logico bajo cuando VDDIO se encuentran desactivados para evitar daños.
+
+Si hay alimentacion en VDDIO pero no en VDD, los pines se mantendran en alta impedancia y el bus de datos se puede utilizar sin problema.
+
+Seleccion de modo,
+E
 
 ### Serial Clock y serial data:
 
