@@ -57,9 +57,7 @@ Cambios Visuales en el Entorno: Modifica el entorno del Tamagotchi para reflejar
 ![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/assets/159670741/23dc7a5d-b5de-4ec0-9bdd-e6523005be3e)
 
 Es un sensor de presión, temperatura y humedad optimizado para registrar bajo ruido y alta resolucion que maneja tanto el protocolo de comunicacion I2C como el SPI y se
-alimenta de voltajes entre 1.7 y 3.6 voltios otorgando mediciones exactas en todo el rango de voltajes. El BME 280 opera con 3 modos de energia, Sleep mode (inactividad), 
-Normal mode (medicion regular) y Forced mode (unica medicion).
-
+alimenta de voltajes entre 1.7 y 3.6 voltios otorgando mediciones exactas en todo el rango de voltajes. 
 
 ### Caracteristicas principales:
 
@@ -77,17 +75,28 @@ Normal mode (medicion regular) y Forced mode (unica medicion).
 
 ![image](https://github.com/user-attachments/assets/ca90c08d-ea1f-4f49-a78e-5d0c4bbd40d2)
 
-Alimentación:
+### Activacion del sensor:
 
 El sensor posee 2 alimentaciones el VDD que suministra los bloques funcionales internos de el dispositivo y el VDDIO que alimenta la interfaz de comunicacion de este
-El sensor posee la funcionalidad POR que restablece los valores de los registros a un valor predeterminado cuando VDD y VDDIO se encuentran por debajo de sus voltajes
-minimos de activación.
+El sensor posee la funcionalidad POR que restablece los valores de los registros a un valor predeterminado en el instante inmediatamente anterior al encendido del sensor
+cuando VDD y VDDIO se encuentran por debajo de sus voltajes minimos de activación.
 
 Se debe mantener las señales de la interfaz en un nivel logico bajo cuando VDDIO se encuentran desactivados para evitar daños.
 
-Si hay alimentacion en VDDIO pero no en VDD, los pines se mantendran en alta impedancia y el bus de datos se puede utilizar sin problema.
+Si hay alimentacion en VDDIO pero no en VDD, los pines se mantendran en alta impedancia y no transmitira señales permitiendo el uso del bus de datos para otros perifericos.
 
-Seleccion de modo: Se puede intercambiar de modo de operación seleccionando entre 
+###Seleccion de modo: 
+
+El sensor tiene 3 modos de operación Sleep mode (inactividad), Normal mode (medicion regular) y Forced mode (unica medicion) por medio de un multiplexor y una señal de control
+de 2 bits es posible realizar el cambio de estados.
+
+Sleep mode (inactividad): No realiza mediciones, tiene bajo consumo de energia y se establece por defecto al encender el sensor y permite el acceso a registros.
+
+Normal mode (medicion regular): realiza mediciones con una frecuencia regular determinada por el relog y aumenta el consumo de energia.
+
+Forced mode (unica medicion): Tal y como indica su nombre, realiza una unica medicion forzada luego de la correspondiente instrucción para volver a el Sleep mode
+y realizar la lectura de medición.
+
 
 ![image](https://github.com/user-attachments/assets/518a7908-dc8a-4c03-9e94-2f5c345771da)
 
