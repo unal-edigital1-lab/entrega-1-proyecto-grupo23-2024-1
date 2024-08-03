@@ -56,7 +56,7 @@ En modo paralelo, los pines típicamente serán:
 * D0 - D15: Pines de datos.
 * BL: Retroiluminación.
 
-## protocolo de comunicación:
+## Protocolo de comunicación:
 
 La pantalla ILI9225 puede comunicarse mediante dos protocolos de comunicación principales: paralelo y SPI, pero en este caso nos enfocaremos en la comunicación SPI:
 
