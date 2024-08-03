@@ -9,13 +9,57 @@ El núcleo del sistema está diseñado para simular interactivamente el cuidado 
 
 ### Visualización de Información de Estado:
 
-Pantalla LCD ILI9341: Esencial para representar visualmente el estado actual del Tamagotchi, incluyendo emociones y necesidades básicas de la mascota virtual.
+Pantalla LCD ILI9225: El display LCD TFT 2.0" es una pantalla a colores con una resolución de 176x220 píxeles, controlador gráfico ILI9225, comunicación SPI y puede mostrar hasta 262144 colores RGB distintos. Esencial para representar visualmente el estado actual del Tamagotchi, incluyendo emociones y necesidades básicas de la mascota virtual.
+
+### PANTALLA: ILI9225
+### Especificación de la pantalla ILI9225:
+
+La pantalla ILI9225 es un controlador de pantalla LCD de 2.0 pulgadas, comúnmente utilizada en proyectos electrónicos con microcontroladores.
+Esta pantalla tiene un esquema general de pines, los cuales son: 
+
+* VCC: Alimentación (generalmente 3.3V o 5V, dependiendo del modelo).
+* GND: Tierra.
+* CS: Chip Select, selecciona el dispositivo.
+* RST: Reset, reinicia la pantalla.
+* RS: Register Select (también llamado DC o A0), selecciona entre comandos y datos.
+* WR: Write (para escribir datos).
+* RD: Read (para leer datos).
+* LED_A o BL (Backlight): Anodo del backlight (luz de fondo), si se proporciona.
+* D0 - D15: Pines de datos (para comunicación paralela, algunos módulos solo tienen D0-D7).
+* SCL (Serial Clock): Reloj para la comunicación SPI.
+* SDA (Serial Data) / MOSI (Master Out Slave In): Datos para la comunicación SPI.
+  
+## Pines para SPI (Modo Serial)
+
+En modo SPI, los pines típicamente serán:
+
+VCC: Alimentación del módulo (3.3V o 5V).
+GND: Tierra.
+CS: Selección del chip.
+RST: Reinicio del módulo.
+RS/DC: Selección entre datos y comandos.
+SCL: Reloj serial.
+SDA/MOSI: Datos del maestro al esclavo.
+BL: Retroiluminación.
+
+## Pines para Paralelo (Modo Paralelo)
+
+En modo paralelo, los pines típicamente serán:
+
+VCC: Alimentación del módulo (3.3V o 5V).
+GND: Tierra.
+CS: Selección del chip.
+RST: Reinicio del módulo.
+RS/DC: Selección entre datos y comandos.
+WR: Señal de escritura.
+RD: Señal de lectura.
+D0 - D15: Pines de datos.
+BL: Retroiluminación.  
 
 ### Indicadores Simples:
 
 Display de 7 Segmentos: Utilizado para mostrar niveles y puntuaciones específicas, como el nivel de hambre o felicidad, complementando la visualización principal.
 
-### PANTALLA: ILI9341
 
 ## Sistema de Botones:
 
