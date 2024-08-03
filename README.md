@@ -72,6 +72,8 @@ Normal mode (medicion regular) y Forced mode (unica medicion).
  Rango Temperatura:                                   -40 a 85 °C
  Resolución:                                             0.1°C
 
+![image](https://github.com/user-attachments/assets/ca90c08d-ea1f-4f49-a78e-5d0c4bbd40d2)
+
 
 ### Serial Clock y serial data:
 
