@@ -33,28 +33,28 @@ Esta pantalla tiene un esquema general de pines, los cuales son:
 
 En modo SPI, los pines típicamente serán:
 
-VCC: Alimentación del módulo (3.3V o 5V).
-GND: Tierra.
-CS: Selección del chip.
-RST: Reinicio del módulo.
-RS/DC: Selección entre datos y comandos.
-SCL: Reloj serial.
-SDA/MOSI: Datos del maestro al esclavo.
-BL: Retroiluminación.
+* VCC: Alimentación del módulo (3.3V o 5V).
+* GND: Tierra.
+* CS: Selección del chip.
+* RST: Reinicio del módulo.
+* RS/DC: Selección entre datos y comandos.
+* SCL: Reloj serial.
+* SDA/MOSI: Datos del maestro al esclavo.
+* BL: Retroiluminación.
 
 ## Pines para Paralelo (Modo Paralelo)
 
 En modo paralelo, los pines típicamente serán:
 
-VCC: Alimentación del módulo (3.3V o 5V).
-GND: Tierra.
-CS: Selección del chip.
-RST: Reinicio del módulo.
-RS/DC: Selección entre datos y comandos.
-WR: Señal de escritura.
-RD: Señal de lectura.
-D0 - D15: Pines de datos.
-BL: Retroiluminación.  
+* VCC: Alimentación del módulo (3.3V o 5V).
+* GND: Tierra.
+* CS: Selección del chip.
+* RST: Reinicio del módulo.
+* RS/DC: Selección entre datos y comandos.
+* WR: Señal de escritura.
+* RD: Señal de lectura.
+* D0 - D15: Pines de datos.
+* BL: Retroiluminación.  
 
 ### Indicadores Simples:
 
