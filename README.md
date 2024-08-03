@@ -97,9 +97,15 @@ Normal mode (medicion regular): realiza mediciones con una frecuencia regular de
 Forced mode (unica medicion): Tal y como indica su nombre, realiza una unica medicion forzada luego de la correspondiente instrucción para volver a el Sleep mode
 y realizar la lectura de medición.
 
-
 ![image](https://github.com/user-attachments/assets/518a7908-dc8a-4c03-9e94-2f5c345771da)
 
+###Diagrama de flujo de medida:
+
+Como el sensor realiza mediciones de temperatura presion y humedad, es necesario dejar en 0 las variables que controlan estas mediciones para tomar unicamente las de
+temperatura, adicionalmente el sensor posee un filtro IIR que permite atenuar el ruido de la señal para reducir las fluctuacione que puede ser activado para reducir
+el ruido de estas señales y obtener mejores mediciones.
+
+![image](https://github.com/user-attachments/assets/06ee7749-0e3e-4853-9d16-8516d3613f2a)
 
 
 ### Serial Clock y serial data:
