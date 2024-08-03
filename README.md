@@ -11,7 +11,7 @@ El núcleo del sistema está diseñado para simular interactivamente el cuidado 
 
 Pantalla LCD ILI9225: El display LCD TFT 2.0" es una pantalla a colores con una resolución de 176x220 píxeles, controlador gráfico ILI9225, comunicación SPI y puede mostrar hasta 262144 colores RGB distintos. Esencial para representar visualmente el estado actual del Tamagotchi, incluyendo emociones y necesidades básicas de la mascota virtual.
 
-### PANTALLA: ILI9225
+## PANTALLA: ILI9225
 ### Especificación de la pantalla ILI9225:
 
 La pantalla ILI9225 es un controlador de pantalla LCD de 2.0 pulgadas, comúnmente utilizada en proyectos electrónicos con microcontroladores.
@@ -29,7 +29,7 @@ Esta pantalla tiene un esquema general de pines, los cuales son:
 * SCL (Serial Clock): Reloj para la comunicación SPI.
 * SDA (Serial Data) / MOSI (Master Out Slave In): Datos para la comunicación SPI.
   
-## Pines para SPI (Modo Serial)
+### Pines para SPI (Modo Serial)
 
 En modo SPI, los pines típicamente serán:
 
@@ -42,7 +42,7 @@ En modo SPI, los pines típicamente serán:
 * SDA/MOSI: Datos del maestro al esclavo.
 * BL: Retroiluminación.
 
-## Pines para Paralelo (Modo Paralelo)
+### Pines para Paralelo (Modo Paralelo)
 
 En modo paralelo, los pines típicamente serán:
 
@@ -56,14 +56,14 @@ En modo paralelo, los pines típicamente serán:
 * D0 - D15: Pines de datos.
 * BL: Retroiluminación.
 
-### protocolo de comunicación:
+## protocolo de comunicación:
 
 La pantalla ILI9225 puede comunicarse mediante dos protocolos de comunicación principales: paralelo y SPI, pero en este caso nos enfocaremos en la comunicación SPI:
 
-## Comunicación SPI (Serial Peripheral Interface)
+### Comunicación SPI (Serial Peripheral Interface)
 es un protocolo serial que usa menos pines que la comunicación paralela. Es más fácil de implementar y más común en microcontroladores con pocos pines.
 
-## Pines:
+### Pines:
 
 * MOSI (Master Out Slave In): Datos del maestro al esclavo.
 * MISO (Master In Slave Out): Datos del esclavo al maestro (a menudo no se usa).
@@ -72,7 +72,7 @@ es un protocolo serial que usa menos pines que la comunicación paralela. Es má
 * RST: Reset.
 * RS (o DC/A0): Register Select (para diferenciar entre comandos y datos).
   
-## Secuencia de comunicación:
+### Secuencia de comunicación:
 
 * Establece CS bajo (activo).
 * Establece RS para seleccionar si es un comando (bajo) o datos (alto).
