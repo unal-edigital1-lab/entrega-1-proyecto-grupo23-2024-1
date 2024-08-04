@@ -193,7 +193,7 @@ Dispositivo Esclavo (Sensor): Es el dispositivo que recibe las órdenes del maes
 
 ## Caja negra
 
-![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/IMG_0109.jpg)
+![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/cajanegratamagotchi.png)
 
 ## Diagrama de estados
 
