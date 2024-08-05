@@ -90,18 +90,22 @@ Display de 7 Segmentos: Utilizado para mostrar niveles y puntuaciones específic
 ### Botones :
 La interacción usuario-sistema se realizará mediante los siguientes botones configurados:
 
+test: permite visualizar los diferentes estados del tamagotchi
+
 Reset: Reestablece el Tamagotchi a un estado inicial conocido al mantener pulsado el botón durante al menos 5 segundos. Este estado inicial simula el despertar de la mascota con salud óptima.
 
 comer: Permite a la mascota virtual alimentarse y subir su estado de ánimo y reducir el nivel de hambre.
 
 Descansar: Permite a la mascota descansar para aumentar su energía.
 
+jugar: permite al tamagotchi divertirse para evitar estar en estado de aburrimiento
+
 Acelerador de Tiempo: Permite modificar la velocidad del tiempo en el Tamagotchi, incrementando la rapidez de los cambios de estado para simular diferentes velocidades temporales.
 
 ## Sistema de Sensado:
 
 
-- Sensor de Temperatura: Este sensor puede simular el clima y afectar el estado de ánimo y las necesidades de la mascota.
+- Sensor de Temperatura: Este sensor puede simular el clima y serà visualizado en la pantalla
   
 ## Estados :
 
