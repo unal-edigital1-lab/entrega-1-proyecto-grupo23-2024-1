@@ -130,17 +130,17 @@ alimenta de voltajes entre 1.7 y 3.6 voltios otorgando mediciones exactas en tod
 
 ### Caracteristicas principales:
 
- Voltaje de alimentacion interna (VDD)   :            1.7V a 3.6V
- Vlotaje minimo activacion (VDD):                         1.58V
- Voltaje alimentacion interfaz (VDDIO):               1.7V a 3.6V
-  Vlotaje minimo activacion (VDDIO):                      0.65V
- Corriente inactivo:                                  0.1μA a 0.3μA
- Corriente Forzado:                                      0.1μA
- Corriente medicion:                                     350μA
- Tiempo encendido (VDD > 1.58 , VDDIO > 0.65):            2ms
- Rango Temperatura:                                   -40 a 85 °C
- Temperatura optima de medicion:                       0 a 65  °C
- Resolución:                                             0.1°C
+* Voltaje de alimentacion interna (VDD)   :            1.7V a 3.6V
+* Vlotaje minimo activacion (VDD):                         1.58V
+* Voltaje alimentacion interfaz (VDDIO):               1.7V a 3.6V
+*  Vlotaje minimo activacion (VDDIO):                      0.65V
+* Corriente inactivo:                                  0.1μA a 0.3μA
+* Corriente Forzado:                                      0.1μA
+* Corriente medicion:                                     350μA
+* Tiempo encendido (VDD > 1.58 , VDDIO > 0.65):            2ms
+* Rango Temperatura:                                   -40 a 85 °C
+* Temperatura optima de medicion:                       0 a 65  °C
+* Resolución:                                             0.1°C
 
 ![image](https://github.com/user-attachments/assets/ca90c08d-ea1f-4f49-a78e-5d0c4bbd40d2)
 
