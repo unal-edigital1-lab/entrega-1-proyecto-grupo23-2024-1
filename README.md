@@ -122,7 +122,8 @@ Cambios Visuales en el Entorno: Modifica el entorno del Tamagotchi para reflejar
 ## Sensor de temperatura BME280
 
 
-![image](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/assets/159670741/23dc7a5d-b5de-4ec0-9bdd-e6523005be3e)
+![image](https://github.com/user-attachments/assets/555d231b-9240-4572-814c-285442ad4682)
+
 
 Es un sensor de presión, temperatura y humedad optimizado para registrar bajo ruido y alta resolucion que maneja tanto el protocolo de comunicacion I2C como el SPI y se
 alimenta de voltajes entre 1.7 y 3.6 voltios otorgando mediciones exactas en todo el rango de voltajes. 
@@ -175,6 +176,16 @@ el ruido de estas señales y obtener mejores mediciones.
 
 ![image](https://github.com/user-attachments/assets/06ee7749-0e3e-4853-9d16-8516d3613f2a)
 
+###Mapa de memoria:
+
+![image](https://github.com/user-attachments/assets/f65729ff-9e3a-4ec7-be18-842489769aa3)
+
+En el mapa podemos observar los registros que contienen los datos de  temperatura, presion y humedad medidos pero como solo nos interesa medir la temperatura, 
+desactivamos presion y humedad en cambiando los parametros osrs_p[2:0] y osrs_h[2:0] de los registros Ctrl meas y ctrl hum respectivamente, a su vez con el registro
+ctrl meas se cambia el estado de medicion visto anteriormente y con el registro config podemos activar y desactivar el filtro del sensosr y establecer su coeficiente, 
+tambien el mapa nos indica en que registro se encuentra el reset, el chip ID y los datos de calibración
+
+La lectura y escritura del dispositivo se realiza leyendo y escribiendo registros con un ancho de 8 bits, 
 
 ### Serial Clock y serial data:
 
