@@ -1,0 +1,28 @@
+
+module sensor(
+  
+  
+  
+  
+  
+  );
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+endmodule
