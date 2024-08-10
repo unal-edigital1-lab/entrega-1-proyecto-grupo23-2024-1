@@ -4,14 +4,11 @@ module tiempo (
   input Acelerar,
   input clk,
   input rst,
-  output led
-  
-  
+  output led,
+  output seg,
+  output hora
   
   );
-  
-  
-  
   
 
   reg [32:0] cfreq=0;
@@ -28,8 +25,22 @@ always @(posedge clk) begin
 		cfreq <=cfreq+1;
 	end
 end
-   
-  
+ reg [17:0] count =0;
+ always @(posedge led) begin
+   if (rst==1)begin
+	  count<=0;
+	end
+	else begin
+	  count<=count+1;
+	
+	end
+ 
+ 
+ 
+ 
+ 
+ end
+ 
   
 
 endmodule

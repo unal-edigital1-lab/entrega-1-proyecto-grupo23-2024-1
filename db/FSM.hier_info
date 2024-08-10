@@ -67,5 +67,7 @@ rst => cfreq.OUTPUTSELECT
 rst => cfreq.OUTPUTSELECT
 rst => cfreq.OUTPUTSELECT
 led <= cfreq[32].DB_MAX_OUTPUT_PORT_TYPE
+seg <= <GND>
+hora <= <GND>
 
 
