@@ -1,5 +1,5 @@
 Analysis & Synthesis report for FSM
-Sat Aug 10 04:36:23 2024
+Fri Aug 23 17:01:07 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -43,7 +43,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Aug 10 04:36:23 2024          ;
+; Analysis & Synthesis Status        ; Successful - Fri Aug 23 17:01:07 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; FSM                                            ;
 ; Top-level Entity Name              ; tiempo                                         ;
@@ -263,7 +263,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Sat Aug 10 04:36:13 2024
+    Info: Processing started: Fri Aug 23 17:00:59 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Tamagotchi -c FSM
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -271,6 +271,14 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/tiem
     Info (12023): Found entity 1: tiempo File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/tiempo.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file db/sensor.v
     Info (12023): Found entity 1: sensor File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/sensor.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file db/bcd_contador.v
+    Info (12023): Found entity 1: bcd_contador File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/bcd_contador.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file db/mod6_contador.v
+    Info (12023): Found entity 1: mod6_contador File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/mod6_contador.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file db/mod3_contador.v
+    Info (12023): Found entity 1: mod3_contador File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/mod3_contador.v Line: 2
+Warning (12018): Entity "dff" will be ignored because it conflicts with Quartus Prime primitive name File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/dff.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file db/dff.v
 Info (12127): Elaborating entity "tiempo" for the top level hierarchy
 Warning (10230): Verilog HDL assignment warning at tiempo.v(34): truncated value with size 32 to match size of target (18) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/tiempo.v Line: 34
 Warning (10034): Output port "seg" at tiempo.v(8) has no driver File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/tiempo.v Line: 8
@@ -286,10 +294,10 @@ Info (21057): Implemented 39 device resources after synthesis - the final resour
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 3 output pins
     Info (21061): Implemented 33 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 350 megabytes
-    Info: Processing ended: Sat Aug 10 04:36:23 2024
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:31
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 356 megabytes
+    Info: Processing ended: Fri Aug 23 17:01:07 2024
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:21
 
 
