@@ -66,6 +66,10 @@
 				{
 					"name" : "clk",
 					"strict" : false
+				},
+				{
+					"name" : "A",
+					"strict" : false
 				}
 			]
 		}

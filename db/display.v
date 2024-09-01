@@ -4,6 +4,7 @@ module display(
     output [0:6] sseg,
     output reg [5:0] an,
 	 input rst_neg,
+	 input A,
 	 output led
     );
 
@@ -14,7 +15,7 @@ wire [5:0]sec;
 wire [5:0] min;
 wire [4:0] hour;
 
-tiempo mi_tiempo(.clk(clk),.rst(rst),.sec(sec),.min(min),.hour(hour));
+tiempo mi_tiempo(.clk(clk),.rst(rst),.sec(sec),.min(min),.hour(hour),.A(~A));
 BCDtoSSeg bcdtosseg(.BCD(bcd), .SSeg(sseg));
 
 reg [26:0] cfreq=0;
