@@ -12,7 +12,7 @@ module mod6_contador(
   
   
   
-  assign T[2]= cnt & Q[0] & Q[2] | cnt & Q[0] & Q[1];
+  assign T[2]= (~Q[2]& Q[1]& Q[0]& cnt) | (Q[2]& ~Q[1] & Q[0] & cnt);
   assign T[1]= cnt & ~Q[2] & Q[0];
   assign T[0]=cnt;
   

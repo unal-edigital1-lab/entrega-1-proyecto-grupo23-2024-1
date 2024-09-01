@@ -13,19 +13,14 @@ module dff(
   always @(posedge clk, negedge clear) begin
   
   
-    if(clear==0)
+    if(clear==0)begin
 	   q<=0;
+		q_neg <= 1;
 		
-	  else 
+	  end else begin 
 	    q<=d;
 		 q_neg<=~d;
-  
-  
-  
-  
-  
-  
-  
+		 end
   
   end
 

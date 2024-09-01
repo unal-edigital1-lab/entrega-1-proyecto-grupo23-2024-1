@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Wed Aug 28 05:22:52 2024
+Analysis & Synthesis Status : Successful - Sat Aug 31 23:25:03 2024
 Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 Revision Name : FSM
-Top-level Entity Name : tiempo
+Top-level Entity Name : display
 Family : Cyclone IV E
-Total logic elements : 33
-    Total combinational functions : 33
-    Dedicated logic registers : 33
-Total registers : 33
-Total pins : 6
+Total logic elements : 288
+    Total combinational functions : 288
+    Dedicated logic registers : 73
+Total registers : 73
+Total pins : 16
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

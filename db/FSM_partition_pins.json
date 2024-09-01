@@ -4,15 +4,67 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "sseg[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg[0]",
+					"strict" : false
+				},
+				{
+					"name" : "an[0]",
+					"strict" : false
+				},
+				{
+					"name" : "an[1]",
+					"strict" : false
+				},
+				{
+					"name" : "an[2]",
+					"strict" : false
+				},
+				{
+					"name" : "an[3]",
+					"strict" : false
+				},
+				{
+					"name" : "an[4]",
+					"strict" : false
+				},
+				{
+					"name" : "an[5]",
+					"strict" : false
+				},
+				{
 					"name" : "led",
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "rst_neg",
 					"strict" : false
 				},
 				{
-					"name" : "rst",
+					"name" : "clk",
 					"strict" : false
 				}
 			]
