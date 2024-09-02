@@ -9,16 +9,16 @@ module tiempo (
     input wire A
 );
 
-    // Parámetros para frecuencias
-    localparam FRECUENCIA_BASE = 50000000;  // Frecuencia del reloj de entrada (50 MHz)
-    localparam FRECUENCIA_A = FRECUENCIA_BASE / 1000;  // Frecuencia cuando A es 1
+    
+    localparam FRECUENCIA_BASE = 50000000;  
+    localparam FRECUENCIA_A = FRECUENCIA_BASE / 1000;  
     localparam MAX_COUNT_BASE = FRECUENCIA_BASE - 1;
     localparam MAX_COUNT_A = FRECUENCIA_A - 1;
 
-    reg [25:0] count;  // Contador para generar un pulso de 1 segundo
+    reg [25:0] count;  
     reg [25:0] max_count;
 
-    // Selección de max_count basado en el valor de A
+    
     always @* begin
         if (A) begin
             max_count = MAX_COUNT_A;
@@ -27,13 +27,13 @@ module tiempo (
         end
     end
 
-    // Generación de un pulso de 1 segundo a partir de un reloj de 50 MHz
+    
     always @(posedge clk or posedge rst) begin
         if (rst) begin
             count <= 0;
-            sec <= 0;   // Inicialización del contador de segundos
-            min <= 0;   // Inicialización del contador de minutos
-            hour <= 0;  // Inicialización del contador de horas
+            sec <= 0;   
+            min <= 0;   
+            hour <= 0; 
         end else begin
             if (count == max_count) begin
                 count <= 0;

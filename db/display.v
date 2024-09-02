@@ -10,7 +10,6 @@ module display(
 
 wire rst = ~rst_neg;
 reg [3:0]bcd=0;
-//wire [15:0] num=16'h4321;
 wire [5:0]sec;
 wire [5:0] min;
 wire [4:0] hour;

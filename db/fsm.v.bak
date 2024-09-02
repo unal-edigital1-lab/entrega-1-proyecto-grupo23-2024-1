@@ -1,0 +1,39 @@
+module fsm(
+   input rst,
+	input comer,
+	input jugar,
+	input descansar,
+	input test,
+	input Acelerar
+);
+
+always @(*)begin
+
+    case(fsm_state)
+	 
+	 
+	 
+	 
+	 endcase
+	 
+
+
+
+
+
+end
+
+
+
+
+
+
+
+
+
+
+
+endmodule
+
+
+   
