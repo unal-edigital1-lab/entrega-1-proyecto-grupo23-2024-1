@@ -1,5 +1,5 @@
 Analysis & Synthesis report for FSM
-Mon Sep  2 21:41:19 2024
+Fri Sep  6 12:47:07 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -55,7 +55,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Sep  2 21:41:19 2024          ;
+; Analysis & Synthesis Status        ; Successful - Fri Sep  6 12:47:07 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; FSM                                            ;
 ; Top-level Entity Name              ; display                                        ;
@@ -552,7 +552,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -562,7 +562,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Mon Sep  2 21:41:11 2024
+    Info: Processing started: Fri Sep  6 12:46:59 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Tamagotchi -c FSM
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -577,14 +577,14 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/disp
 Info (12021): Found 1 design units, including 1 entities, in source file db/fsm.v
     Info (12023): Found entity 1: fsm File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/fsm.v Line: 1
 Info (12127): Elaborating entity "display" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at display.v(31): truncated value with size 32 to match size of target (27) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 31
-Warning (10230): Verilog HDL assignment warning at display.v(41): truncated value with size 32 to match size of target (3) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 41
-Warning (10230): Verilog HDL assignment warning at display.v(43): truncated value with size 32 to match size of target (4) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 43
+Warning (10230): Verilog HDL assignment warning at display.v(32): truncated value with size 32 to match size of target (27) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 32
+Warning (10230): Verilog HDL assignment warning at display.v(42): truncated value with size 32 to match size of target (3) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 42
 Warning (10230): Verilog HDL assignment warning at display.v(44): truncated value with size 32 to match size of target (4) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 44
 Warning (10230): Verilog HDL assignment warning at display.v(45): truncated value with size 32 to match size of target (4) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 45
 Warning (10230): Verilog HDL assignment warning at display.v(46): truncated value with size 32 to match size of target (4) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 46
 Warning (10230): Verilog HDL assignment warning at display.v(47): truncated value with size 32 to match size of target (4) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 47
 Warning (10230): Verilog HDL assignment warning at display.v(48): truncated value with size 32 to match size of target (4) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 48
+Warning (10230): Verilog HDL assignment warning at display.v(49): truncated value with size 32 to match size of target (4) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 49
 Info (12128): Elaborating entity "tiempo" for hierarchy "tiempo:mi_tiempo" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 17
 Warning (10230): Verilog HDL assignment warning at tiempo.v(24): truncated value with size 32 to match size of target (26) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/tiempo.v Line: 24
 Warning (10230): Verilog HDL assignment warning at tiempo.v(26): truncated value with size 32 to match size of target (26) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/tiempo.v Line: 26
@@ -594,17 +594,17 @@ Warning (10230): Verilog HDL assignment warning at tiempo.v(53): truncated value
 Warning (10230): Verilog HDL assignment warning at tiempo.v(56): truncated value with size 32 to match size of target (26) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/tiempo.v Line: 56
 Info (12128): Elaborating entity "BCDtoSSeg" for hierarchy "BCDtoSSeg:bcdtosseg" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 18
 Info (278001): Inferred 9 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 45
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 44
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 44
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 43
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 46
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod3" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 46
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod4" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 47
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div2" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 48
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod5" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 48
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod2" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 45
-Info (12133): Instantiated megafunction "lpm_divide:Mod2" with the following parameter: File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 45
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 46
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 45
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 45
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 44
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 47
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod3" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 47
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod4" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 48
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div2" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 49
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod5" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 49
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod2" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 46
+Info (12133): Instantiated megafunction "lpm_divide:Mod2" with the following parameter: File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 46
     Info (12134): Parameter "LPM_WIDTHN" = "6"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -619,16 +619,16 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/add_
     Info (12023): Found entity 1: add_sub_7pc File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/add_sub_7pc.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
     Info (12023): Found entity 1: add_sub_8pc File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/add_sub_8pc.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 44
-Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 44
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 45
+Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 45
     Info (12134): Parameter "LPM_WIDTHN" = "6"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_hhm.tdf
     Info (12023): Found entity 1: lpm_divide_hhm File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/lpm_divide_hhm.tdf Line: 25
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod4" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 47
-Info (12133): Instantiated megafunction "lpm_divide:Mod4" with the following parameter: File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 47
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod4" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 48
+Info (12133): Instantiated megafunction "lpm_divide:Mod4" with the following parameter: File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 48
     Info (12134): Parameter "LPM_WIDTHN" = "5"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -639,8 +639,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_8kh File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/sign_div_unsign_8kh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_44f.tdf
     Info (12023): Found entity 1: alt_u_div_44f File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/alt_u_div_44f.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div2" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 48
-Info (12133): Instantiated megafunction "lpm_divide:Div2" with the following parameter: File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 48
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div2" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 49
+Info (12133): Instantiated megafunction "lpm_divide:Div2" with the following parameter: File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/db/display.v Line: 49
     Info (12134): Parameter "LPM_WIDTHN" = "5"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -657,8 +657,8 @@ Info (21057): Implemented 294 device resources after synthesis - the final resou
     Info (21059): Implemented 14 output pins
     Info (21061): Implemented 277 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
-    Info: Peak virtual memory: 402 megabytes
-    Info: Processing ended: Mon Sep  2 21:41:19 2024
+    Info: Peak virtual memory: 407 megabytes
+    Info: Processing ended: Fri Sep  6 12:47:07 2024
     Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:21
 

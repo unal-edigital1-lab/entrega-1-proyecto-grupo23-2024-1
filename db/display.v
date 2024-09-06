@@ -17,6 +17,7 @@ wire [4:0] hour;
 tiempo mi_tiempo(.clk(clk),.rst(rst),.sec(sec),.min(min),.hour(hour),.A(~A));
 BCDtoSSeg bcdtosseg(.BCD(bcd), .SSeg(sseg));
 
+
 reg [26:0] cfreq=0;
 wire enable;
 
