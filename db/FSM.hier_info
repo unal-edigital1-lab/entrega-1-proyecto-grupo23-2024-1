@@ -1,5 +1,11 @@
-|display
-clk => clk.IN1
+|top_module
+clk => clk.IN2
+rst_neg => rst.IN2
+neg_start => start.IN1
+sd_out => sd_out.IN1
+sd_in << spi_sd:spi_instance.sd_in
+sd_clk << spi_sd:spi_instance.sd_clk
+sd_cs << spi_sd:spi_instance.sd_cs
 sseg[6] << BCDtoSSeg:bcdtosseg.SSeg[6]
 sseg[5] << BCDtoSSeg:bcdtosseg.SSeg[5]
 sseg[4] << BCDtoSSeg:bcdtosseg.SSeg[4]
@@ -13,12 +19,81 @@ an[2] << an[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 an[3] << an[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 an[4] << an[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 an[5] << an[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-rst_neg => rst.IN1
-A => _.IN1
 led << cfreq[16].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|display|tiempo:mi_tiempo
+|top_module|spi_sd:spi_instance
+clk => data_out[0]~reg0.CLK
+clk => data_out[1]~reg0.CLK
+clk => data_out[2]~reg0.CLK
+clk => data_out[3]~reg0.CLK
+clk => data_out[4]~reg0.CLK
+clk => data_out[5]~reg0.CLK
+clk => data_out[6]~reg0.CLK
+clk => data_out[7]~reg0.CLK
+clk => bit_cnt[0].CLK
+clk => bit_cnt[1].CLK
+clk => bit_cnt[2].CLK
+clk => done~reg0.CLK
+clk => sd_cs~reg0.CLK
+clk => sd_clk~reg0.CLK
+clk => sd_in~reg0.CLK
+clk => state~5.DATAIN
+rst => bit_cnt[0].ACLR
+rst => bit_cnt[1].ACLR
+rst => bit_cnt[2].ACLR
+rst => done~reg0.ACLR
+rst => sd_cs~reg0.PRESET
+rst => sd_clk~reg0.PRESET
+rst => sd_in~reg0.PRESET
+rst => state~7.DATAIN
+rst => data_out[0]~reg0.ENA
+rst => data_out[7]~reg0.ENA
+rst => data_out[6]~reg0.ENA
+rst => data_out[5]~reg0.ENA
+rst => data_out[4]~reg0.ENA
+rst => data_out[3]~reg0.ENA
+rst => data_out[2]~reg0.ENA
+rst => data_out[1]~reg0.ENA
+sd_out => data_out.DATAB
+sd_out => data_out.DATAB
+sd_out => data_out.DATAB
+sd_out => data_out.DATAB
+sd_out => data_out.DATAB
+sd_out => data_out.DATAB
+sd_out => data_out.DATAB
+sd_out => data_out.DATAB
+sd_in <= sd_in~reg0.DB_MAX_OUTPUT_PORT_TYPE
+sd_clk <= sd_clk~reg0.DB_MAX_OUTPUT_PORT_TYPE
+sd_cs <= sd_cs~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[0] <= data_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[1] <= data_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[2] <= data_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[3] <= data_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[4] <= data_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[5] <= data_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[6] <= data_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_out[7] <= data_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+data_in[0] => Mux0.IN7
+data_in[1] => Mux0.IN6
+data_in[2] => Mux0.IN5
+data_in[3] => Mux0.IN4
+data_in[4] => Mux0.IN3
+data_in[5] => Mux0.IN2
+data_in[6] => Mux0.IN1
+data_in[7] => Mux0.IN0
+start => sd_cs.OUTPUTSELECT
+start => state.OUTPUTSELECT
+start => state.OUTPUTSELECT
+start => state.OUTPUTSELECT
+start => state.OUTPUTSELECT
+start => bit_cnt.OUTPUTSELECT
+start => bit_cnt.OUTPUTSELECT
+start => bit_cnt.OUTPUTSELECT
+done <= done~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|top_module|tiempo:mi_tiempo
 clk => hour[0]~reg0.CLK
 clk => hour[1]~reg0.CLK
 clk => hour[2]~reg0.CLK
@@ -137,7 +212,7 @@ A => Equal0.IN50
 A => Equal0.IN51
 
 
-|display|BCDtoSSeg:bcdtosseg
+|top_module|BCDtoSSeg:bcdtosseg
 BCD[0] => Decoder0.IN3
 BCD[1] => Decoder0.IN2
 BCD[2] => Decoder0.IN1
