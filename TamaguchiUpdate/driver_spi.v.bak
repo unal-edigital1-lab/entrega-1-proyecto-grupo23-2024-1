@@ -1,0 +1,67 @@
+module driver_spi(
+    input wire  clk,
+    input wire  reset, 
+    input wire  [8:0] datosentrada, //datos de entrada
+    input wire  banderadisponible, //bandera que le indica al driver que puede leer los datos
+    output wire sck, // salida reloj para spi 
+    output reg  mosi, //salida datos para spi
+    output reg  rs, //salida selector de registro spi
+    output wire cs, //salida activador chip
+    output reg  enviado //bandera que le indica al controlador que ya ha enviado los datos y puede enviar los nuevos
+);
+
+reg[0:2] contadorbits = 3'b0; //cuenta que bit se esta enviando
+reg[8:0] registro_entrada;
+reg registro_sck; // valor de sck en la fpga a enviar
+reg registro_cs; // valor de cs en la fpga a enviar
+
+initial begin
+    registro_sck <= 1'b1;
+    registro_entrada <= 1'b0;
+    contadorbits <= 1'b0;
+    enviado <= 1'b1;
+    registro_cs <= 1'b0;
+    mosi <= 1'b0;
+    rs <= 1'b1;
+end
+
+
+wire registro_rs = registro_entrada[8];
+wire[0:7] datos_reales = registro_entrada[7:0]; 
+
+assign sck = registro_sck & registro_cs; // el sck solo se envia cuando cs esta activo
+assign cs = !registro_cs; // el cs de la pantalla se activa en bajo y se desactiva en alto, en la fpga se manejara diferente
+
+always @ (posedge clk, posedge reset) begin
+    if(reset) begin
+        registro_sck <= 1'b1;
+    	registro_entrada <= 1'b0;
+    	contadorbits <= 1'b0;
+    	enviado <= 1'b1;
+    	registro_cs <= 1'b0;
+    	mosi <= 1'b0;
+    	rs <= 1'b1;
+    end else begin
+        if (banderadisponible) begin
+            registro_entrada <= datosentrada; // lectura de los datos de entrada e inicio de envio
+            enviado <= 1'b0; // bandera de enviado se baja
+        end
+        if (!enviado) begin
+            registro_sck <= !registro_sck; //inversion del reloj
+            if (registro_sck) begin //cuando no se este enviando
+                rs <= registro_rs; //actualizar rs
+                mosi <= datos_reales[contadorbits]; //envia el dato del contador
+                registro_cs <= 1'b1; //activa el chip
+                contadorbits <= contadorbits + 1'b1; //aumenta el contador, el contador al entrar dice cuantos bits ya envio, si esta el 7 se reinicia
+                enviado <= contadorbits == 3'b111; //bandera de salida
+            end
+        end else begin
+            registro_sck <= 1'b1; // encargada de enviar el ultimo bit de transferencia
+            if (registro_sck) begin //luego de enviar el ultimo
+                registro_cs <= 1'b0; 
+                rs <= 1'b1;
+            end
+        end
+    end
+end	
+endmodule

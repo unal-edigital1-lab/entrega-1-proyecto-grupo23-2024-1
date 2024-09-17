@@ -1,0 +1,11 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+C:/Users/diego/Desktop/TamaguchiUpdate {C:/Users/diego/Desktop/TamaguchiUpdate/ili9225_controller.v}
+vlog -vlog01compat -work work +incdir+C:/Users/diego/Desktop/TamaguchiUpdate {C:/Users/diego/Desktop/TamaguchiUpdate/TamaguchiUpdate.v}
+vlog -vlog01compat -work work +incdir+C:/Users/diego/Desktop/TamaguchiUpdate {C:/Users/diego/Desktop/TamaguchiUpdate/spi_master.v}
+

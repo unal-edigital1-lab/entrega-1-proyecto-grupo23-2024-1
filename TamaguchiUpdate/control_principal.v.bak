@@ -1,0 +1,28 @@
+module control_principal(
+	input wire clk,
+	input wire reset,
+	input wire secondpassed,
+	input wire boton_dormir,
+	input wire boton_jugar,
+	input wire boton_comer,
+	input wire test, 
+	input wire enfermo
+	output reg [2:0]hambre,
+	output reg [2:0]diversion,
+	output reg [2:0]energia,
+	output reg dormido
+);
+
+
+
+
+always @(posedge reset, posedge clk) begin
+	if(reset)begin
+		
+	end
+
+end
+
+
+
+endmodule

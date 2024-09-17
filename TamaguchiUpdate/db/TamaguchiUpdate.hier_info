@@ -1,0 +1,99 @@
+|TamaguchiUpdate
+clk => clk_out.CLK
+rst => rst.IN1
+spi_mosi << ili9225_controller:ili9225.spi_mosi
+spi_cs << ili9225_controller:ili9225.spi_cs
+spi_sck << ili9225_controller:ili9225.spi_sck
+spi_dc << ili9225_controller:ili9225.spi_dc
+
+
+|TamaguchiUpdate|ili9225_controller:ili9225
+clk => clk.IN1
+rst => rst.IN1
+input_data[0] => spi_data.DATAB
+input_data[1] => spi_data.DATAB
+input_data[2] => spi_data.DATAB
+input_data[3] => spi_data.DATAB
+input_data[4] => spi_data.DATAB
+input_data[5] => spi_data.DATAB
+input_data[6] => spi_data.DATAB
+input_data[7] => spi_data.DATAB
+input_data[8] => spi_data.DATAA
+input_data[9] => spi_data.DATAA
+input_data[10] => spi_data.DATAA
+input_data[11] => spi_data.DATAA
+input_data[12] => spi_data.DATAA
+input_data[13] => spi_data.DATAA
+input_data[14] => spi_data.DATAA
+input_data[15] => spi_data.DATAA
+frame_done => Selector9.IN1
+frame_done => Selector8.IN2
+frame_done => Selector8.IN3
+spi_mosi <= spi_master:spi.spi_mosi
+spi_sck <= spi_master:spi.spi_sck
+spi_cs <= spi_master:spi.spi_cs
+spi_dc <= spi_master:spi.spi_dc
+data_clk <= data_byte_flag.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TamaguchiUpdate|ili9225_controller:ili9225|spi_master:spi
+clk => spi_dc~reg0.CLK
+clk => spi_mosi~reg0.CLK
+clk => cs_reg.CLK
+clk => idle~reg0.CLK
+clk => data_bit_counter[2].CLK
+clk => data_bit_counter[1].CLK
+clk => data_bit_counter[0].CLK
+clk => data_reg[0].CLK
+clk => data_reg[1].CLK
+clk => data_reg[2].CLK
+clk => data_reg[3].CLK
+clk => data_reg[4].CLK
+clk => data_reg[5].CLK
+clk => data_reg[6].CLK
+clk => data_reg[7].CLK
+clk => data_reg[8].CLK
+clk => sck_reg.CLK
+rst => spi_dc~reg0.PRESET
+rst => spi_mosi~reg0.ACLR
+rst => cs_reg.ACLR
+rst => idle~reg0.PRESET
+rst => data_bit_counter[2].ACLR
+rst => data_bit_counter[1].ACLR
+rst => data_bit_counter[0].ACLR
+rst => data_reg[0].ACLR
+rst => data_reg[1].ACLR
+rst => data_reg[2].ACLR
+rst => data_reg[3].ACLR
+rst => data_reg[4].ACLR
+rst => data_reg[5].ACLR
+rst => data_reg[6].ACLR
+rst => data_reg[7].ACLR
+rst => data_reg[8].ACLR
+rst => sck_reg.PRESET
+input_data[0] => data_reg[0].DATAIN
+input_data[1] => data_reg[1].DATAIN
+input_data[2] => data_reg[2].DATAIN
+input_data[3] => data_reg[3].DATAIN
+input_data[4] => data_reg[4].DATAIN
+input_data[5] => data_reg[5].DATAIN
+input_data[6] => data_reg[6].DATAIN
+input_data[7] => data_reg[7].DATAIN
+input_data[8] => data_reg[8].DATAIN
+available_data => idle.OUTPUTSELECT
+available_data => data_reg[8].ENA
+available_data => data_reg[7].ENA
+available_data => data_reg[6].ENA
+available_data => data_reg[5].ENA
+available_data => data_reg[4].ENA
+available_data => data_reg[3].ENA
+available_data => data_reg[2].ENA
+available_data => data_reg[1].ENA
+available_data => data_reg[0].ENA
+spi_sck <= spi_sck.DB_MAX_OUTPUT_PORT_TYPE
+spi_mosi <= spi_mosi~reg0.DB_MAX_OUTPUT_PORT_TYPE
+spi_dc <= spi_dc~reg0.DB_MAX_OUTPUT_PORT_TYPE
+spi_cs <= cs_reg.DB_MAX_OUTPUT_PORT_TYPE
+idle <= idle~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
