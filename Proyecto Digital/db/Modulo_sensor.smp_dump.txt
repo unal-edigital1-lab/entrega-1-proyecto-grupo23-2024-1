@@ -1,0 +1,9 @@
+
+State Machine - |Modulo_sensor|state
+Name state.DESELECT state.WRITE_DATA state.READ_DATA state.SEND_ADDRESS state.SELECT state.IDLE 
+state.IDLE 0 0 0 0 0 0 
+state.SELECT 0 0 0 0 1 1 
+state.SEND_ADDRESS 0 0 0 1 0 1 
+state.READ_DATA 0 0 1 0 0 1 
+state.WRITE_DATA 0 1 0 0 0 1 
+state.DESELECT 1 0 0 0 0 1 

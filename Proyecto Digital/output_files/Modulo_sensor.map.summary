@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Aug 29 11:56:30 2024
+Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+Revision Name : Modulo_sensor
+Top-level Entity Name : Modulo_sensor
+Family : Cyclone IV E
+Total logic elements : 62
+    Total combinational functions : 54
+    Dedicated logic registers : 36
+Total registers : 36
+Total pins : 24
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
