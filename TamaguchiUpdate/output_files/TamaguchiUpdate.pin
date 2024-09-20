@@ -1,4 +1,4 @@
- -- Copyright (C) 2024  Intel Corporation. All rights reserved.
+ -- Copyright (C) 2023  Intel Corporation. All rights reserved.
  -- Your use of Intel Corporation's design tools, logic functions 
  -- and other software and tools, and any partner logic 
  -- functions, and any output files from any of the foregoing 
@@ -64,7 +64,7 @@
  -- Pin directions (input, output or bidir) are based on device operating in user mode.
  ---------------------------------------------------------------------------------
 
-Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 CHIP  "TamaguchiUpdate"  ASSIGNED TO AN: EP4CE6E22C8
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
@@ -118,15 +118,15 @@ bdormir                      : 46        : input  : 2.5 V             :         
 VCCIO3                       : 47        : power  :                   : 2.5V    : 3         :                
 GND                          : 48        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 49        :        :                   :         : 3         :                
-btest                        : 50        : input  : 2.5 V             :         : 3         : Y              
-btime                        : 51        : input  : 2.5 V             :         : 3         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : 50        :        :                   :         : 3         :                
+cs_sensor                    : 51        : output : 2.5 V             :         : 3         : Y              
 sck_repuesto                 : 52        : output : 2.5 V             :         : 3         : Y              
 miso_sensor                  : 53        : input  : 2.5 V             :         : 3         : Y              
 mosi_sensor                  : 54        : output : 2.5 V             :         : 4         : Y              
 sck_sensor                   : 55        : output : 2.5 V             :         : 4         : Y              
 VCCIO4                       : 56        : power  :                   : 2.5V    : 4         :                
 GND                          : 57        : gnd    :                   :         :           :                
-cs_sensor                    : 58        : output : 2.5 V             :         : 4         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : 58        :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 59        :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 60        :        :                   :         : 4         :                
 VCCINT                       : 61        : power  :                   : 1.2V    :           :                
@@ -136,7 +136,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : 64        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : 65        :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 66        :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 67        :        :                   :         : 4         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 68        :        :                   :         : 4         :                
+btime_neg                    : 68        : input  : 2.5 V             :         : 4         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : 69        :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 70        :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 71        :        :                   :         : 4         :                
@@ -154,11 +154,11 @@ GND                          : 82        : gnd    :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : 83        :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 84        :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 85        :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 86        :        :                   :         : 5         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 87        :        :                   :         : 5         :                
+rst_neg                      : 86        : input  : 2.5 V             :         : 5         : Y              
+btest_neg                    : 87        : input  : 2.5 V             :         : 5         : Y              
 GND+                         : 88        :        :                   :         : 5         :                
 GND+                         : 89        :        :                   :         : 5         :                
-rst_neg                      : 90        : input  : 2.5 V             :         : 6         : Y              
+GND+                         : 90        :        :                   :         : 6         :                
 GND+                         : 91        :        :                   :         : 6         :                
 CONF_DONE                    : 92        :        :                   :         : 6         :                
 VCCIO6                       : 93        : power  :                   : 2.5V    : 6         :                

@@ -1,0 +1,15 @@
+-- begin_signature
+-- Contol_ili
+-- end_signature
+WIDTH=9;
+DEPTH=4;
+
+ADDRESS_RADIX=UNS;
+DATA_RADIX=BIN;
+
+CONTENT BEGIN
+	3 :	100111011;
+	2 :	100010000;
+	1 :	000010001;
+	0 :	000000000;
+END;

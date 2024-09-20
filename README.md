@@ -214,3 +214,9 @@ Dispositivo Esclavo (Sensor): Es el dispositivo que recibe las órdenes del maes
 
 
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/diagramadeestado.drawio.png)
+
+## Funcionamiento pantalla ili9225
+
+
+
+

@@ -60,7 +60,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "btest",
+					"name" : "btest_neg",
 					"strict" : false
 				},
 				{
@@ -76,7 +76,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "btime",
+					"name" : "btime_neg",
 					"strict" : false
 				}
 			]

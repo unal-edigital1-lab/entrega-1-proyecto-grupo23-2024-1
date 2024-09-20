@@ -3,27 +3,27 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'ControlImagen:cimage|Contol_ili:ili9225|data_byte_flag'
-Slack : -52.254
-TNS   : -898.499
+Slack : -52.153
+TNS   : -911.673
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -7.518
-TNS   : -1694.055
+Slack : -7.413
+TNS   : -1627.040
 
 Type  : Slow 1200mV 85C Model Setup 'clk_out'
-Slack : -5.292
-TNS   : -442.856
+Slack : -5.739
+TNS   : -460.338
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : -0.804
-TNS   : -2.264
+Slack : -0.801
+TNS   : -0.950
 
 Type  : Slow 1200mV 85C Model Hold 'clk_out'
 Slack : 0.434
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'ControlImagen:cimage|Contol_ili:ili9225|data_byte_flag'
-Slack : 0.761
+Slack : 0.760
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
@@ -39,27 +39,27 @@ Slack : -1.487
 TNS   : -49.071
 
 Type  : Slow 1200mV 0C Model Setup 'ControlImagen:cimage|Contol_ili:ili9225|data_byte_flag'
-Slack : -47.796
-TNS   : -823.999
+Slack : -47.787
+TNS   : -838.779
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -7.007
-TNS   : -1556.441
+Slack : -6.925
+TNS   : -1498.242
 
 Type  : Slow 1200mV 0C Model Setup 'clk_out'
-Slack : -4.940
-TNS   : -409.733
+Slack : -5.440
+TNS   : -432.354
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : -0.755
-TNS   : -2.093
+Slack : -0.699
+TNS   : -0.923
 
 Type  : Slow 1200mV 0C Model Hold 'clk_out'
-Slack : 0.384
+Slack : 0.383
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'ControlImagen:cimage|Contol_ili:ili9225|data_byte_flag'
-Slack : 0.704
+Slack : 0.705
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
@@ -72,35 +72,35 @@ TNS   : -156.135
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ControlImagen:cimage|Contol_ili:ili9225|data_byte_flag'
 Slack : -1.487
-TNS   : -49.071
+TNS   : -49.124
 
 Type  : Fast 1200mV 0C Model Setup 'ControlImagen:cimage|Contol_ili:ili9225|data_byte_flag'
-Slack : -21.899
-TNS   : -370.704
+Slack : -21.867
+TNS   : -373.783
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -2.686
-TNS   : -504.111
+Slack : -2.696
+TNS   : -479.291
 
 Type  : Fast 1200mV 0C Model Setup 'clk_out'
-Slack : -1.855
-TNS   : -134.557
+Slack : -1.974
+TNS   : -139.765
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : -0.476
-TNS   : -1.391
+Slack : -0.472
+TNS   : -0.828
 
 Type  : Fast 1200mV 0C Model Hold 'clk_out'
-Slack : 0.175
+Slack : 0.176
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'ControlImagen:cimage|Contol_ili:ili9225|data_byte_flag'
-Slack : 0.304
+Slack : 0.303
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -421.047
+TNS   : -420.812
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_out'
 Slack : -1.000

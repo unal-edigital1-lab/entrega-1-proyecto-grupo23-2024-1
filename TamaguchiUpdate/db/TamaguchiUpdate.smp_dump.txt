@@ -1,0 +1,54 @@
+
+State Machine - |TamaguchiUpdate|ControlSensor:sensortemperatura|state
+Name state.SEND_INIT_2 state.WAIT state.001 state.000 state.READ 
+state.000 0 0 0 0 0 
+state.001 0 0 1 1 0 
+state.WAIT 0 1 0 1 0 
+state.SEND_INIT_2 1 0 0 1 0 
+state.READ 0 0 0 1 1 
+
+State Machine - |TamaguchiUpdate|ControlSensor:sensortemperatura|spi_sensor:driver_sensor_mecheche10horasenestoayudaxd|chains_sended
+Name chains_sended.011 chains_sended.010 chains_sended.001 chains_sended.000 
+chains_sended.000 0 0 0 0 
+chains_sended.001 0 0 1 1 
+chains_sended.010 0 1 0 1 
+chains_sended.011 1 0 0 1 
+
+State Machine - |TamaguchiUpdate|ControlSensor:sensortemperatura|spi_sensor:driver_sensor_mecheche10horasenestoayudaxd|rst_state
+Name rst_state.00 rst_state.10 rst_state.01 
+rst_state.00 0 0 0 
+rst_state.01 1 0 1 
+rst_state.10 1 1 0 
+
+State Machine - |TamaguchiUpdate|ControlImagen:cimage|Contol_ili:ili9225|state_next_wait
+Name state_next_wait.SEND_ADRESS state_next_wait.SEND_INIT_4 state_next_wait.SEND_INIT_3 state_next_wait.SEND_INIT_2 state_next_wait.SEND_INIT_1 state_next_wait.0000 
+state_next_wait.0000 0 0 0 0 0 0 
+state_next_wait.SEND_INIT_1 0 0 0 0 1 1 
+state_next_wait.SEND_INIT_2 0 0 0 1 0 1 
+state_next_wait.SEND_INIT_3 0 0 1 0 0 1 
+state_next_wait.SEND_INIT_4 0 1 0 0 0 1 
+state_next_wait.SEND_ADRESS 1 0 0 0 0 1 
+
+State Machine - |TamaguchiUpdate|ControlImagen:cimage|Contol_ili:ili9225|step_reset
+Name step_reset.0111 step_reset.0110 step_reset.0101 step_reset.0100 step_reset.0011 step_reset.0010 step_reset.0001 step_reset.0000 step_reset.1000 
+step_reset.0000 0 0 0 0 0 0 0 0 0 
+step_reset.0001 0 0 0 0 0 0 1 1 0 
+step_reset.0010 0 0 0 0 0 1 0 1 0 
+step_reset.0011 0 0 0 0 1 0 0 1 0 
+step_reset.0100 0 0 0 1 0 0 0 1 0 
+step_reset.0101 0 0 1 0 0 0 0 1 0 
+step_reset.0110 0 1 0 0 0 0 0 1 0 
+step_reset.0111 1 0 0 0 0 0 0 1 0 
+step_reset.1000 0 0 0 0 0 0 0 1 1 
+
+State Machine - |TamaguchiUpdate|ControlImagen:cimage|Contol_ili:ili9225|state
+Name state.FRAME_LOOP state.SEND_ADRESS state.SEND_INIT_4 state.SEND_INIT_3 state.SEND_INIT_2 state.SEND_INIT_1 state.WAIT state.START_RESET state.WAIT_FRAME 
+state.START_RESET 0 0 0 0 0 0 0 0 0 
+state.WAIT 0 0 0 0 0 0 1 1 0 
+state.SEND_INIT_1 0 0 0 0 0 1 0 1 0 
+state.SEND_INIT_2 0 0 0 0 1 0 0 1 0 
+state.SEND_INIT_3 0 0 0 1 0 0 0 1 0 
+state.SEND_INIT_4 0 0 1 0 0 0 0 1 0 
+state.SEND_ADRESS 0 1 0 0 0 0 0 1 0 
+state.FRAME_LOOP 1 0 0 0 0 0 0 1 0 
+state.WAIT_FRAME 0 0 0 0 0 0 0 1 1 

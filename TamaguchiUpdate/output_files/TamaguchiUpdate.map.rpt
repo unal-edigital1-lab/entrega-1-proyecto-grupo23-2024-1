@@ -1,6 +1,6 @@
 Analysis & Synthesis report for TamaguchiUpdate
-Thu Sep 19 18:06:52 2024
-Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+Fri Sep 20 17:14:25 2024
+Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
 ---------------------
@@ -41,7 +41,7 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2024  Intel Corporation. All rights reserved.
+Copyright (C) 2023  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -61,8 +61,8 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Sep 19 18:06:52 2024          ;
-; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Analysis & Synthesis Status        ; Successful - Fri Sep 20 17:14:25 2024          ;
+; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; TamaguchiUpdate                                ;
 ; Top-level Entity Name              ; TamaguchiUpdate                                ;
 ; Family                             ; Cyclone IV E                                   ;
@@ -169,7 +169,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
+; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
@@ -183,65 +183,65 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                     ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                 ; Library ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
-; controltiempo.v                  ; yes             ; User Verilog HDL File        ; C:/Users/diego/Desktop/TamaguchiUpdate/controltiempo.v                       ;         ;
-; antirebote.v                     ; yes             ; User Verilog HDL File        ; C:/Users/diego/Desktop/TamaguchiUpdate/antirebote.v                          ;         ;
-; TamaguchiUpdate.v                ; yes             ; User Verilog HDL File        ; C:/Users/diego/Desktop/TamaguchiUpdate/TamaguchiUpdate.v                     ;         ;
-; control_principal.v              ; yes             ; User Verilog HDL File        ; C:/Users/diego/Desktop/TamaguchiUpdate/control_principal.v                   ;         ;
-; spi_master.v                     ; yes             ; User Verilog HDL File        ; C:/Users/diego/Desktop/TamaguchiUpdate/spi_master.v                          ;         ;
-; Memoria.v                        ; yes             ; User Verilog HDL File        ; C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v                             ;         ;
-; Contol_ili.v                     ; yes             ; User Verilog HDL File        ; C:/Users/diego/Desktop/TamaguchiUpdate/Contol_ili.v                          ;         ;
-; ControlImagen.v                  ; yes             ; User Verilog HDL File        ; C:/Users/diego/Desktop/TamaguchiUpdate/ControlImagen.v                       ;         ;
-; ControlSensor.v                  ; yes             ; User Verilog HDL File        ; C:/Users/diego/Desktop/TamaguchiUpdate/ControlSensor.v                       ;         ;
-; spi_sensor.v                     ; yes             ; User Verilog HDL File        ; C:/Users/diego/Desktop/TamaguchiUpdate/spi_sensor.v                          ;         ;
-; 7.txt                            ; yes             ; Auto-Found File              ; C:/Users/diego/Desktop/TamaguchiUpdate/7.txt                                 ;         ;
-; 4.txt                            ; yes             ; Auto-Found File              ; C:/Users/diego/Desktop/TamaguchiUpdate/4.txt                                 ;         ;
-; 3.txt                            ; yes             ; Auto-Found File              ; C:/Users/diego/Desktop/TamaguchiUpdate/3.txt                                 ;         ;
-; 6.txt                            ; yes             ; Auto-Found File              ; C:/Users/diego/Desktop/TamaguchiUpdate/6.txt                                 ;         ;
-; 5.txt                            ; yes             ; Auto-Found File              ; C:/Users/diego/Desktop/TamaguchiUpdate/5.txt                                 ;         ;
-; 2.txt                            ; yes             ; Auto-Found File              ; C:/Users/diego/Desktop/TamaguchiUpdate/2.txt                                 ;         ;
-; 1.txt                            ; yes             ; Auto-Found File              ; C:/Users/diego/Desktop/TamaguchiUpdate/1.txt                                 ;         ;
-; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/lpm_divide.tdf          ;         ;
-; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/abs_divider.inc         ;         ;
-; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/sign_div_unsign.inc     ;         ;
-; aglobal231.inc                   ; yes             ; Megafunction                 ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/aglobal231.inc          ;         ;
-; db/lpm_divide_hkm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/diego/Desktop/TamaguchiUpdate/db/lpm_divide_hkm.tdf                 ;         ;
-; db/sign_div_unsign_9nh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/diego/Desktop/TamaguchiUpdate/db/sign_div_unsign_9nh.tdf            ;         ;
-; db/alt_u_div_6af.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/diego/Desktop/TamaguchiUpdate/db/alt_u_div_6af.tdf                  ;         ;
-; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/diego/Desktop/TamaguchiUpdate/db/add_sub_7pc.tdf                    ;         ;
-; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/diego/Desktop/TamaguchiUpdate/db/add_sub_8pc.tdf                    ;         ;
-; db/lpm_divide_9bm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/diego/Desktop/TamaguchiUpdate/db/lpm_divide_9bm.tdf                 ;         ;
-; db/sign_div_unsign_ulh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/diego/Desktop/TamaguchiUpdate/db/sign_div_unsign_ulh.tdf            ;         ;
-; db/alt_u_div_g7f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/diego/Desktop/TamaguchiUpdate/db/alt_u_div_g7f.tdf                  ;         ;
-; db/lpm_divide_jhm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/diego/Desktop/TamaguchiUpdate/db/lpm_divide_jhm.tdf                 ;         ;
-; db/sign_div_unsign_bkh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/diego/Desktop/TamaguchiUpdate/db/sign_div_unsign_bkh.tdf            ;         ;
-; db/alt_u_div_a4f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/diego/Desktop/TamaguchiUpdate/db/alt_u_div_a4f.tdf                  ;         ;
-; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/lpm_mult.tdf            ;         ;
-; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
-; multcore.inc                     ; yes             ; Megafunction                 ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/multcore.inc            ;         ;
-; bypassff.inc                     ; yes             ; Megafunction                 ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/bypassff.inc            ;         ;
-; altshift.inc                     ; yes             ; Megafunction                 ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/altshift.inc            ;         ;
-; multcore.tdf                     ; yes             ; Megafunction                 ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/multcore.tdf            ;         ;
-; csa_add.inc                      ; yes             ; Megafunction                 ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/csa_add.inc             ;         ;
-; mpar_add.inc                     ; yes             ; Megafunction                 ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/mpar_add.inc            ;         ;
-; muleabz.inc                      ; yes             ; Megafunction                 ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/muleabz.inc             ;         ;
-; mul_lfrg.inc                     ; yes             ; Megafunction                 ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/mul_lfrg.inc            ;         ;
-; mul_boothc.inc                   ; yes             ; Megafunction                 ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/mul_boothc.inc          ;         ;
-; alt_ded_mult.inc                 ; yes             ; Megafunction                 ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/alt_ded_mult.inc        ;         ;
-; alt_ded_mult_y.inc               ; yes             ; Megafunction                 ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/alt_ded_mult_y.inc      ;         ;
-; dffpipe.inc                      ; yes             ; Megafunction                 ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/dffpipe.inc             ;         ;
-; mpar_add.tdf                     ; yes             ; Megafunction                 ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/mpar_add.tdf            ;         ;
-; lpm_add_sub.tdf                  ; yes             ; Megafunction                 ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;         ;
-; addcore.inc                      ; yes             ; Megafunction                 ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/addcore.inc             ;         ;
-; look_add.inc                     ; yes             ; Megafunction                 ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/look_add.inc            ;         ;
-; alt_stratix_add_sub.inc          ; yes             ; Megafunction                 ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;         ;
-; db/add_sub_afh.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/diego/Desktop/TamaguchiUpdate/db/add_sub_afh.tdf                    ;         ;
-; altshift.tdf                     ; yes             ; Megafunction                 ; c:/intelfpga/23.1std/quartus/libraries/megafunctions/altshift.tdf            ;         ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                  ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                              ; Library ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------+---------+
+; controltiempo.v                  ; yes             ; User Verilog HDL File        ; /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/controltiempo.v            ;         ;
+; antirebote.v                     ; yes             ; User Verilog HDL File        ; /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/antirebote.v               ;         ;
+; TamaguchiUpdate.v                ; yes             ; User Verilog HDL File        ; /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/TamaguchiUpdate.v          ;         ;
+; control_principal.v              ; yes             ; User Verilog HDL File        ; /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/control_principal.v        ;         ;
+; spi_master.v                     ; yes             ; User Verilog HDL File        ; /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/spi_master.v               ;         ;
+; Memoria.v                        ; yes             ; User Verilog HDL File        ; /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v                  ;         ;
+; Contol_ili.v                     ; yes             ; User Verilog HDL File        ; /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Contol_ili.v               ;         ;
+; ControlImagen.v                  ; yes             ; User Verilog HDL File        ; /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlImagen.v            ;         ;
+; ControlSensor.v                  ; yes             ; User Verilog HDL File        ; /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlSensor.v            ;         ;
+; spi_sensor.v                     ; yes             ; User Verilog HDL File        ; /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/spi_sensor.v               ;         ;
+; 7.txt                            ; yes             ; Auto-Found File              ; /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/7.txt                      ;         ;
+; 4.txt                            ; yes             ; Auto-Found File              ; /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/4.txt                      ;         ;
+; 3.txt                            ; yes             ; Auto-Found File              ; /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/3.txt                      ;         ;
+; 6.txt                            ; yes             ; Auto-Found File              ; /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/6.txt                      ;         ;
+; 5.txt                            ; yes             ; Auto-Found File              ; /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/5.txt                      ;         ;
+; 2.txt                            ; yes             ; Auto-Found File              ; /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/2.txt                      ;         ;
+; 1.txt                            ; yes             ; Auto-Found File              ; /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/1.txt                      ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; /home/kevin/intelFPGA_lite_23.1std/quartus/libraries/megafunctions/lpm_divide.tdf                         ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; /home/kevin/intelFPGA_lite_23.1std/quartus/libraries/megafunctions/abs_divider.inc                        ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; /home/kevin/intelFPGA_lite_23.1std/quartus/libraries/megafunctions/sign_div_unsign.inc                    ;         ;
+; aglobal231.inc                   ; yes             ; Megafunction                 ; /home/kevin/intelFPGA_lite_23.1std/quartus/libraries/megafunctions/aglobal231.inc                         ;         ;
+; db/lpm_divide_hkm.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/lpm_divide_hkm.tdf      ;         ;
+; db/sign_div_unsign_9nh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/sign_div_unsign_9nh.tdf ;         ;
+; db/alt_u_div_6af.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/alt_u_div_6af.tdf       ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/add_sub_7pc.tdf         ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/add_sub_8pc.tdf         ;         ;
+; db/lpm_divide_9bm.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/lpm_divide_9bm.tdf      ;         ;
+; db/sign_div_unsign_ulh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/sign_div_unsign_ulh.tdf ;         ;
+; db/alt_u_div_g7f.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/alt_u_div_g7f.tdf       ;         ;
+; db/lpm_divide_jhm.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/lpm_divide_jhm.tdf      ;         ;
+; db/sign_div_unsign_bkh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/sign_div_unsign_bkh.tdf ;         ;
+; db/alt_u_div_a4f.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/alt_u_div_a4f.tdf       ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; /home/kevin/intelFPGA_lite_23.1std/quartus/libraries/megafunctions/lpm_mult.tdf                           ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; /home/kevin/intelFPGA_lite_23.1std/quartus/libraries/megafunctions/lpm_add_sub.inc                        ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; /home/kevin/intelFPGA_lite_23.1std/quartus/libraries/megafunctions/multcore.inc                           ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; /home/kevin/intelFPGA_lite_23.1std/quartus/libraries/megafunctions/bypassff.inc                           ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; /home/kevin/intelFPGA_lite_23.1std/quartus/libraries/megafunctions/altshift.inc                           ;         ;
+; multcore.tdf                     ; yes             ; Megafunction                 ; /home/kevin/intelFPGA_lite_23.1std/quartus/libraries/megafunctions/multcore.tdf                           ;         ;
+; csa_add.inc                      ; yes             ; Megafunction                 ; /home/kevin/intelFPGA_lite_23.1std/quartus/libraries/megafunctions/csa_add.inc                            ;         ;
+; mpar_add.inc                     ; yes             ; Megafunction                 ; /home/kevin/intelFPGA_lite_23.1std/quartus/libraries/megafunctions/mpar_add.inc                           ;         ;
+; muleabz.inc                      ; yes             ; Megafunction                 ; /home/kevin/intelFPGA_lite_23.1std/quartus/libraries/megafunctions/muleabz.inc                            ;         ;
+; mul_lfrg.inc                     ; yes             ; Megafunction                 ; /home/kevin/intelFPGA_lite_23.1std/quartus/libraries/megafunctions/mul_lfrg.inc                           ;         ;
+; mul_boothc.inc                   ; yes             ; Megafunction                 ; /home/kevin/intelFPGA_lite_23.1std/quartus/libraries/megafunctions/mul_boothc.inc                         ;         ;
+; alt_ded_mult.inc                 ; yes             ; Megafunction                 ; /home/kevin/intelFPGA_lite_23.1std/quartus/libraries/megafunctions/alt_ded_mult.inc                       ;         ;
+; alt_ded_mult_y.inc               ; yes             ; Megafunction                 ; /home/kevin/intelFPGA_lite_23.1std/quartus/libraries/megafunctions/alt_ded_mult_y.inc                     ;         ;
+; dffpipe.inc                      ; yes             ; Megafunction                 ; /home/kevin/intelFPGA_lite_23.1std/quartus/libraries/megafunctions/dffpipe.inc                            ;         ;
+; mpar_add.tdf                     ; yes             ; Megafunction                 ; /home/kevin/intelFPGA_lite_23.1std/quartus/libraries/megafunctions/mpar_add.tdf                           ;         ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction                 ; /home/kevin/intelFPGA_lite_23.1std/quartus/libraries/megafunctions/lpm_add_sub.tdf                        ;         ;
+; addcore.inc                      ; yes             ; Megafunction                 ; /home/kevin/intelFPGA_lite_23.1std/quartus/libraries/megafunctions/addcore.inc                            ;         ;
+; look_add.inc                     ; yes             ; Megafunction                 ; /home/kevin/intelFPGA_lite_23.1std/quartus/libraries/megafunctions/look_add.inc                           ;         ;
+; alt_stratix_add_sub.inc          ; yes             ; Megafunction                 ; /home/kevin/intelFPGA_lite_23.1std/quartus/libraries/megafunctions/alt_stratix_add_sub.inc                ;         ;
+; db/add_sub_afh.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/add_sub_afh.tdf         ;         ;
+; altshift.tdf                     ; yes             ; Megafunction                 ; /home/kevin/intelFPGA_lite_23.1std/quartus/libraries/megafunctions/altshift.tdf                           ;         ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -537,42 +537,42 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |TamaguchiUpdate|antirebote:test|contador[17]                                                                         ;
-; 3:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |TamaguchiUpdate|antirebote:comida|contador[2]                                                                        ;
-; 3:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |TamaguchiUpdate|antirebote:juego|contador[16]                                                                        ;
-; 3:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |TamaguchiUpdate|antirebote:sueno|contador[4]                                                                         ;
+; 3:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |TamaguchiUpdate|antirebote:comida|contador[1]                                                                        ;
+; 3:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |TamaguchiUpdate|antirebote:juego|contador[6]                                                                         ;
+; 3:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |TamaguchiUpdate|antirebote:sueno|contador[1]                                                                         ;
+; 3:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |TamaguchiUpdate|antirebote:test|contador[1]                                                                          ;
 ; 3:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |TamaguchiUpdate|antirebote:times|contador[21]                                                                        ;
-; 3:1                ; 36 bits   ; 72 LEs        ; 36 LEs               ; 36 LEs                 ; Yes        ; |TamaguchiUpdate|control_principal:controlTama|contador_reset[12]                                                     ;
-; 4:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |TamaguchiUpdate|control_principal:controlTama|contador_hambre[1]                                                     ;
-; 4:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |TamaguchiUpdate|control_principal:controlTama|contador_diversion[5]                                                  ;
-; 5:1                ; 11 bits   ; 33 LEs        ; 11 LEs               ; 22 LEs                 ; Yes        ; |TamaguchiUpdate|control_principal:controlTama|contador_sueno[9]                                                      ;
-; 5:1                ; 11 bits   ; 33 LEs        ; 11 LEs               ; 22 LEs                 ; Yes        ; |TamaguchiUpdate|control_principal:controlTama|contador_dormir[5]                                                     ;
-; 5:1                ; 36 bits   ; 108 LEs       ; 36 LEs               ; 72 LEs                 ; Yes        ; |TamaguchiUpdate|control_principal:controlTama|contador_test[24]                                                      ;
+; 3:1                ; 36 bits   ; 72 LEs        ; 36 LEs               ; 36 LEs                 ; Yes        ; |TamaguchiUpdate|control_principal:controlTama|contador_reset[7]                                                      ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |TamaguchiUpdate|control_principal:controlTama|contador_hambre[10]                                                    ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |TamaguchiUpdate|control_principal:controlTama|contador_diversion[9]                                                  ;
+; 5:1                ; 11 bits   ; 33 LEs        ; 11 LEs               ; 22 LEs                 ; Yes        ; |TamaguchiUpdate|control_principal:controlTama|contador_sueno[5]                                                      ;
+; 5:1                ; 11 bits   ; 33 LEs        ; 11 LEs               ; 22 LEs                 ; Yes        ; |TamaguchiUpdate|control_principal:controlTama|contador_dormir[4]                                                     ;
+; 5:1                ; 36 bits   ; 108 LEs       ; 36 LEs               ; 72 LEs                 ; Yes        ; |TamaguchiUpdate|control_principal:controlTama|contador_test[26]                                                      ;
 ; 5:1                ; 15 bits   ; 45 LEs        ; 0 LEs                ; 45 LEs                 ; Yes        ; |TamaguchiUpdate|ControlSensor:sensortemperatura|data_2[4]                                                            ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |TamaguchiUpdate|ControlSensor:sensortemperatura|data_1[1]                                                            ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |TamaguchiUpdate|ControlSensor:sensortemperatura|data_1[5]                                                            ;
-; 7:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |TamaguchiUpdate|ControlSensor:sensortemperatura|config_count[4]                                                      ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |TamaguchiUpdate|ControlSensor:sensortemperatura|delay_limit[0]                                                       ;
-; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |TamaguchiUpdate|ControlSensor:sensortemperatura|delay_count[24]                                                      ;
-; 13:1               ; 4 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |TamaguchiUpdate|ControlImagen:cimage|Contol_ili:ili9225|delay_limit[14]                                              ;
-; 16:1               ; 2 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; Yes        ; |TamaguchiUpdate|ControlImagen:cimage|Contol_ili:ili9225|spi_data[3]                                                  ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |TamaguchiUpdate|ControlSensor:sensortemperatura|data_1[2]                                                            ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |TamaguchiUpdate|ControlSensor:sensortemperatura|data_2[0]                                                            ;
+; 7:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |TamaguchiUpdate|ControlSensor:sensortemperatura|config_count[0]                                                      ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |TamaguchiUpdate|ControlSensor:sensortemperatura|delay_limit[14]                                                      ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |TamaguchiUpdate|ControlSensor:sensortemperatura|delay_count[25]                                                      ;
+; 13:1               ; 4 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |TamaguchiUpdate|ControlImagen:cimage|Contol_ili:ili9225|delay_limit[11]                                              ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; Yes        ; |TamaguchiUpdate|ControlImagen:cimage|Contol_ili:ili9225|spi_data[5]                                                  ;
 ; 16:1               ; 3 bits    ; 30 LEs        ; 18 LEs               ; 12 LEs                 ; Yes        ; |TamaguchiUpdate|ControlImagen:cimage|Contol_ili:ili9225|spi_data[1]                                                  ;
-; 19:1               ; 8 bits    ; 96 LEs        ; 8 LEs                ; 88 LEs                 ; Yes        ; |TamaguchiUpdate|ControlImagen:cimage|Contol_ili:ili9225|config_counter[1]                                            ;
-; 31:1               ; 4 bits    ; 80 LEs        ; 48 LEs               ; 32 LEs                 ; Yes        ; |TamaguchiUpdate|ControlSensor:sensortemperatura|spi_sensor:driver_sensor_mecheche10horasenestoayudaxd|rst_counter[1] ;
-; 20:1               ; 32 bits   ; 416 LEs       ; 32 LEs               ; 384 LEs                ; Yes        ; |TamaguchiUpdate|ControlImagen:cimage|Contol_ili:ili9225|delay_counter[13]                                            ;
+; 19:1               ; 8 bits    ; 96 LEs        ; 8 LEs                ; 88 LEs                 ; Yes        ; |TamaguchiUpdate|ControlImagen:cimage|Contol_ili:ili9225|config_counter[0]                                            ;
+; 31:1               ; 4 bits    ; 80 LEs        ; 48 LEs               ; 32 LEs                 ; Yes        ; |TamaguchiUpdate|ControlSensor:sensortemperatura|spi_sensor:driver_sensor_mecheche10horasenestoayudaxd|rst_counter[0] ;
+; 20:1               ; 32 bits   ; 416 LEs       ; 32 LEs               ; 384 LEs                ; Yes        ; |TamaguchiUpdate|ControlImagen:cimage|Contol_ili:ili9225|delay_counter[2]                                             ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |TamaguchiUpdate|ControlImagen:cimage|Contol_ili:ili9225|spi_reset                                                    ;
 ; 9:1                ; 5 bits    ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |TamaguchiUpdate|ControlImagen:cimage|current_pixel[4]                                                                ;
-; 9:1                ; 11 bits   ; 66 LEs        ; 44 LEs               ; 22 LEs                 ; Yes        ; |TamaguchiUpdate|ControlImagen:cimage|current_pixel[12]                                                               ;
+; 9:1                ; 11 bits   ; 66 LEs        ; 44 LEs               ; 22 LEs                 ; Yes        ; |TamaguchiUpdate|ControlImagen:cimage|current_pixel[8]                                                                ;
 ; 3:1                ; 21 bits   ; 42 LEs        ; 42 LEs               ; 0 LEs                  ; No         ; |TamaguchiUpdate|ControlSensor:sensortemperatura|spi_sensor:driver_sensor_mecheche10horasenestoayudaxd|delay_counter  ;
 ; 4:1                ; 21 bits   ; 42 LEs        ; 42 LEs               ; 0 LEs                  ; No         ; |TamaguchiUpdate|ControlSensor:sensortemperatura|spi_sensor:driver_sensor_mecheche10horasenestoayudaxd|delay_counter  ;
 ; 6:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |TamaguchiUpdate|ControlImagen:cimage|Memoria:ROMmemory|Mux8                                                          ;
-; 7:1                ; 10 bits   ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |TamaguchiUpdate|ControlImagen:cimage|Memoria:ROMmemory|Mux16                                                         ;
+; 7:1                ; 10 bits   ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |TamaguchiUpdate|ControlImagen:cimage|Memoria:ROMmemory|Mux6                                                          ;
 ; 8:1                ; 3 bits    ; 15 LEs        ; 6 LEs                ; 9 LEs                  ; No         ; |TamaguchiUpdate|ControlSensor:sensortemperatura|Selector2                                                            ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; No         ; |TamaguchiUpdate|ControlSensor:sensortemperatura|Selector4                                                            ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; No         ; |TamaguchiUpdate|ControlSensor:sensortemperatura|Selector3                                                            ;
 ; 11:1               ; 4 bits    ; 28 LEs        ; 16 LEs               ; 12 LEs                 ; No         ; |TamaguchiUpdate|ControlImagen:cimage|Contol_ili:ili9225|Selector98                                                   ;
-; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; No         ; |TamaguchiUpdate|ControlImagen:cimage|Contol_ili:ili9225|Selector100                                                  ;
-; 15:1               ; 3 bits    ; 30 LEs        ; 9 LEs                ; 21 LEs                 ; No         ; |TamaguchiUpdate|ControlImagen:cimage|Contol_ili:ili9225|Selector96                                                   ;
-; 16:1               ; 6 bits    ; 60 LEs        ; 12 LEs               ; 48 LEs                 ; No         ; |TamaguchiUpdate|ControlImagen:cimage|Contol_ili:ili9225|Selector91                                                   ;
+; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; No         ; |TamaguchiUpdate|ControlImagen:cimage|Contol_ili:ili9225|Selector101                                                  ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 9 LEs                ; 21 LEs                 ; No         ; |TamaguchiUpdate|ControlImagen:cimage|Contol_ili:ili9225|Selector97                                                   ;
+; 16:1               ; 6 bits    ; 60 LEs        ; 12 LEs               ; 48 LEs                 ; No         ; |TamaguchiUpdate|ControlImagen:cimage|Contol_ili:ili9225|Selector89                                                   ;
 ; 13:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; No         ; |TamaguchiUpdate|ControlImagen:cimage|Contol_ili:ili9225|Selector83                                                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------+
 
@@ -758,7 +758,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:27     ;
+; Top            ; 00:00:12     ;
 +----------------+--------------+
 
 
@@ -767,206 +767,206 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Thu Sep 19 18:06:07 2024
+    Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+    Info: Processing started: Fri Sep 20 17:14:05 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TamaguchiUpdate -c TamaguchiUpdate
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file controltiempo.v
-    Info (12023): Found entity 1: controltiempo File: C:/Users/diego/Desktop/TamaguchiUpdate/controltiempo.v Line: 1
+    Info (12023): Found entity 1: controltiempo File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/controltiempo.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file antirebote.v
-    Info (12023): Found entity 1: antirebote File: C:/Users/diego/Desktop/TamaguchiUpdate/antirebote.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file tamaguchiupdate.v
-    Info (12023): Found entity 1: TamaguchiUpdate File: C:/Users/diego/Desktop/TamaguchiUpdate/TamaguchiUpdate.v Line: 1
+    Info (12023): Found entity 1: antirebote File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/antirebote.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file TamaguchiUpdate.v
+    Info (12023): Found entity 1: TamaguchiUpdate File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/TamaguchiUpdate.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file control_principal.v
-    Info (12023): Found entity 1: control_principal File: C:/Users/diego/Desktop/TamaguchiUpdate/control_principal.v Line: 1
+    Info (12023): Found entity 1: control_principal File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/control_principal.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file spi_master.v
-    Info (12023): Found entity 1: spi_master File: C:/Users/diego/Desktop/TamaguchiUpdate/spi_master.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file memoria.v
-    Info (12023): Found entity 1: Memoria File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file contol_ili.v
-    Info (12023): Found entity 1: Contol_ili File: C:/Users/diego/Desktop/TamaguchiUpdate/Contol_ili.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file controlimagen.v
-    Info (12023): Found entity 1: ControlImagen File: C:/Users/diego/Desktop/TamaguchiUpdate/ControlImagen.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file controlsensor.v
-    Info (12023): Found entity 1: ControlSensor File: C:/Users/diego/Desktop/TamaguchiUpdate/ControlSensor.v Line: 1
+    Info (12023): Found entity 1: spi_master File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/spi_master.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file Memoria.v
+    Info (12023): Found entity 1: Memoria File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file Contol_ili.v
+    Info (12023): Found entity 1: Contol_ili File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Contol_ili.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ControlImagen.v
+    Info (12023): Found entity 1: ControlImagen File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlImagen.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ControlSensor.v
+    Info (12023): Found entity 1: ControlSensor File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlSensor.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file spi_sensor.v
-    Info (12023): Found entity 1: spi_sensor File: C:/Users/diego/Desktop/TamaguchiUpdate/spi_sensor.v Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at Contol_ili.v(63): created implicit net for "spi_mosi" File: C:/Users/diego/Desktop/TamaguchiUpdate/Contol_ili.v Line: 63
-Warning (10236): Verilog HDL Implicit Net warning at Contol_ili.v(64): created implicit net for "spi_sck" File: C:/Users/diego/Desktop/TamaguchiUpdate/Contol_ili.v Line: 64
-Warning (10236): Verilog HDL Implicit Net warning at Contol_ili.v(65): created implicit net for "spi_cs" File: C:/Users/diego/Desktop/TamaguchiUpdate/Contol_ili.v Line: 65
-Warning (10236): Verilog HDL Implicit Net warning at Contol_ili.v(66): created implicit net for "spi_dc" File: C:/Users/diego/Desktop/TamaguchiUpdate/Contol_ili.v Line: 66
-Warning (10236): Verilog HDL Implicit Net warning at Contol_ili.v(69): created implicit net for "idle" File: C:/Users/diego/Desktop/TamaguchiUpdate/Contol_ili.v Line: 69
+    Info (12023): Found entity 1: spi_sensor File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/spi_sensor.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at Contol_ili.v(63): created implicit net for "spi_mosi" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Contol_ili.v Line: 63
+Warning (10236): Verilog HDL Implicit Net warning at Contol_ili.v(64): created implicit net for "spi_sck" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Contol_ili.v Line: 64
+Warning (10236): Verilog HDL Implicit Net warning at Contol_ili.v(65): created implicit net for "spi_cs" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Contol_ili.v Line: 65
+Warning (10236): Verilog HDL Implicit Net warning at Contol_ili.v(66): created implicit net for "spi_dc" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Contol_ili.v Line: 66
+Warning (10236): Verilog HDL Implicit Net warning at Contol_ili.v(69): created implicit net for "idle" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Contol_ili.v Line: 69
 Info (12127): Elaborating entity "TamaguchiUpdate" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at TamaguchiUpdate.v(45): truncated value with size 32 to match size of target (5) File: C:/Users/diego/Desktop/TamaguchiUpdate/TamaguchiUpdate.v Line: 45
-Info (12128): Elaborating entity "antirebote" for hierarchy "antirebote:juego" File: C:/Users/diego/Desktop/TamaguchiUpdate/TamaguchiUpdate.v Line: 57
-Info (12128): Elaborating entity "controltiempo" for hierarchy "controltiempo:cntl" File: C:/Users/diego/Desktop/TamaguchiUpdate/TamaguchiUpdate.v Line: 64
-Info (12128): Elaborating entity "control_principal" for hierarchy "control_principal:controlTama" File: C:/Users/diego/Desktop/TamaguchiUpdate/TamaguchiUpdate.v Line: 90
-Warning (10230): Verilog HDL assignment warning at control_principal.v(139): truncated value with size 32 to match size of target (11) File: C:/Users/diego/Desktop/TamaguchiUpdate/control_principal.v Line: 139
-Warning (10230): Verilog HDL assignment warning at control_principal.v(144): truncated value with size 32 to match size of target (3) File: C:/Users/diego/Desktop/TamaguchiUpdate/control_principal.v Line: 144
-Warning (10230): Verilog HDL assignment warning at control_principal.v(191): truncated value with size 32 to match size of target (3) File: C:/Users/diego/Desktop/TamaguchiUpdate/control_principal.v Line: 191
-Warning (10230): Verilog HDL assignment warning at control_principal.v(202): truncated value with size 32 to match size of target (3) File: C:/Users/diego/Desktop/TamaguchiUpdate/control_principal.v Line: 202
-Info (12128): Elaborating entity "ControlImagen" for hierarchy "ControlImagen:cimage" File: C:/Users/diego/Desktop/TamaguchiUpdate/TamaguchiUpdate.v Line: 110
-Warning (10230): Verilog HDL assignment warning at ControlImagen.v(33): truncated value with size 32 to match size of target (8) File: C:/Users/diego/Desktop/TamaguchiUpdate/ControlImagen.v Line: 33
-Warning (10230): Verilog HDL assignment warning at ControlImagen.v(34): truncated value with size 32 to match size of target (5) File: C:/Users/diego/Desktop/TamaguchiUpdate/ControlImagen.v Line: 34
-Warning (10230): Verilog HDL assignment warning at ControlImagen.v(35): truncated value with size 32 to match size of target (5) File: C:/Users/diego/Desktop/TamaguchiUpdate/ControlImagen.v Line: 35
-Warning (10230): Verilog HDL assignment warning at ControlImagen.v(36): truncated value with size 32 to match size of target (8) File: C:/Users/diego/Desktop/TamaguchiUpdate/ControlImagen.v Line: 36
-Warning (10230): Verilog HDL assignment warning at ControlImagen.v(167): truncated value with size 32 to match size of target (16) File: C:/Users/diego/Desktop/TamaguchiUpdate/ControlImagen.v Line: 167
-Info (12128): Elaborating entity "Contol_ili" for hierarchy "ControlImagen:cimage|Contol_ili:ili9225" File: C:/Users/diego/Desktop/TamaguchiUpdate/ControlImagen.v Line: 56
-Warning (10230): Verilog HDL assignment warning at Contol_ili.v(442): truncated value with size 32 to match size of target (8) File: C:/Users/diego/Desktop/TamaguchiUpdate/Contol_ili.v Line: 442
-Warning (10230): Verilog HDL assignment warning at Contol_ili.v(461): truncated value with size 32 to match size of target (8) File: C:/Users/diego/Desktop/TamaguchiUpdate/Contol_ili.v Line: 461
-Warning (10230): Verilog HDL assignment warning at Contol_ili.v(480): truncated value with size 32 to match size of target (8) File: C:/Users/diego/Desktop/TamaguchiUpdate/Contol_ili.v Line: 480
-Warning (10230): Verilog HDL assignment warning at Contol_ili.v(499): truncated value with size 32 to match size of target (8) File: C:/Users/diego/Desktop/TamaguchiUpdate/Contol_ili.v Line: 499
-Warning (10230): Verilog HDL assignment warning at Contol_ili.v(515): truncated value with size 32 to match size of target (8) File: C:/Users/diego/Desktop/TamaguchiUpdate/Contol_ili.v Line: 515
-Warning (10230): Verilog HDL assignment warning at Contol_ili.v(534): truncated value with size 32 to match size of target (8) File: C:/Users/diego/Desktop/TamaguchiUpdate/Contol_ili.v Line: 534
-Warning (10030): Net "INIT_SEQ_1.data_a" at Contol_ili.v(48) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Contol_ili.v Line: 48
-Warning (10030): Net "INIT_SEQ_1.waddr_a" at Contol_ili.v(48) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Contol_ili.v Line: 48
-Warning (10030): Net "INIT_SEQ_2.data_a" at Contol_ili.v(49) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Contol_ili.v Line: 49
-Warning (10030): Net "INIT_SEQ_2.waddr_a" at Contol_ili.v(49) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Contol_ili.v Line: 49
-Warning (10030): Net "INIT_SEQ_3.data_a" at Contol_ili.v(50) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Contol_ili.v Line: 50
-Warning (10030): Net "INIT_SEQ_3.waddr_a" at Contol_ili.v(50) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Contol_ili.v Line: 50
-Warning (10030): Net "INIT_SEQ_4.data_a" at Contol_ili.v(51) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Contol_ili.v Line: 51
-Warning (10030): Net "INIT_SEQ_4.waddr_a" at Contol_ili.v(51) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Contol_ili.v Line: 51
-Warning (10030): Net "ADRESS_SEQ.data_a" at Contol_ili.v(52) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Contol_ili.v Line: 52
-Warning (10030): Net "ADRESS_SEQ.waddr_a" at Contol_ili.v(52) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Contol_ili.v Line: 52
-Warning (10030): Net "INIT_SEQ_1.we_a" at Contol_ili.v(48) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Contol_ili.v Line: 48
-Warning (10030): Net "INIT_SEQ_2.we_a" at Contol_ili.v(49) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Contol_ili.v Line: 49
-Warning (10030): Net "INIT_SEQ_3.we_a" at Contol_ili.v(50) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Contol_ili.v Line: 50
-Warning (10030): Net "INIT_SEQ_4.we_a" at Contol_ili.v(51) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Contol_ili.v Line: 51
-Warning (10030): Net "ADRESS_SEQ.we_a" at Contol_ili.v(52) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Contol_ili.v Line: 52
-Info (12128): Elaborating entity "spi_master" for hierarchy "ControlImagen:cimage|Contol_ili:ili9225|spi_master:spi" File: C:/Users/diego/Desktop/TamaguchiUpdate/Contol_ili.v Line: 70
-Info (12128): Elaborating entity "Memoria" for hierarchy "ControlImagen:cimage|Memoria:ROMmemory" File: C:/Users/diego/Desktop/TamaguchiUpdate/ControlImagen.v Line: 64
-Warning (10270): Verilog HDL Case Statement warning at Memoria.v(33): incomplete case statement has no default case item File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 33
-Warning (10240): Verilog HDL Always Construct warning at Memoria.v(29): inferring latch(es) for variable "pixel", which holds its previous value in one or more paths through the always construct File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 29
-Warning (10030): Net "memoria_estado_0.data_a" at Memoria.v(9) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 9
-Warning (10030): Net "memoria_estado_0.waddr_a" at Memoria.v(9) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 9
-Warning (10030): Net "memoria_estado_1.data_a" at Memoria.v(10) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 10
-Warning (10030): Net "memoria_estado_1.waddr_a" at Memoria.v(10) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 10
-Warning (10030): Net "memoria_estado_2.data_a" at Memoria.v(11) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 11
-Warning (10030): Net "memoria_estado_2.waddr_a" at Memoria.v(11) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 11
-Warning (10030): Net "memoria_estado_3.data_a" at Memoria.v(12) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 12
-Warning (10030): Net "memoria_estado_3.waddr_a" at Memoria.v(12) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 12
-Warning (10030): Net "memoria_estado_4.data_a" at Memoria.v(13) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 13
-Warning (10030): Net "memoria_estado_4.waddr_a" at Memoria.v(13) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 13
-Warning (10030): Net "memoria_estado_5.data_a" at Memoria.v(14) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 14
-Warning (10030): Net "memoria_estado_5.waddr_a" at Memoria.v(14) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 14
-Warning (10030): Net "memoria_estado_6.data_a" at Memoria.v(15) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 15
-Warning (10030): Net "memoria_estado_6.waddr_a" at Memoria.v(15) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 15
-Warning (10030): Net "memoria_estado_0.we_a" at Memoria.v(9) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 9
-Warning (10030): Net "memoria_estado_1.we_a" at Memoria.v(10) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 10
-Warning (10030): Net "memoria_estado_2.we_a" at Memoria.v(11) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 11
-Warning (10030): Net "memoria_estado_3.we_a" at Memoria.v(12) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 12
-Warning (10030): Net "memoria_estado_4.we_a" at Memoria.v(13) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 13
-Warning (10030): Net "memoria_estado_5.we_a" at Memoria.v(14) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 14
-Warning (10030): Net "memoria_estado_6.we_a" at Memoria.v(15) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 15
-Info (10041): Inferred latch for "pixel[0]" at Memoria.v(29) File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 29
-Info (10041): Inferred latch for "pixel[1]" at Memoria.v(29) File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 29
-Info (10041): Inferred latch for "pixel[2]" at Memoria.v(29) File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 29
-Info (10041): Inferred latch for "pixel[3]" at Memoria.v(29) File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 29
-Info (10041): Inferred latch for "pixel[4]" at Memoria.v(29) File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 29
-Info (10041): Inferred latch for "pixel[5]" at Memoria.v(29) File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 29
-Info (10041): Inferred latch for "pixel[6]" at Memoria.v(29) File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 29
-Info (10041): Inferred latch for "pixel[7]" at Memoria.v(29) File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 29
-Info (10041): Inferred latch for "pixel[8]" at Memoria.v(29) File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 29
-Info (10041): Inferred latch for "pixel[9]" at Memoria.v(29) File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 29
-Info (10041): Inferred latch for "pixel[10]" at Memoria.v(29) File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 29
-Info (10041): Inferred latch for "pixel[11]" at Memoria.v(29) File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 29
-Info (10041): Inferred latch for "pixel[12]" at Memoria.v(29) File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 29
-Info (10041): Inferred latch for "pixel[13]" at Memoria.v(29) File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 29
-Info (10041): Inferred latch for "pixel[14]" at Memoria.v(29) File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 29
-Info (10041): Inferred latch for "pixel[15]" at Memoria.v(29) File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 29
-Info (12128): Elaborating entity "ControlSensor" for hierarchy "ControlSensor:sensortemperatura" File: C:/Users/diego/Desktop/TamaguchiUpdate/TamaguchiUpdate.v Line: 121
-Warning (10230): Verilog HDL assignment warning at ControlSensor.v(138): truncated value with size 32 to match size of target (5) File: C:/Users/diego/Desktop/TamaguchiUpdate/ControlSensor.v Line: 138
-Warning (10230): Verilog HDL assignment warning at ControlSensor.v(170): truncated value with size 32 to match size of target (5) File: C:/Users/diego/Desktop/TamaguchiUpdate/ControlSensor.v Line: 170
-Warning (10030): Net "INIT_SEQ_1.data_a" at ControlSensor.v(24) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/ControlSensor.v Line: 24
-Warning (10030): Net "INIT_SEQ_1.waddr_a[0]" at ControlSensor.v(24) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/ControlSensor.v Line: 24
-Warning (10030): Net "INIT_SEQ_2.data_a" at ControlSensor.v(25) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/ControlSensor.v Line: 25
-Warning (10030): Net "INIT_SEQ_2.waddr_a" at ControlSensor.v(25) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/ControlSensor.v Line: 25
-Warning (10030): Net "INIT_SEQ_1.we_a" at ControlSensor.v(24) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/ControlSensor.v Line: 24
-Warning (10030): Net "INIT_SEQ_2.we_a" at ControlSensor.v(25) has no driver or initial value, using a default initial value '0' File: C:/Users/diego/Desktop/TamaguchiUpdate/ControlSensor.v Line: 25
-Info (12128): Elaborating entity "spi_sensor" for hierarchy "ControlSensor:sensortemperatura|spi_sensor:driver_sensor_mecheche10horasenestoayudaxd" File: C:/Users/diego/Desktop/TamaguchiUpdate/ControlSensor.v Line: 103
-Warning (10230): Verilog HDL assignment warning at spi_sensor.v(76): truncated value with size 32 to match size of target (21) File: C:/Users/diego/Desktop/TamaguchiUpdate/spi_sensor.v Line: 76
-Warning (10230): Verilog HDL assignment warning at spi_sensor.v(120): truncated value with size 32 to match size of target (4) File: C:/Users/diego/Desktop/TamaguchiUpdate/spi_sensor.v Line: 120
-Warning (10230): Verilog HDL assignment warning at spi_sensor.v(138): truncated value with size 32 to match size of target (4) File: C:/Users/diego/Desktop/TamaguchiUpdate/spi_sensor.v Line: 138
-Warning (10230): Verilog HDL assignment warning at spi_sensor.v(153): truncated value with size 32 to match size of target (4) File: C:/Users/diego/Desktop/TamaguchiUpdate/spi_sensor.v Line: 153
-Warning (10230): Verilog HDL assignment warning at spi_sensor.v(167): truncated value with size 32 to match size of target (4) File: C:/Users/diego/Desktop/TamaguchiUpdate/spi_sensor.v Line: 167
-Warning (10230): Verilog HDL assignment warning at spi_sensor.v(175): truncated value with size 32 to match size of target (21) File: C:/Users/diego/Desktop/TamaguchiUpdate/spi_sensor.v Line: 175
-Info (10264): Verilog HDL Case Statement information at spi_sensor.v(195): all case item expressions in this case statement are onehot File: C:/Users/diego/Desktop/TamaguchiUpdate/spi_sensor.v Line: 195
-Warning (10230): Verilog HDL assignment warning at spi_sensor.v(224): truncated value with size 32 to match size of target (4) File: C:/Users/diego/Desktop/TamaguchiUpdate/spi_sensor.v Line: 224
+Warning (10230): Verilog HDL assignment warning at TamaguchiUpdate.v(46): truncated value with size 32 to match size of target (5) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/TamaguchiUpdate.v Line: 46
+Info (12128): Elaborating entity "antirebote" for hierarchy "antirebote:juego" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/TamaguchiUpdate.v Line: 58
+Info (12128): Elaborating entity "controltiempo" for hierarchy "controltiempo:cntl" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/TamaguchiUpdate.v Line: 65
+Info (12128): Elaborating entity "control_principal" for hierarchy "control_principal:controlTama" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/TamaguchiUpdate.v Line: 91
+Warning (10230): Verilog HDL assignment warning at control_principal.v(139): truncated value with size 32 to match size of target (11) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/control_principal.v Line: 139
+Warning (10230): Verilog HDL assignment warning at control_principal.v(144): truncated value with size 32 to match size of target (3) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/control_principal.v Line: 144
+Warning (10230): Verilog HDL assignment warning at control_principal.v(191): truncated value with size 32 to match size of target (3) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/control_principal.v Line: 191
+Warning (10230): Verilog HDL assignment warning at control_principal.v(202): truncated value with size 32 to match size of target (3) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/control_principal.v Line: 202
+Info (12128): Elaborating entity "ControlImagen" for hierarchy "ControlImagen:cimage" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/TamaguchiUpdate.v Line: 111
+Warning (10230): Verilog HDL assignment warning at ControlImagen.v(33): truncated value with size 32 to match size of target (8) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlImagen.v Line: 33
+Warning (10230): Verilog HDL assignment warning at ControlImagen.v(34): truncated value with size 32 to match size of target (5) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlImagen.v Line: 34
+Warning (10230): Verilog HDL assignment warning at ControlImagen.v(35): truncated value with size 32 to match size of target (5) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlImagen.v Line: 35
+Warning (10230): Verilog HDL assignment warning at ControlImagen.v(36): truncated value with size 32 to match size of target (8) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlImagen.v Line: 36
+Warning (10230): Verilog HDL assignment warning at ControlImagen.v(167): truncated value with size 32 to match size of target (16) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlImagen.v Line: 167
+Info (12128): Elaborating entity "Contol_ili" for hierarchy "ControlImagen:cimage|Contol_ili:ili9225" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlImagen.v Line: 56
+Warning (10230): Verilog HDL assignment warning at Contol_ili.v(442): truncated value with size 32 to match size of target (8) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Contol_ili.v Line: 442
+Warning (10230): Verilog HDL assignment warning at Contol_ili.v(461): truncated value with size 32 to match size of target (8) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Contol_ili.v Line: 461
+Warning (10230): Verilog HDL assignment warning at Contol_ili.v(480): truncated value with size 32 to match size of target (8) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Contol_ili.v Line: 480
+Warning (10230): Verilog HDL assignment warning at Contol_ili.v(499): truncated value with size 32 to match size of target (8) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Contol_ili.v Line: 499
+Warning (10230): Verilog HDL assignment warning at Contol_ili.v(515): truncated value with size 32 to match size of target (8) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Contol_ili.v Line: 515
+Warning (10230): Verilog HDL assignment warning at Contol_ili.v(534): truncated value with size 32 to match size of target (8) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Contol_ili.v Line: 534
+Warning (10030): Net "INIT_SEQ_1.data_a" at Contol_ili.v(48) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Contol_ili.v Line: 48
+Warning (10030): Net "INIT_SEQ_1.waddr_a" at Contol_ili.v(48) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Contol_ili.v Line: 48
+Warning (10030): Net "INIT_SEQ_2.data_a" at Contol_ili.v(49) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Contol_ili.v Line: 49
+Warning (10030): Net "INIT_SEQ_2.waddr_a" at Contol_ili.v(49) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Contol_ili.v Line: 49
+Warning (10030): Net "INIT_SEQ_3.data_a" at Contol_ili.v(50) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Contol_ili.v Line: 50
+Warning (10030): Net "INIT_SEQ_3.waddr_a" at Contol_ili.v(50) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Contol_ili.v Line: 50
+Warning (10030): Net "INIT_SEQ_4.data_a" at Contol_ili.v(51) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Contol_ili.v Line: 51
+Warning (10030): Net "INIT_SEQ_4.waddr_a" at Contol_ili.v(51) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Contol_ili.v Line: 51
+Warning (10030): Net "ADRESS_SEQ.data_a" at Contol_ili.v(52) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Contol_ili.v Line: 52
+Warning (10030): Net "ADRESS_SEQ.waddr_a" at Contol_ili.v(52) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Contol_ili.v Line: 52
+Warning (10030): Net "INIT_SEQ_1.we_a" at Contol_ili.v(48) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Contol_ili.v Line: 48
+Warning (10030): Net "INIT_SEQ_2.we_a" at Contol_ili.v(49) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Contol_ili.v Line: 49
+Warning (10030): Net "INIT_SEQ_3.we_a" at Contol_ili.v(50) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Contol_ili.v Line: 50
+Warning (10030): Net "INIT_SEQ_4.we_a" at Contol_ili.v(51) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Contol_ili.v Line: 51
+Warning (10030): Net "ADRESS_SEQ.we_a" at Contol_ili.v(52) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Contol_ili.v Line: 52
+Info (12128): Elaborating entity "spi_master" for hierarchy "ControlImagen:cimage|Contol_ili:ili9225|spi_master:spi" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Contol_ili.v Line: 70
+Info (12128): Elaborating entity "Memoria" for hierarchy "ControlImagen:cimage|Memoria:ROMmemory" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlImagen.v Line: 64
+Warning (10270): Verilog HDL Case Statement warning at Memoria.v(33): incomplete case statement has no default case item File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 33
+Warning (10240): Verilog HDL Always Construct warning at Memoria.v(29): inferring latch(es) for variable "pixel", which holds its previous value in one or more paths through the always construct File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 29
+Warning (10030): Net "memoria_estado_0.data_a" at Memoria.v(9) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 9
+Warning (10030): Net "memoria_estado_0.waddr_a" at Memoria.v(9) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 9
+Warning (10030): Net "memoria_estado_1.data_a" at Memoria.v(10) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 10
+Warning (10030): Net "memoria_estado_1.waddr_a" at Memoria.v(10) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 10
+Warning (10030): Net "memoria_estado_2.data_a" at Memoria.v(11) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 11
+Warning (10030): Net "memoria_estado_2.waddr_a" at Memoria.v(11) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 11
+Warning (10030): Net "memoria_estado_3.data_a" at Memoria.v(12) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 12
+Warning (10030): Net "memoria_estado_3.waddr_a" at Memoria.v(12) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 12
+Warning (10030): Net "memoria_estado_4.data_a" at Memoria.v(13) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 13
+Warning (10030): Net "memoria_estado_4.waddr_a" at Memoria.v(13) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 13
+Warning (10030): Net "memoria_estado_5.data_a" at Memoria.v(14) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 14
+Warning (10030): Net "memoria_estado_5.waddr_a" at Memoria.v(14) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 14
+Warning (10030): Net "memoria_estado_6.data_a" at Memoria.v(15) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 15
+Warning (10030): Net "memoria_estado_6.waddr_a" at Memoria.v(15) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 15
+Warning (10030): Net "memoria_estado_0.we_a" at Memoria.v(9) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 9
+Warning (10030): Net "memoria_estado_1.we_a" at Memoria.v(10) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 10
+Warning (10030): Net "memoria_estado_2.we_a" at Memoria.v(11) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 11
+Warning (10030): Net "memoria_estado_3.we_a" at Memoria.v(12) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 12
+Warning (10030): Net "memoria_estado_4.we_a" at Memoria.v(13) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 13
+Warning (10030): Net "memoria_estado_5.we_a" at Memoria.v(14) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 14
+Warning (10030): Net "memoria_estado_6.we_a" at Memoria.v(15) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 15
+Info (10041): Inferred latch for "pixel[0]" at Memoria.v(29) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 29
+Info (10041): Inferred latch for "pixel[1]" at Memoria.v(29) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 29
+Info (10041): Inferred latch for "pixel[2]" at Memoria.v(29) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 29
+Info (10041): Inferred latch for "pixel[3]" at Memoria.v(29) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 29
+Info (10041): Inferred latch for "pixel[4]" at Memoria.v(29) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 29
+Info (10041): Inferred latch for "pixel[5]" at Memoria.v(29) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 29
+Info (10041): Inferred latch for "pixel[6]" at Memoria.v(29) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 29
+Info (10041): Inferred latch for "pixel[7]" at Memoria.v(29) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 29
+Info (10041): Inferred latch for "pixel[8]" at Memoria.v(29) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 29
+Info (10041): Inferred latch for "pixel[9]" at Memoria.v(29) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 29
+Info (10041): Inferred latch for "pixel[10]" at Memoria.v(29) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 29
+Info (10041): Inferred latch for "pixel[11]" at Memoria.v(29) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 29
+Info (10041): Inferred latch for "pixel[12]" at Memoria.v(29) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 29
+Info (10041): Inferred latch for "pixel[13]" at Memoria.v(29) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 29
+Info (10041): Inferred latch for "pixel[14]" at Memoria.v(29) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 29
+Info (10041): Inferred latch for "pixel[15]" at Memoria.v(29) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 29
+Info (12128): Elaborating entity "ControlSensor" for hierarchy "ControlSensor:sensortemperatura" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/TamaguchiUpdate.v Line: 122
+Warning (10230): Verilog HDL assignment warning at ControlSensor.v(138): truncated value with size 32 to match size of target (5) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlSensor.v Line: 138
+Warning (10230): Verilog HDL assignment warning at ControlSensor.v(170): truncated value with size 32 to match size of target (5) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlSensor.v Line: 170
+Warning (10030): Net "INIT_SEQ_1.data_a" at ControlSensor.v(24) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlSensor.v Line: 24
+Warning (10030): Net "INIT_SEQ_1.waddr_a[0]" at ControlSensor.v(24) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlSensor.v Line: 24
+Warning (10030): Net "INIT_SEQ_2.data_a" at ControlSensor.v(25) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlSensor.v Line: 25
+Warning (10030): Net "INIT_SEQ_2.waddr_a" at ControlSensor.v(25) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlSensor.v Line: 25
+Warning (10030): Net "INIT_SEQ_1.we_a" at ControlSensor.v(24) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlSensor.v Line: 24
+Warning (10030): Net "INIT_SEQ_2.we_a" at ControlSensor.v(25) has no driver or initial value, using a default initial value '0' File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlSensor.v Line: 25
+Info (12128): Elaborating entity "spi_sensor" for hierarchy "ControlSensor:sensortemperatura|spi_sensor:driver_sensor_mecheche10horasenestoayudaxd" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlSensor.v Line: 103
+Warning (10230): Verilog HDL assignment warning at spi_sensor.v(76): truncated value with size 32 to match size of target (21) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/spi_sensor.v Line: 76
+Warning (10230): Verilog HDL assignment warning at spi_sensor.v(120): truncated value with size 32 to match size of target (4) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/spi_sensor.v Line: 120
+Warning (10230): Verilog HDL assignment warning at spi_sensor.v(138): truncated value with size 32 to match size of target (4) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/spi_sensor.v Line: 138
+Warning (10230): Verilog HDL assignment warning at spi_sensor.v(153): truncated value with size 32 to match size of target (4) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/spi_sensor.v Line: 153
+Warning (10230): Verilog HDL assignment warning at spi_sensor.v(167): truncated value with size 32 to match size of target (4) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/spi_sensor.v Line: 167
+Warning (10230): Verilog HDL assignment warning at spi_sensor.v(175): truncated value with size 32 to match size of target (21) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/spi_sensor.v Line: 175
+Info (10264): Verilog HDL Case Statement information at spi_sensor.v(195): all case item expressions in this case statement are onehot File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/spi_sensor.v Line: 195
+Warning (10230): Verilog HDL assignment warning at spi_sensor.v(224): truncated value with size 32 to match size of target (4) File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/spi_sensor.v Line: 224
 Info (276014): Found 13 instances of uninferred RAM logic
-    Info (276004): RAM logic "ControlSensor:sensortemperatura|INIT_SEQ_2" is uninferred due to inappropriate RAM size File: C:/Users/diego/Desktop/TamaguchiUpdate/ControlSensor.v Line: 25
-    Info (276004): RAM logic "ControlSensor:sensortemperatura|INIT_SEQ_1" is uninferred due to inappropriate RAM size File: C:/Users/diego/Desktop/TamaguchiUpdate/ControlSensor.v Line: 24
-    Info (276004): RAM logic "ControlImagen:cimage|Contol_ili:ili9225|INIT_SEQ_1" is uninferred due to inappropriate RAM size File: C:/Users/diego/Desktop/TamaguchiUpdate/Contol_ili.v Line: 48
-    Info (276004): RAM logic "ControlImagen:cimage|Contol_ili:ili9225|INIT_SEQ_2" is uninferred due to inappropriate RAM size File: C:/Users/diego/Desktop/TamaguchiUpdate/Contol_ili.v Line: 49
-    Info (276004): RAM logic "ControlImagen:cimage|Contol_ili:ili9225|INIT_SEQ_3" is uninferred due to inappropriate RAM size File: C:/Users/diego/Desktop/TamaguchiUpdate/Contol_ili.v Line: 50
-    Info (276004): RAM logic "ControlImagen:cimage|Contol_ili:ili9225|ADRESS_SEQ" is uninferred due to inappropriate RAM size File: C:/Users/diego/Desktop/TamaguchiUpdate/Contol_ili.v Line: 52
-    Info (276007): RAM logic "ControlImagen:cimage|Memoria:ROMmemory|memoria_estado_0" is uninferred due to asynchronous read logic File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 9
-    Info (276007): RAM logic "ControlImagen:cimage|Memoria:ROMmemory|memoria_estado_1" is uninferred due to asynchronous read logic File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 10
-    Info (276007): RAM logic "ControlImagen:cimage|Memoria:ROMmemory|memoria_estado_2" is uninferred due to asynchronous read logic File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 11
-    Info (276007): RAM logic "ControlImagen:cimage|Memoria:ROMmemory|memoria_estado_3" is uninferred due to asynchronous read logic File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 12
-    Info (276007): RAM logic "ControlImagen:cimage|Memoria:ROMmemory|memoria_estado_4" is uninferred due to asynchronous read logic File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 13
-    Info (276007): RAM logic "ControlImagen:cimage|Memoria:ROMmemory|memoria_estado_5" is uninferred due to asynchronous read logic File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 14
-    Info (276007): RAM logic "ControlImagen:cimage|Memoria:ROMmemory|memoria_estado_6" is uninferred due to asynchronous read logic File: C:/Users/diego/Desktop/TamaguchiUpdate/Memoria.v Line: 15
-Critical Warning (127005): Memory depth (32) in the design file differs from memory depth (26) in the Memory Initialization File "C:/Users/diego/Desktop/TamaguchiUpdate/db/TamaguchiUpdate.ram1_ControlSensor_4ea2c1f1.hdl.mif" -- setting initial value for remaining addresses to 0
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/diego/Desktop/TamaguchiUpdate/db/TamaguchiUpdate.ram1_ControlSensor_4ea2c1f1.hdl.mif" contains "don't care" values -- overwriting them with 0s
-Critical Warning (127005): Memory depth (32) in the design file differs from memory depth (20) in the Memory Initialization File "C:/Users/diego/Desktop/TamaguchiUpdate/db/TamaguchiUpdate.ram0_Contol_ili_85d56e06.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (32) in the design file differs from memory depth (20) in the Memory Initialization File "C:/Users/diego/Desktop/TamaguchiUpdate/db/TamaguchiUpdate.ram1_Contol_ili_85d56e06.hdl.mif" -- setting initial value for remaining addresses to 0
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/diego/Desktop/TamaguchiUpdate/db/TamaguchiUpdate.ram3_Contol_ili_85d56e06.hdl.mif" contains "don't care" values -- overwriting them with 0s
-Critical Warning (127005): Memory depth (64) in the design file differs from memory depth (34) in the Memory Initialization File "C:/Users/diego/Desktop/TamaguchiUpdate/db/TamaguchiUpdate.ram4_Contol_ili_85d56e06.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (256) in the design file differs from memory depth (169) in the Memory Initialization File "C:/Users/diego/Desktop/TamaguchiUpdate/db/TamaguchiUpdate.ram0_Memoria_e03d9be0.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (256) in the design file differs from memory depth (169) in the Memory Initialization File "C:/Users/diego/Desktop/TamaguchiUpdate/db/TamaguchiUpdate.ram1_Memoria_e03d9be0.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (256) in the design file differs from memory depth (169) in the Memory Initialization File "C:/Users/diego/Desktop/TamaguchiUpdate/db/TamaguchiUpdate.ram2_Memoria_e03d9be0.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (256) in the design file differs from memory depth (169) in the Memory Initialization File "C:/Users/diego/Desktop/TamaguchiUpdate/db/TamaguchiUpdate.ram3_Memoria_e03d9be0.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (256) in the design file differs from memory depth (169) in the Memory Initialization File "C:/Users/diego/Desktop/TamaguchiUpdate/db/TamaguchiUpdate.ram4_Memoria_e03d9be0.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (256) in the design file differs from memory depth (169) in the Memory Initialization File "C:/Users/diego/Desktop/TamaguchiUpdate/db/TamaguchiUpdate.ram5_Memoria_e03d9be0.hdl.mif" -- setting initial value for remaining addresses to 0
-Critical Warning (127005): Memory depth (256) in the design file differs from memory depth (169) in the Memory Initialization File "C:/Users/diego/Desktop/TamaguchiUpdate/db/TamaguchiUpdate.ram6_Memoria_e03d9be0.hdl.mif" -- setting initial value for remaining addresses to 0
+    Info (276004): RAM logic "ControlSensor:sensortemperatura|INIT_SEQ_2" is uninferred due to inappropriate RAM size File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlSensor.v Line: 25
+    Info (276004): RAM logic "ControlSensor:sensortemperatura|INIT_SEQ_1" is uninferred due to inappropriate RAM size File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlSensor.v Line: 24
+    Info (276004): RAM logic "ControlImagen:cimage|Contol_ili:ili9225|INIT_SEQ_1" is uninferred due to inappropriate RAM size File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Contol_ili.v Line: 48
+    Info (276004): RAM logic "ControlImagen:cimage|Contol_ili:ili9225|INIT_SEQ_2" is uninferred due to inappropriate RAM size File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Contol_ili.v Line: 49
+    Info (276004): RAM logic "ControlImagen:cimage|Contol_ili:ili9225|INIT_SEQ_3" is uninferred due to inappropriate RAM size File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Contol_ili.v Line: 50
+    Info (276004): RAM logic "ControlImagen:cimage|Contol_ili:ili9225|ADRESS_SEQ" is uninferred due to inappropriate RAM size File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Contol_ili.v Line: 52
+    Info (276007): RAM logic "ControlImagen:cimage|Memoria:ROMmemory|memoria_estado_0" is uninferred due to asynchronous read logic File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 9
+    Info (276007): RAM logic "ControlImagen:cimage|Memoria:ROMmemory|memoria_estado_1" is uninferred due to asynchronous read logic File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 10
+    Info (276007): RAM logic "ControlImagen:cimage|Memoria:ROMmemory|memoria_estado_2" is uninferred due to asynchronous read logic File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 11
+    Info (276007): RAM logic "ControlImagen:cimage|Memoria:ROMmemory|memoria_estado_3" is uninferred due to asynchronous read logic File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 12
+    Info (276007): RAM logic "ControlImagen:cimage|Memoria:ROMmemory|memoria_estado_4" is uninferred due to asynchronous read logic File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 13
+    Info (276007): RAM logic "ControlImagen:cimage|Memoria:ROMmemory|memoria_estado_5" is uninferred due to asynchronous read logic File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 14
+    Info (276007): RAM logic "ControlImagen:cimage|Memoria:ROMmemory|memoria_estado_6" is uninferred due to asynchronous read logic File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/Memoria.v Line: 15
+Critical Warning (127005): Memory depth (32) in the design file differs from memory depth (26) in the Memory Initialization File "/home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/TamaguchiUpdate.ram1_ControlSensor_4ea2c1f1.hdl.mif" -- setting initial value for remaining addresses to 0
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/TamaguchiUpdate.ram1_ControlSensor_4ea2c1f1.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Critical Warning (127005): Memory depth (32) in the design file differs from memory depth (20) in the Memory Initialization File "/home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/TamaguchiUpdate.ram0_Contol_ili_85d56e06.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (32) in the design file differs from memory depth (20) in the Memory Initialization File "/home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/TamaguchiUpdate.ram1_Contol_ili_85d56e06.hdl.mif" -- setting initial value for remaining addresses to 0
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/TamaguchiUpdate.ram3_Contol_ili_85d56e06.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Critical Warning (127005): Memory depth (64) in the design file differs from memory depth (34) in the Memory Initialization File "/home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/TamaguchiUpdate.ram4_Contol_ili_85d56e06.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (256) in the design file differs from memory depth (169) in the Memory Initialization File "/home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/TamaguchiUpdate.ram0_Memoria_e03d9be0.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (256) in the design file differs from memory depth (169) in the Memory Initialization File "/home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/TamaguchiUpdate.ram1_Memoria_e03d9be0.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (256) in the design file differs from memory depth (169) in the Memory Initialization File "/home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/TamaguchiUpdate.ram2_Memoria_e03d9be0.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (256) in the design file differs from memory depth (169) in the Memory Initialization File "/home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/TamaguchiUpdate.ram3_Memoria_e03d9be0.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (256) in the design file differs from memory depth (169) in the Memory Initialization File "/home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/TamaguchiUpdate.ram4_Memoria_e03d9be0.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (256) in the design file differs from memory depth (169) in the Memory Initialization File "/home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/TamaguchiUpdate.ram5_Memoria_e03d9be0.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (256) in the design file differs from memory depth (169) in the Memory Initialization File "/home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/TamaguchiUpdate.ram6_Memoria_e03d9be0.hdl.mif" -- setting initial value for remaining addresses to 0
 Info (278001): Inferred 4 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ControlImagen:cimage|Div1" File: C:/Users/diego/Desktop/TamaguchiUpdate/ControlImagen.v Line: 35
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ControlImagen:cimage|Mod0" File: C:/Users/diego/Desktop/TamaguchiUpdate/ControlImagen.v Line: 33
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ControlImagen:cimage|Div0" File: C:/Users/diego/Desktop/TamaguchiUpdate/ControlImagen.v Line: 34
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "ControlImagen:cimage|Mult0" File: C:/Users/diego/Desktop/TamaguchiUpdate/ControlImagen.v Line: 36
-Info (12130): Elaborated megafunction instantiation "ControlImagen:cimage|lpm_divide:Div1" File: C:/Users/diego/Desktop/TamaguchiUpdate/ControlImagen.v Line: 35
-Info (12133): Instantiated megafunction "ControlImagen:cimage|lpm_divide:Div1" with the following parameter: File: C:/Users/diego/Desktop/TamaguchiUpdate/ControlImagen.v Line: 35
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ControlImagen:cimage|Div1" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlImagen.v Line: 35
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ControlImagen:cimage|Mod0" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlImagen.v Line: 33
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ControlImagen:cimage|Div0" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlImagen.v Line: 34
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "ControlImagen:cimage|Mult0" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlImagen.v Line: 36
+Info (12130): Elaborated megafunction instantiation "ControlImagen:cimage|lpm_divide:Div1" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlImagen.v Line: 35
+Info (12133): Instantiated megafunction "ControlImagen:cimage|lpm_divide:Div1" with the following parameter: File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlImagen.v Line: 35
     Info (12134): Parameter "LPM_WIDTHN" = "16"
     Info (12134): Parameter "LPM_WIDTHD" = "12"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_hkm.tdf
-    Info (12023): Found entity 1: lpm_divide_hkm File: C:/Users/diego/Desktop/TamaguchiUpdate/db/lpm_divide_hkm.tdf Line: 25
+    Info (12023): Found entity 1: lpm_divide_hkm File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/lpm_divide_hkm.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9nh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_9nh File: C:/Users/diego/Desktop/TamaguchiUpdate/db/sign_div_unsign_9nh.tdf Line: 25
+    Info (12023): Found entity 1: sign_div_unsign_9nh File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/sign_div_unsign_9nh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_6af.tdf
-    Info (12023): Found entity 1: alt_u_div_6af File: C:/Users/diego/Desktop/TamaguchiUpdate/db/alt_u_div_6af.tdf Line: 27
+    Info (12023): Found entity 1: alt_u_div_6af File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/alt_u_div_6af.tdf Line: 27
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
-    Info (12023): Found entity 1: add_sub_7pc File: C:/Users/diego/Desktop/TamaguchiUpdate/db/add_sub_7pc.tdf Line: 23
+    Info (12023): Found entity 1: add_sub_7pc File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/add_sub_7pc.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
-    Info (12023): Found entity 1: add_sub_8pc File: C:/Users/diego/Desktop/TamaguchiUpdate/db/add_sub_8pc.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "ControlImagen:cimage|lpm_divide:Mod0" File: C:/Users/diego/Desktop/TamaguchiUpdate/ControlImagen.v Line: 33
-Info (12133): Instantiated megafunction "ControlImagen:cimage|lpm_divide:Mod0" with the following parameter: File: C:/Users/diego/Desktop/TamaguchiUpdate/ControlImagen.v Line: 33
+    Info (12023): Found entity 1: add_sub_8pc File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/add_sub_8pc.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "ControlImagen:cimage|lpm_divide:Mod0" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlImagen.v Line: 33
+Info (12133): Instantiated megafunction "ControlImagen:cimage|lpm_divide:Mod0" with the following parameter: File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlImagen.v Line: 33
     Info (12134): Parameter "LPM_WIDTHN" = "16"
     Info (12134): Parameter "LPM_WIDTHD" = "8"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_9bm.tdf
-    Info (12023): Found entity 1: lpm_divide_9bm File: C:/Users/diego/Desktop/TamaguchiUpdate/db/lpm_divide_9bm.tdf Line: 25
+    Info (12023): Found entity 1: lpm_divide_9bm File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/lpm_divide_9bm.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_ulh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_ulh File: C:/Users/diego/Desktop/TamaguchiUpdate/db/sign_div_unsign_ulh.tdf Line: 25
+    Info (12023): Found entity 1: sign_div_unsign_ulh File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/sign_div_unsign_ulh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_g7f.tdf
-    Info (12023): Found entity 1: alt_u_div_g7f File: C:/Users/diego/Desktop/TamaguchiUpdate/db/alt_u_div_g7f.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "ControlImagen:cimage|lpm_divide:Div0" File: C:/Users/diego/Desktop/TamaguchiUpdate/ControlImagen.v Line: 34
-Info (12133): Instantiated megafunction "ControlImagen:cimage|lpm_divide:Div0" with the following parameter: File: C:/Users/diego/Desktop/TamaguchiUpdate/ControlImagen.v Line: 34
+    Info (12023): Found entity 1: alt_u_div_g7f File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/alt_u_div_g7f.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "ControlImagen:cimage|lpm_divide:Div0" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlImagen.v Line: 34
+Info (12133): Instantiated megafunction "ControlImagen:cimage|lpm_divide:Div0" with the following parameter: File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlImagen.v Line: 34
     Info (12134): Parameter "LPM_WIDTHN" = "8"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_jhm.tdf
-    Info (12023): Found entity 1: lpm_divide_jhm File: C:/Users/diego/Desktop/TamaguchiUpdate/db/lpm_divide_jhm.tdf Line: 25
+    Info (12023): Found entity 1: lpm_divide_jhm File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/lpm_divide_jhm.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_bkh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_bkh File: C:/Users/diego/Desktop/TamaguchiUpdate/db/sign_div_unsign_bkh.tdf Line: 25
+    Info (12023): Found entity 1: sign_div_unsign_bkh File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/sign_div_unsign_bkh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_a4f.tdf
-    Info (12023): Found entity 1: alt_u_div_a4f File: C:/Users/diego/Desktop/TamaguchiUpdate/db/alt_u_div_a4f.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "ControlImagen:cimage|lpm_mult:Mult0" File: C:/Users/diego/Desktop/TamaguchiUpdate/ControlImagen.v Line: 36
-Info (12133): Instantiated megafunction "ControlImagen:cimage|lpm_mult:Mult0" with the following parameter: File: C:/Users/diego/Desktop/TamaguchiUpdate/ControlImagen.v Line: 36
+    Info (12023): Found entity 1: alt_u_div_a4f File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/alt_u_div_a4f.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "ControlImagen:cimage|lpm_mult:Mult0" File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlImagen.v Line: 36
+Info (12133): Instantiated megafunction "ControlImagen:cimage|lpm_mult:Mult0" with the following parameter: File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/ControlImagen.v Line: 36
     Info (12134): Parameter "LPM_WIDTHA" = "8"
     Info (12134): Parameter "LPM_WIDTHB" = "4"
     Info (12134): Parameter "LPM_WIDTHP" = "12"
@@ -976,18 +976,18 @@ Info (12133): Instantiated megafunction "ControlImagen:cimage|lpm_mult:Mult0" wi
     Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
     Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
     Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
-Info (12131): Elaborated megafunction instantiation "ControlImagen:cimage|lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "ControlImagen:cimage|lpm_mult:Mult0" File: c:/intelfpga/23.1std/quartus/libraries/megafunctions/lpm_mult.tdf Line: 309
-Info (12131): Elaborated megafunction instantiation "ControlImagen:cimage|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "ControlImagen:cimage|lpm_mult:Mult0" File: c:/intelfpga/23.1std/quartus/libraries/megafunctions/multcore.tdf Line: 229
-Info (12131): Elaborated megafunction instantiation "ControlImagen:cimage|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "ControlImagen:cimage|lpm_mult:Mult0" File: c:/intelfpga/23.1std/quartus/libraries/megafunctions/mpar_add.tdf Line: 78
+Info (12131): Elaborated megafunction instantiation "ControlImagen:cimage|lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "ControlImagen:cimage|lpm_mult:Mult0" File: /home/kevin/intelFPGA_lite_23.1std/quartus/libraries/megafunctions/lpm_mult.tdf Line: 309
+Info (12131): Elaborated megafunction instantiation "ControlImagen:cimage|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "ControlImagen:cimage|lpm_mult:Mult0" File: /home/kevin/intelFPGA_lite_23.1std/quartus/libraries/megafunctions/multcore.tdf Line: 229
+Info (12131): Elaborated megafunction instantiation "ControlImagen:cimage|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "ControlImagen:cimage|lpm_mult:Mult0" File: /home/kevin/intelFPGA_lite_23.1std/quartus/libraries/megafunctions/mpar_add.tdf Line: 78
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_afh.tdf
-    Info (12023): Found entity 1: add_sub_afh File: C:/Users/diego/Desktop/TamaguchiUpdate/db/add_sub_afh.tdf Line: 23
-Info (12131): Elaborated megafunction instantiation "ControlImagen:cimage|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "ControlImagen:cimage|lpm_mult:Mult0" File: c:/intelfpga/23.1std/quartus/libraries/megafunctions/lpm_mult.tdf Line: 352
+    Info (12023): Found entity 1: add_sub_afh File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/db/add_sub_afh.tdf Line: 23
+Info (12131): Elaborated megafunction instantiation "ControlImagen:cimage|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "ControlImagen:cimage|lpm_mult:Mult0" File: /home/kevin/intelFPGA_lite_23.1std/quartus/libraries/megafunctions/lpm_mult.tdf Line: 352
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info (13000): Registers with preset signals will power-up high File: C:/Users/diego/Desktop/TamaguchiUpdate/spi_master.v Line: 7
+Info (13000): Registers with preset signals will power-up high File: /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/spi_master.v Line: 7
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 16 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file C:/Users/diego/Desktop/TamaguchiUpdate/output_files/TamaguchiUpdate.map.smsg
+Info (144001): Generated suppressed messages file /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/output_files/TamaguchiUpdate.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Info (21057): Implemented 2665 device resources after synthesis - the final resource count might be different
@@ -995,15 +995,15 @@ Info (21057): Implemented 2665 device resources after synthesis - the final reso
     Info (21059): Implemented 11 output pins
     Info (21061): Implemented 2646 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 89 warnings
-    Info: Peak virtual memory: 4799 megabytes
-    Info: Processing ended: Thu Sep 19 18:06:52 2024
-    Info: Elapsed time: 00:00:45
-    Info: Total CPU time (on all processors): 00:00:42
+    Info: Peak virtual memory: 432 megabytes
+    Info: Processing ended: Fri Sep 20 17:14:25 2024
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:33
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/Users/diego/Desktop/TamaguchiUpdate/output_files/TamaguchiUpdate.map.smsg.
+The suppressed messages can be found in /home/kevin/github-classroom/entrega-1-proyecto-grupo23-2024-1/TamaguchiUpdate/output_files/TamaguchiUpdate.map.smsg.
 
 

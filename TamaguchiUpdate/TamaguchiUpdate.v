@@ -5,8 +5,8 @@ module TamaguchiUpdate (
 		  input bjugar,
 		  input bdormir,
 		  input bcomer,
-		  input btest,
-		  input btime,
+		  input btest_neg,
+		  input btime_neg,
 		  
 		  //spi pantalla
         output wire spi_mosi,
@@ -25,7 +25,8 @@ module TamaguchiUpdate (
 			output wire repuesto, //miso de salida para prueba con analizador sensor
 			output wire sck_repuesto//sck de salida para prueba con analizador sensor
     );
-	 
+	 wire btime = ~btime_neg;
+	 wire btest = ~btest_neg;
     reg clk_out;
 	 reg [4:0]contador;
 	 wire rst;
