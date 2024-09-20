@@ -21,8 +21,8 @@ initial begin
     data_bit_counter <= 1'b0;
     idle <= 1'b1;
     cs_reg <= 1'b0;
-    spi_mosi <= 1'b0;
-    spi_dc <= 1'b1;
+    spi_mosi <= 1'b1;
+    spi_dc <= 1'b0;
 end
 
 
@@ -32,15 +32,15 @@ wire[0:DATA_SIZE-2] real_data = data_reg[DATA_SIZE-2:0];
 assign spi_sck = sck_reg & cs_reg; 
 assign spi_cs = !cs_reg; 
 
-always @ (posedge clk, posedge rst) begin
+always @ (negedge clk, posedge rst) begin
     if(rst) begin
         sck_reg <= 1'b1;
         data_reg <= 1'b0;
         data_bit_counter <= 1'b0;
         idle <= 1'b1;
         cs_reg <= 1'b0;
-        spi_mosi <= 1'b0;
-        spi_dc <= 1'b1;
+        spi_mosi <= 1'b1;
+        spi_dc <= 1'b0;
     end else begin
         if (available_data) begin
             data_reg <= input_data;

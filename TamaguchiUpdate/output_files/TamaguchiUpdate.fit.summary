@@ -1,15 +1,15 @@
-Fitter Status : Successful - Thu Sep 12 10:52:11 2024
+Fitter Status : Successful - Thu Sep 19 18:07:34 2024
 Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 Revision Name : TamaguchiUpdate
 Top-level Entity Name : TamaguchiUpdate
 Family : Cyclone IV E
 Device : EP4CE6E22C8
 Timing Models : Final
-Total logic elements : 277 / 6,272 ( 4 % )
-    Total combinational functions : 269 / 6,272 ( 4 % )
-    Dedicated logic registers : 91 / 6,272 ( 1 % )
-Total registers : 91
-Total pins : 6 / 92 ( 7 % )
+Total logic elements : 2,636 / 6,272 ( 42 % )
+    Total combinational functions : 2,626 / 6,272 ( 42 % )
+    Dedicated logic registers : 529 / 6,272 ( 8 % )
+Total registers : 529
+Total pins : 19 / 92 ( 21 % )
 Total virtual pins : 0
 Total memory bits : 0 / 276,480 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 30 ( 0 % )

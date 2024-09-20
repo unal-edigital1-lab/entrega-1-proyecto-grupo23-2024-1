@@ -1,63 +1,123 @@
-module TamaguchiUpdate #(parameter RESOLUTION = 220*176, parameter PIXEL_SIZE = 16)(
-        input wire clk, //50
-        input wire rst,
+module TamaguchiUpdate (
+        input wire clk, //50Mhz
+        input wire rst_neg, // reset negado PIN 90
+		  
+		  input bjugar,
+		  input bdormir,
+		  input bcomer,
+		  input btest,
+		  input btime,
+		  
+		  //spi pantalla
         output wire spi_mosi,
         output wire spi_cs,
         output wire spi_sck,
-        output wire spi_dc
+        output wire spi_dc,
+		  output wire spi_reset,
+		  
+		  
+		  //spi sensor
+		   input miso_sensor,
+			output wire cs_sensor,
+			output wire sck_sensor,
+			output wire mosi_sensor,
+			output wire bandera_salud,
+			output wire repuesto, //miso de salida para prueba con analizador sensor
+			output wire sck_repuesto//sck de salida para prueba con analizador sensor
     );
+	 
     reg clk_out;
-    wire clk_input_data;
-	 reg [6:0] contador;
-    reg [PIXEL_SIZE-1:0] current_pixel;
-	
-
-    reg [$clog2(RESOLUTION)-1:0] pixel_counter;
-    reg transmission_done;
-
+	 reg [4:0]contador;
+	 wire rst;
+	 assign sck_repuesto = sck_sensor;
+	 assign rst = !rst_neg;
     initial begin
-        current_pixel <= 'b0;
-        pixel_counter <= 'b0;
-        transmission_done <= 'b0; 
 		  clk_out <= 'b0;
-		  contador <= 0;
+		  contador <= 'b0;
     end
-
-	 always@(posedge clk)begin
-		clk_out <= !clk_out;
+	 assign repuesto = miso_sensor;
+	 //divisor de frecuencia
+	 always@(posedge clk)begin //reloj de 1Mhz
+		 if (contador == 5'hF) begin
+                contador <= 5'h0;          // Reiniciar el contador cuando llega a 15
+                clk_out <= ~clk_out;      // Invertir el estado del reloj de salida
+            end else begin
+                contador <= contador + 1;   // Incrementar el contador
+            end
 	 end
     
-
-    always @(posedge clk_input_data or posedge rst) begin
-        if (rst) begin
-            pixel_counter <= 'b0;
-            current_pixel <= 'b0;
-            transmission_done <= 'b0; 
-        end else if (!transmission_done) begin
-            current_pixel <= 16'b1111100000000000;
-            pixel_counter <= pixel_counter + 'b1;
-            if (pixel_counter == RESOLUTION-1) begin
-                transmission_done <= 'b1; 
-            end
-        end
-    end
+	
+	 wire rebjugar;
+	 wire rebdormir;
+	 wire rebcomer;
+	 wire rebtest;
+	 wire rebtime;
+	 
+	 //antirebote
+	 antirebote juego(bjugar,clk,rebjugar);
+	 antirebote sueno(bdormir,clk,rebdormir);
+	 antirebote comida(bcomer,clk,rebcomer);
+	 antirebote test(btest,clk,rebtest);
+	 antirebote times(btime,clk,rebtime);
+	 
+	 //control aceleracion tiempo
+	 controltiempo cntl(clk, rst, rebtime,secondpassed);
+	 
+	 wire sensorsalud;
+	 wire secondpassed;
+	 wire [2:0]hambre;
+	 wire [2:0]energia;
+	 wire [2:0]diversion;
+	 wire [2:0]estado;
+	 wire modo;
+	 
+	 assign bandera_salud = !sensorsalud;
+	 //control maquina principal
+	 control_principal controlTama(
+	.clk(clk),
+	.reset(rst),
+	.secondpassed(secondpassed),
+	.boton_dormir(rebdormir),
+	.boton_jugar(rebjugar),
+	.boton_comer(rebcomer),
+	.test(rebtest), 
+	.enfermo_sensor(!sensorsalud),
+	.hambre(hambre),
+	.diversion(diversion),
+	.energia(energia),
+	.estado(estado),
+	.modo(modo)
+	 );
 	 
 	 
-	 assign spi_mosi = ~spi_mosi_neg;
-	assign spi_cs = ~spi_cs_neg;
-	assign spi_dc = ~spi_dc_neg;
-	assign spi_sck = ~spi_sck_neg;
-
-    ili9225_controller ili9225(
-		.clk(clk_out), 
+	 
+	 
+	 //pantalla 
+    ControlImagen cimage(
+		.clk(clk),
 		.rst(rst),
-        .frame_done(transmission_done), 
-        .input_data(current_pixel),
-        .spi_mosi(spi_mosi_neg),
-		.spi_sck(spi_sck_neg), 
-        .spi_cs(spi_cs_neg), 
-        .spi_dc(spi_dc_neg),
-        .data_clk(clk_input_data)
-    );
-
+		.hambre(hambre),
+		.diversion(diversion),
+		.energia(energia),
+		.salud(sensorsalud),
+		.state(estado),
+		.modo(modo),
+		.spi_mosi(spi_mosi),
+		.spi_cs(spi_cs),
+		.spi_sck(spi_sck),
+		.spi_dc(spi_dc),
+		.spi_reset(spi_reset)
+	 );
+	 
+	 //sensor
+	 ControlSensor sensortemperatura(
+	.clk(clk_out), //1Mhz
+	.rst(rst),
+	.miso_sensor(miso_sensor),
+	.cs_sensor(cs_sensor),
+	.sck_sensor(sck_sensor),
+	.mosi_sensor(mosi_sensor),
+	.bandera_salud(sensorsalud)
+	 );
+	 
 endmodule

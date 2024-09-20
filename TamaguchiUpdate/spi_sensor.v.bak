@@ -1,0 +1,237 @@
+module spi_sensor(
+ input clk, //1Mhz
+ input rst,
+ input miso_sensor,
+ input [7:0]data_1,
+ input [7:0]data_2,
+ input [7:0]data_3,
+ input [2:0]modo,
+ input load_data,
+ output reg cs_sensor,
+ output wire sck_sensor,
+ output reg mosi_sensor,
+ output reg bandera_salud,
+ output reg ready
+);
+
+
+reg [20:0]delay_counter;
+reg[7:0]data_read_send;
+
+reg [1:0]rst_state;
+reg [3:0] rst_counter;
+
+reg hab_sck;
+reg reg_sck;
+
+reg[2:0]chains_sended;
+
+assign sck_sensor = hab_sck&reg_sck;
+
+localparam DELAY_60ms = 93750;
+localparam DELAY_1s = 1562500; // a reloj de 1.562Mhz
+
+initial begin
+		cs_sensor <= 1;
+		mosi_sensor <= 1;
+		reg_sck<= 0;
+		hab_sck<= 1;
+		bandera_salud <= 1;
+		ready <= 0;
+		delay_counter <= 0;
+		data_read_send <= 0;
+		rst_state <= 0;
+		rst_counter <= 0;
+		chains_sended <= 0;
+end
+
+
+always @(negedge clk, posedge rst)begin
+	if(rst)begin
+		cs_sensor <= 1;
+		mosi_sensor <= 1;
+		bandera_salud <= 1;
+		ready <= 0;
+		delay_counter <= 0;
+		data_read_send <= 0;
+		rst_state <= 0;
+		reg_sck<= 0;
+		hab_sck<= 1;
+		chains_sended <= 0;
+	end
+	else begin
+		case(rst_state)
+			0:begin
+				case(rst_counter)
+					0:begin
+						reg_sck <=1;
+						if(delay_counter == DELAY_60ms)begin
+							rst_counter <= 1;
+							delay_counter <= 0;
+						end
+						else begin
+							delay_counter <= delay_counter + 1;
+						end
+					end
+					1:begin
+						cs_sensor <= 0;
+						rst_counter <= 2;
+					end
+					2:begin
+						cs <= 1;
+						rst_counter<= 3;
+					end
+					3:begin
+						rst_state <= 1;
+						ready <= 1;
+						rst_counter<= 0;
+						reg_sck <= 1;
+						hab_sck<= 0;
+					end
+				endcase
+			end
+			1:begin
+				if (modo == 3)begin
+					if(delay_counter == DELAY_1s)begin
+						case(chains_sended)
+							0:begin
+								if(ready)begin
+									if(rst_counter == 0)begin
+										[0:7]data_read_send <= 8'hFA;
+										ready <= 0;
+									end
+								end
+								else begin
+									if(rst_counter == 8)begin
+										reg_sck <= 1;
+										chains_sended <= 1;
+										rst_counter <= 0;
+										mosi_sensor <= 1;
+									end
+									else begin
+										reg_sck <= !reg_sck;
+										if(reg_sck)begin
+											hab_sck<= 1;
+											cs_sensor <= 0;
+											mosi_sensor <= data_read_send[rst_counter];
+											rst_counter <= rst_counter + 1;
+										end
+									end
+								end
+							end
+							1:begin
+								if(rst_counter == 8)begin
+										reg_sck <= 1;
+										chains_sended <= 2;
+										rst_counter <= 0;
+										bandera_salud <= (data_read_send > 8'h84)?1'b0:1'b1;
+									end
+									else begin
+										reg_sck <= !reg_sck;
+										if(!reg_sck)begin
+											hab_sck<= 1;
+											cs_sensor <= 0;
+											data_read_send[7-rst_counter] <= miso_sensor;
+											rst_counter <= rst_counter + 1;
+										end
+									end
+							end
+							2:begin
+								if(rst_counter == 8)begin
+										reg_sck <= 1;
+										chains_sended <= 3;
+										rst_counter <= 0;
+									end
+									else begin
+										reg_sck <= !reg_sck;
+										if(reg_sck)begin
+											hab_sck<= 1;
+											cs_sensor <= 0;
+											rst_counter <= rst_counter + 1;
+										end
+									end
+							end
+							3:begin
+								if(rst_counter == 8)begin
+										reg_sck <= 1;
+										delay_counter <= 0;
+									end
+									else begin
+										reg_sck <= !reg_sck;
+										if(reg_sck)begin
+											hab_sck<= 1;
+											cs_sensor <= 0;
+											rst_counter <= rst_counter + 1;
+										end
+									end
+							end
+							
+						endcase
+					end
+					else begin
+						delay_counter <= delay_counter +1;
+						cs_sensor <= 1;
+						hab_sck<= 0;
+						reg_sck <= 1;
+						rst_counter <= 0;
+						chains_sended <= 0;
+					end
+				end
+				else begin
+					if(ready == 1)begin
+						if(load_data == 1)begin
+							[0:7]data_read_send <= data_1[7:0];
+							ready <= 0;
+							rst_counter <= 0;
+						end
+					end
+					else begin
+						if(rst_counter == 8)begin
+							reg_sck <= 1;
+							case (chains_sended)
+								0:begin
+									rst_counter <= 0;
+									[0:7]data_read_send <= data_2[7:0];
+									chains_sended <= 1;
+								end
+								1:begin
+									if(modo == 0)begin
+										rst_state <= 2;
+										rst_counter <= 0;
+									end
+									else begin
+										rst_counter <= 0;
+										[0:7]data_read_send <= data_3[7:0];
+										chains_sended <= 2;
+									end
+								end
+								2:begin
+									rst_state <= 2;
+									rst_counter <= 0;
+								end
+							endcase
+						end
+						else begin
+							reg_sck <= !reg_sck;
+							if(reg_sck)begin
+								hab_sck<= 1;
+								cs_sensor <= 0;
+								mosi_sensor <= data_read_send[rst_counter];
+								rst_counter <= rst_counter + 1;
+							end
+						end
+					end
+				end
+			end
+		2:begin
+			cs_sensor <= 1;
+			rst_state <= 1;
+			ready <= 1;
+			hab_sck<= 0;
+			chains_sended <= 0;
+			delay_counter <= 0;
+		end
+		endcase
+	end
+
+end

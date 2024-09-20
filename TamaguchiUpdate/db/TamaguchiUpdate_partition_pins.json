@@ -20,11 +20,63 @@
 					"strict" : false
 				},
 				{
-					"name" : "rst",
+					"name" : "spi_reset",
+					"strict" : false
+				},
+				{
+					"name" : "cs_sensor",
+					"strict" : false
+				},
+				{
+					"name" : "sck_sensor",
+					"strict" : false
+				},
+				{
+					"name" : "mosi_sensor",
+					"strict" : false
+				},
+				{
+					"name" : "bandera_salud",
+					"strict" : false
+				},
+				{
+					"name" : "repuesto",
+					"strict" : false
+				},
+				{
+					"name" : "sck_repuesto",
+					"strict" : false
+				},
+				{
+					"name" : "miso_sensor",
 					"strict" : false
 				},
 				{
 					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "rst_neg",
+					"strict" : false
+				},
+				{
+					"name" : "btest",
+					"strict" : false
+				},
+				{
+					"name" : "bjugar",
+					"strict" : false
+				},
+				{
+					"name" : "bcomer",
+					"strict" : false
+				},
+				{
+					"name" : "bdormir",
+					"strict" : false
+				},
+				{
+					"name" : "btime",
 					"strict" : false
 				}
 			]

@@ -1,40 +1,34 @@
 module antirebote (
     input boton,
     input clk,
-    output reg botondebounced               
+    output reg rebotado             
 );
 
-reg previous;
-reg[21:0] contador;//conteo hasta 1.500.000
+reg previo; //valor previo del boton
+reg[21:0] contador;//conteo hasta 50ms
 
-wire compare;
-wire buttonneg; //prueba para botones normalmente abiertos
+
 
 
 initial begin
-	previous <= 0;
+	previo <= 0;
 	contador <= 0;
-	botondebounced <= 0;
+	rebotado <= 0;
 end
-
-assign buttonneg = ~boton;
-
-assign compare = previous^buttonneg;
-
 
 
 
 
 always @(posedge clk)begin
-	if(contador == 0)begin
-		if(compare == 1)begin
-			previous <= buttonneg;
-			contador <= 2500000;
-			botondebounced <= buttonneg;
+	if(contador == 2500000)begin
+		if(boton^previo)begin
+			previo <= boton;
+			contador <= 0;
+			rebotado <= boton;
 		end
 	end
 	else begin
-		contador <= contador - 1'b1;
+		contador <= contador + 1'b1;
 	end
 end
 endmodule

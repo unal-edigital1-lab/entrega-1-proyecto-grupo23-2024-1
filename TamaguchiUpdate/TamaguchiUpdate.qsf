@@ -42,7 +42,7 @@ set_global_assignment -name DEVICE EP4CE6E22C8
 set_global_assignment -name TOP_LEVEL_ENTITY TamaguchiUpdate
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 23.1STD.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "19:03:18  SEPTEMBER 07, 2024"
-set_global_assignment -name LAST_QUARTUS_VERSION "23.1std.0 Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "23.1std.1 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
@@ -62,7 +62,6 @@ set_location_assignment PIN_34 -to spi_sck
 set_location_assignment PIN_33 -to spi_mosi
 set_location_assignment PIN_31 -to spi_dc
 set_location_assignment PIN_32 -to spi_cs
-set_location_assignment PIN_90 -to rst
 set_location_assignment PIN_23 -to clk
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
@@ -72,14 +71,28 @@ set_global_assignment -name EDA_TEST_BENCH_NAME TamaguchiUpdate_tb -section_id e
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id TamaguchiUpdate_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME TamaguchiUpdate_tb -section_id TamaguchiUpdate_tb
 set_global_assignment -name EDA_TEST_BENCH_FILE TamaguchiUpdate_tb.v -section_id TamaguchiUpdate_tb
+set_location_assignment PIN_39 -to spi_reset
+set_global_assignment -name VERILOG_FILE controltiempo.v
 set_global_assignment -name VERILOG_FILE antirebote.v
-set_global_assignment -name VERILOG_FILE ili9225_controller.v
 set_global_assignment -name VERILOG_FILE TamaguchiUpdate.v
 set_global_assignment -name VERILOG_FILE control_principal.v
 set_global_assignment -name VERILOG_FILE spi_master.v
-set_global_assignment -name VERILOG_FILE TamaguchiUpdate_tb.v
-set_global_assignment -name VERILOG_FILE output_files/controltiempo.v
 set_global_assignment -name VERILOG_FILE Memoria.v
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform1.vwf
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name VERILOG_FILE Contol_ili.v
+set_global_assignment -name VERILOG_FILE ControlImagen.v
+set_global_assignment -name VERILOG_FILE ControlSensor.v
+set_global_assignment -name VERILOG_FILE spi_sensor.v
+set_location_assignment PIN_55 -to sck_sensor
+set_location_assignment PIN_58 -to cs_sensor
+set_location_assignment PIN_53 -to miso_sensor
+set_location_assignment PIN_54 -to mosi_sensor
+set_location_assignment PIN_51 -to btime
+set_location_assignment PIN_50 -to btest
+set_location_assignment PIN_42 -to bjugar
+set_location_assignment PIN_46 -to bdormir
+set_location_assignment PIN_44 -to bcomer
+set_location_assignment PIN_76 -to bandera_salud
+set_location_assignment PIN_90 -to rst_neg
+set_location_assignment PIN_43 -to repuesto
+set_location_assignment PIN_52 -to sck_repuesto
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

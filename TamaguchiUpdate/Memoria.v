@@ -2,17 +2,17 @@ module Memoria(
 input clk,
 input rst,
 input [2:0]adress,
-input [15:0]contador_pixel,
+input [7:0]contador_pixel,
 output reg[15:0]pixel
 );
 
-reg [15:0] memoria_estado_0[0:38719];
-reg [15:0] memoria_estado_1[0:38719];
-reg [15:0] memoria_estado_2[0:38719];
-reg [15:0] memoria_estado_3[0:38719];
-reg [15:0] memoria_estado_4[0:38719];
-reg [15:0] memoria_estado_5[0:38719];
-reg [15:0] memoria_estado_6[0:38719];
+reg [15:0] memoria_estado_0[0:168];
+reg [15:0] memoria_estado_1[0:168];
+reg [15:0] memoria_estado_2[0:168];
+reg [15:0] memoria_estado_3[0:168];
+reg [15:0] memoria_estado_4[0:168];
+reg [15:0] memoria_estado_5[0:168];
+reg [15:0] memoria_estado_6[0:168];
 
 initial begin
 	pixel <= 0;
