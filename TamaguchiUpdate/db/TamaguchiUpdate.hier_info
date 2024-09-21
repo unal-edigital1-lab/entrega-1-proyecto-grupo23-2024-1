@@ -6,18 +6,18 @@ bdormir => bdormir.IN1
 bcomer => bcomer.IN1
 btest_neg => btest.IN1
 btime_neg => btime.IN1
-spi_mosi <= ControlImagen:cimage.spi_mosi
-spi_cs <= ControlImagen:cimage.spi_cs
-spi_sck <= ControlImagen:cimage.spi_sck
-spi_dc <= ControlImagen:cimage.spi_dc
-spi_reset <= ControlImagen:cimage.spi_reset
+spi_mosi << ControlImagen:cimage.spi_mosi
+spi_cs << ControlImagen:cimage.spi_cs
+spi_sck << ControlImagen:cimage.spi_sck
+spi_dc << ControlImagen:cimage.spi_dc
+spi_reset << ControlImagen:cimage.spi_reset
 miso_sensor => miso_sensor.IN1
-cs_sensor <= ControlSensor:sensortemperatura.cs_sensor
-sck_sensor <= ControlSensor:sensortemperatura.sck_sensor
-mosi_sensor <= ControlSensor:sensortemperatura.mosi_sensor
-bandera_salud <= sensorsalud.DB_MAX_OUTPUT_PORT_TYPE
-repuesto <= miso_sensor.DB_MAX_OUTPUT_PORT_TYPE
-sck_repuesto <= ControlSensor:sensortemperatura.sck_sensor
+cs_sensor << ControlSensor:sensortemperatura.cs_sensor
+sck_sensor << ControlSensor:sensortemperatura.sck_sensor
+mosi_sensor << ControlSensor:sensortemperatura.mosi_sensor
+bandera_salud << sensorsalud.DB_MAX_OUTPUT_PORT_TYPE
+repuesto << miso_sensor.DB_MAX_OUTPUT_PORT_TYPE
+sck_repuesto << ControlSensor:sensortemperatura.sck_sensor
 
 
 |TamaguchiUpdate|antirebote:juego
