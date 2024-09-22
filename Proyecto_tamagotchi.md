@@ -13,6 +13,20 @@
 
 ## Objetivos 
 
+### Objetivo General:
+
+Desarrollar un sistema digital que simule una mascota virtual con comportamientos autónomos y que requiera interacción del usuario para mantener su estado de bienestar, utilizando un controlador lógico programable (FPGA) y técnicas de diseño digital.
+
+### Objetivos Específicos:
+
+* Diseñar y simular módulos digitales que gestionen los principales estados de la mascota virtual, como hambre, energía, diversión, y salud, basándose en las acciones del usuario.
+* Implementar un sistema de temporización que regule el paso del tiempo dentro del juego, permitiendo que la mascota envejezca y cambie su estado de acuerdo a las acciones del usuario y el tiempo transcurrido.
+* Desarrollar un sistema de filtrado anti-rebote para las señales de entrada, evitando fluctuaciones indeseadas al presionar botones que controlan las acciones del usuario.
+* Probar y verificar el comportamiento del sistema mediante simulaciones y pruebas en hardware real (FPGA), garantizando que la mascota reaccione de manera adecuada a las entradas del usuario y a las condiciones del entorno simulado.
+* Proveer un mecanismo de visualización que permita al usuario conocer el estado actual de la mascota virtual y las acciones necesarias para mantenerla viva y feliz.
+  
+Este proyecto será guiado por el profesor Ferney Alberto Beltrán Molina, quien supervisará el diseño, implementación y pruebas de los diferentes módulos que conforman el sistema de la mascota virtual.
+
 ## Introducción
 
 ## Proceso
