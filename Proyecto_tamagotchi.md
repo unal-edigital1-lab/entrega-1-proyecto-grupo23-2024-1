@@ -664,9 +664,9 @@ START_RESET: begin
 
 #### Control imagen
 
-![]()
+![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/pintadoderojo.jpeg)
 
-![]()
+![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/semipintadoderojo.jpeg)
 
 
 ### IMPLEMENTACIÓN SENSOR:
