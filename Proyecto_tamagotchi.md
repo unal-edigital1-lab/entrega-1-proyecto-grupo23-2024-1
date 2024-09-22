@@ -121,7 +121,7 @@ Para obtener estas secuencias, el grupo utilizó un analizador de señales junto
 #### START_RESET
 
 
-!()[]
+!()[https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/start_reset.jpeg]
 
 ```verilog
 START_RESET: begin
