@@ -218,7 +218,8 @@ Dispositivo Esclavo (Sensor): Es el dispositivo que recibe las órdenes del maes
 ## Funcionamiento pantalla ili9225
 
 
-## Interpretación de los códigos: 
+## INTERPRETACIÓN DE LOS CÓDIGOS: 
+
 
 ### CÓDIGO ANTIREBOTE:
 
