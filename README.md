@@ -220,7 +220,8 @@ Dispositivo Esclavo (Sensor): Es el dispositivo que recibe las órdenes del maes
 
 ## Interpretación de los códigos: 
 
-### Código antirebote:
+### CÓDIGO ANTIREBOTE:
+
 
 Se hizo un módulo Verilog llamado antirebote implementa un sistema de anti-rebote para un botón. Los botones físicos suelen tener un comportamiento de "rebote" (pequeñas fluctuaciones en la señal cuando son presionados), lo que puede causar múltiples activaciones no deseadas. El objetivo de este módulo es eliminar esos rebotes y proporcionar una señal estable cuando el botón es presionado.
 
@@ -228,13 +229,13 @@ Procedemos a desglosar el código línea por línea:
 
 DEFINICIÓN DEL MÓDULO Y ENTRADAS/SALIDAS:
 
-module antirebote (
+    module antirebote (
     input boton,
     input clk,
-    output reg rebotado            
-);
+    output reg rebotado );
 
-entradas:
+ENTRADAS:
+
 boton: La señal del botón físico que podría tener rebotes.
 clk: Señal de reloj que controla la secuencia de operaciones.
 
@@ -243,47 +244,42 @@ rebotado: Señal de salida filtrada, libre de rebotes. Esta señal refleja el es
 
 REGISTROS INTERNOS:
 
-reg previo; //valor previo del boton
-reg[21:0] contador; //conteo hasta 50ms
+    reg previo; //valor previo del boton
+    reg[21:0] contador; //conteo hasta 50ms
 
 previo: Almacena el valor anterior del botón para detectar cambios en su estado.
 contador: Un contador de 22 bits que se utiliza para medir el tiempo durante el cual el botón debe estar estable para que se considere como una acción válida (sin rebotes). Este contador se utiliza para ignorar fluctuaciones rápidas en la señal del botón.
 
 INICIALIZACIÓN:
 
-initial begin
-previo <= 0;
-contador <= 0;
-rebotado <= 0;
-end
+    initial begin
+    previo <= 0; 
+    contador <= 0; 
+    rebotado <= 0;
+    end
 
-El bloque initial establece los valores iniciales:
-previo: Se inicia en 0, lo que significa que inicialmente no se detecta ninguna pulsación de botón.
+EL BLOQUE INITIAL ESTABLECE LOS VALORES INICIALES:
+PREVIO: Se inicia en 0, lo que significa que inicialmente no se detecta ninguna pulsación de botón.
 contador: Comienza en 0, lo que significa que aún no se ha comenzado a contar el tiempo de estabilidad del botón.
-rebotado: Se inicia en 0, lo que significa que inicialmente la salida no indica ninguna pulsación de botón.
+REBOTADO: Se inicia en 0, lo que significa que inicialmente la salida no indica ninguna pulsación de botón.
 Lógica secuencial
 
-always @(posedge clk) begin
-
-  if (contador == 2500000) begin
-    
+    always @(posedge clk) begin
+    if (contador == 2500000) begin
     if (boton ^ previo) begin
       previo <= boton;
       contador <= 0;
       rebotado <= boton;
     end
-    
-  end else begin
-  
+    end else begin
     contador <= contador + 1'b1;
-    
-  end
-  
-end
+    end
+    end
 
 EXPLICACIÓN PASO A PASO:
 
 Sensibilidad al flanco positivo del reloj (posedge clk):
+
 Cada vez que hay un pulso de reloj, el bloque always se ejecuta.
 
 Comprobación del valor del contador:
@@ -298,6 +294,102 @@ La salida rebotado también se actualiza para reflejar el nuevo estado del botó
 Si el estado del botón no ha cambiado:
 Si el contador no ha alcanzado 2500000, simplemente se incrementa el valor del contador. Esto permite que el sistema continúe midiendo el tiempo de estabilidad del botón.
 
+Por todo esto podemos decir un resumen del codgio, el cual es el siguiente :
+
+* El módulo espera hasta que el botón mantenga un estado estable (sin fluctuaciones) durante 50 ms antes de cambiar el valor de la señal de salida rebotado.
+* Si el botón cambia de estado (de presionado a no presionado o viceversa) pero el cambio ocurre muy rápido (debido a los rebotes), este módulo lo ignora hasta que el botón permanezca en un estado estable durante el tiempo configurado.
+* Este sistema asegura que los pulsos de un botón físico no provoquen cambios indeseados debido a los rebotes mecánicos, proporcionando una señal de salida más limpia.
+
+
+### CÓDIGO DE CONTROL DE TIEMPO:
+
+Se implementó un código de Verilog implementa un módulo llamado controltiempo, que genera una señal secondpassed para indicar que ha transcurrido una cierta cantidad de tiempo (en segundos o fracciones de segundo). El tiempo de espera puede acelerarse si se presiona un botón (boton_acelerar). 
+
+Se procede a desglosarlo línea por línea.
+
+DEFINICIÓN DEL MÓDULO Y ENTRADAS/SALIDAS:
+
+    module controltiempo(
+    input clk,
+    input reset,
+    input boton_acelerar,
+    output reg secondpassed
+    );
+
+ENTRADAS:
+
+CLK: Señal de reloj (clock) que controla el ritmo del módulo.\
+
+RESET: Señal de reinicio que restablece el contador y las salidas.
+
+BOTON_ACELERAR: Si está activado, acelera el paso del tiempo.
+
+SALIDAS:
+
+SECONDPASSED: Una señal que indica si ha pasado el tiempo definido (puede ser un segundo o menos si el botón boton_acelerar está presionado).
+
+REGISTROS INTERNOS
+
+    reg [35:0]contador;
+    wire [35:0]limite;
+
+CONTADOR: Un registro de 36 bits que cuenta el número de ciclos de reloj (clk).
+
+LIMITE: ES un cable (wire) que define cuántos ciclos de reloj deben pasar antes de que secondpassed cambie de estado (indicando que ha pasado el tiempo especificado). El valor de este límite depende de si el botón boton_acelerar está presionado o no.
+
+BLOQUE INITIAL
+
+    initial begin
+    contador <= 0;
+    secondpassed <= 0;
+    end
+
+Esta es la sección de inicialización. Se establece que al comenzar, el contador está en 0 y la señal secondpassed también está en 0. Esto garantiza que el módulo comience en un estado limpio.
+
+ASIGNACIÓN CONDICIONAL DEL LÍMITE:
+
+    assign limite = (boton_acelerar) ? 'd2000000 : 'd25000000;
+
+EL VALOR DE LIMITE SE ASIGNA DE FORMA CONDICIONAL:
+
+* Si boton_acelerar está presionado (boton_acelerar == 1), el límite se reduce a 2,000,000 ciclos de reloj (un valor más bajo que acelera el conteo).
+* Si boton_acelerar no está presionado (boton_acelerar == 0), el límite se establece en 25,000,000 ciclos, que podría representar aproximadamente 1 segundo (dependiendo de la frecuencia del reloj).
+
+LÓGICA SECUENCIAL
+
+    always@(posedge clk, posedge reset) begin
+     if(reset) begin 
+      contador <= 0;
+      secondpassed <= 0;
+     end else begin
+    if(contador > limite) begin
+      secondpassed <= ~secondpassed;
+      contador <= 0;
+    end else begin
+      contador <= contador + 1;
+    end
+    end
+    end
+    
+Sensibilidad al flanco positivo del reloj (posedge clk) o al flanco positivo de reset (posedge reset):
+
+* Si reset es activado, el contador se reinicia a 0 y secondpassed también se restablece a 0.
+* Si no está activado el reset, se comienza el proceso de conteo:
+* Si el valor del contador ha superado el limite:
+
+Se invierte el valor de secondpassed, indicando que ha pasado el tiempo definido (el ciclo de tiempo ha terminado).
+
+El contador se reinicia a 0 para comenzar un nuevo ciclo de conteo.
+
+Si el contador no ha alcanzado el límite, simplemente se incrementa en 1.
+
+Se resume el funcionamiento del código el cual es el siguiente:
+
+* El módulo comienza con contador en 0 y secondpassed en 0.
+* Con cada pulso de reloj (clk), el contador se incrementa.
+* Si el botón boton_acelerar está presionado, el limite es menor (2,000,000 ciclos) y el tiempo entre cambios de secondpassed es más rápido.
+* Si el botón no está presionado, el limite es mayor (25,000,000 ciclos) y el tiempo entre cambios de secondpassed es más lento (representando aproximadamente 1 segundo).
+* Cuando reset se activa, todo el sistema vuelve a su estado inicial (contador y secondpassed a 0).
 
 
 
