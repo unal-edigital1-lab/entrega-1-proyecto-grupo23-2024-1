@@ -4,11 +4,11 @@
 
 -Jhon Michael Valencia Renteria
 
--Daniel
+-Daniel Chacon
 
 -Kevin Adrian Guerra Cifuentes
 
--David 
+-David Valderrama
 
 # PROYECTO TAMAGOTCHI
 
