@@ -39,7 +39,7 @@ En este proyecto, se implementará un sistema que emula una mascota virtual cont
 
 ### Diagrama de Caja Negra
 
-![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/diagrama_caja_negra.png)
+![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/cajanegracorreigda.png)
 
 ### ANTIRREBOTE Y CONTROL DEL TIEMPO:
 
