@@ -13,6 +13,10 @@
 
 ## Proceso
 
+### Diagrama de Caja Negra
+
+![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/diagrama_caja_negra.png)
+
 ### Antirrebote y control del tiempo
 
 
