@@ -223,6 +223,32 @@ START_RESET: begin
 
 ```
 
+#### INIT_SEQ_1
+![]()
+```verilog
+
+```
+#### INIT_SEQ_2
+![]()
+```verilog
+
+```
+#### INIT_SEQ_3
+![]()
+```verilog
+
+```
+#### INIT_SEQ_4 
+![]()
+```verilog
+
+```
+#### ADRESS_SEQ 
+![]()
+```verilog
+
+```
+
 
 ### Implementación Sensor
 
