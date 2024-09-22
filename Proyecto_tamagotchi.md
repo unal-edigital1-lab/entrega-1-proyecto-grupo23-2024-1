@@ -662,6 +662,13 @@ START_RESET: begin
 ```
 
 
+#### Control imagen
+
+![]()
+
+![]()
+
+
 ### IMPLEMENTACIÓN SENSOR:
 
 
