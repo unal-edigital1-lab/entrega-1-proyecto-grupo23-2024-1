@@ -218,5 +218,83 @@ Dispositivo Esclavo (Sensor): Es el dispositivo que recibe las órdenes del maes
 ## Funcionamiento pantalla ili9225
 
 
+## Interpretación de los códigos: 
+
+### Código antirebote:
+
+Se hizo un módulo Verilog llamado antirebote implementa un sistema de anti-rebote para un botón. Los botones físicos suelen tener un comportamiento de "rebote" (pequeñas fluctuaciones en la señal cuando son presionados), lo que puede causar múltiples activaciones no deseadas. El objetivo de este módulo es eliminar esos rebotes y proporcionar una señal estable cuando el botón es presionado.
+
+Procedemos a desglosar el código línea por línea:
+
+DEFINICIÓN DEL MÓDULO Y ENTRADAS/SALIDAS:
+
+module antirebote (
+    input boton,
+    input clk,
+    output reg rebotado            
+);
+
+entradas:
+boton: La señal del botón físico que podría tener rebotes.
+clk: Señal de reloj que controla la secuencia de operaciones.
+
+Salida:
+rebotado: Señal de salida filtrada, libre de rebotes. Esta señal refleja el estado del botón pero solo cambia cuando se ha confirmado que el botón fue presionado de manera estable (sin rebotes).
+
+REGISTROS INTERNOS:
+
+reg previo; //valor previo del boton
+reg[21:0] contador; //conteo hasta 50ms
+
+previo: Almacena el valor anterior del botón para detectar cambios en su estado.
+contador: Un contador de 22 bits que se utiliza para medir el tiempo durante el cual el botón debe estar estable para que se considere como una acción válida (sin rebotes). Este contador se utiliza para ignorar fluctuaciones rápidas en la señal del botón.
+
+INICIALIZACIÓN:
+
+initial begin
+previo <= 0;
+contador <= 0;
+rebotado <= 0;
+end
+
+El bloque initial establece los valores iniciales:
+previo: Se inicia en 0, lo que significa que inicialmente no se detecta ninguna pulsación de botón.
+contador: Comienza en 0, lo que significa que aún no se ha comenzado a contar el tiempo de estabilidad del botón.
+rebotado: Se inicia en 0, lo que significa que inicialmente la salida no indica ninguna pulsación de botón.
+Lógica secuencial
+
+always @(posedge clk) begin
+ if (contador == 2500000) begin
+    if (boton ^ previo) begin
+      previo <= boton;
+      contador <= 0;
+      rebotado <= boton;
+    end
+  end else begin
+    contador <= contador + 1'b1;
+  end
+end
+
+EXPLICACIÓN PASO A PASO:
+
+Sensibilidad al flanco positivo del reloj (posedge clk):
+Cada vez que hay un pulso de reloj, el bloque always se ejecuta.
+
+Comprobación del valor del contador:
+Si el contador ha alcanzado el valor 2500000, lo que significa que ha transcurrido aproximadamente 50 ms (dependiendo de la frecuencia del reloj), entonces se verifica si el estado actual del botón (boton) es diferente del valor previo almacenado en previo.
+El número 2500000 fue elegido como un tiempo de espera (debounce) para eliminar los rebotes. Asumiendo un reloj de 50 MHz, esto sería un retardo de aproximadamente 50 ms.
+Si el estado del botón ha cambiado (boton ^ previo):
+^ es el operador XOR, que compara si el valor actual de boton es diferente del valor anterior almacenado en previo.
+Si boton y previo son diferentes, significa que el botón ha cambiado de estado (presionado o liberado) de manera estable.
+Se actualiza previo para reflejar el nuevo valor del botón.
+El contador se reinicia a 0 para empezar a contar el tiempo nuevamente.
+La salida rebotado también se actualiza para reflejar el nuevo estado del botón, ya libre de rebotes.
+Si el estado del botón no ha cambiado:
+Si el contador no ha alcanzado 2500000, simplemente se incrementa el valor del contador. Esto permite que el sistema continúe midiendo el tiempo de estabilidad del botón.
+
+
+
+
+
 
 
