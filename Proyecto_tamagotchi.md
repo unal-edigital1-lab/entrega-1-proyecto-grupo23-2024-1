@@ -803,7 +803,7 @@ Se resume el funcionamiento del código el cual es el siguiente:
 
 ## Conclusiones
 
-
+* Integración exitosa de módulos digitales: A través del desarrollo del proyecto, se logró implementar un sistema que simula el comportamiento de una mascota virtual, integrando módulos que controlan los estados de hambre, diversión, energía y salud. Cada módulo interactúa de forma coherente, logrando una simulación fluida y autónoma de la mascota virtual.
 
 
 
