@@ -1,9 +1,13 @@
 # Entrega final del proyecto
 
 -Jhon Michael Valencia Renteria
+
 -Daniel
+
 -Kevin Adrian Guerra Cifuentes
+
 -David 
+
 # PROYECTO TAMAGOTCHI
 
 
