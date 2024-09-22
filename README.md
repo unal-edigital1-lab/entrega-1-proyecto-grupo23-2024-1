@@ -392,6 +392,144 @@ Se resume el funcionamiento del código el cual es el siguiente:
 * Cuando reset se activa, todo el sistema vuelve a su estado inicial (contador y secondpassed a 0).
 
 
+### Código control principal:
+
+Se implementó un código Verilog es un módulo llamado control_principal, el cual parece implementar el control de un sistema basado en estados para una especie de mascota virtual, con funciones relacionadas con hambre, diversión, energía y otros parámetros. Este sistema esta programado para reaccionar a diversos eventos (como presionar botones o señales externas), ajustando el estado de la mascota. 
+
+Se procede a explicar línea por línea el codigo de control principal:
+
+DEFINICIÓN DEL MÓDULO Y ENTRADAS/SALIDAS
+
+    module control_principal(
+    input wire clk,
+    input wire reset,
+    input wire secondpassed,
+    input wire boton_dormir,
+    input wire boton_jugar,
+    input wire boton_comer,
+    input wire test,
+    input wire enfermo_sensor,
+    output reg [2:0]hambre,
+    output reg [2:0]diversion,
+    output reg [2:0]energia,
+    output reg [2:0]estado,
+    output reg modo
+    );
+    
+EL MÓDULO CONTROL_PRINCIPAL TIENE VARIAS ENTRADAS Y SALIDAS:
+
+ENTRADAS: CLK (reloj), reset (reiniciar el sistema), secondpassed (indica si ha pasado un segundo), boton_dormir, boton_jugar, boton_comer, test y enfermo_sensor.
+
+SALIDAS: REGISTROS de 3 bits hambre, diversion, energia, estado, y un modo modo.
+
+Estas entradas/salidas son cables (wire y reg), que representan señales que cambian según el tiempo o los eventos.
+
+REGISTROS INTERNOS Y FLAGS
+
+    reg [10:0] contador_sueno;
+    reg [10:0] contador_diversion;
+    reg [10:0] contador_hambre;
+    reg [10:0] contador_dormir;
+    
+Estos registros son contadores que se utilizan para medir el tiempo transcurrido desde que comenzó a afectar cada uno de los parámetros de la mascota (hambre, diversión, energía, sueño, etc.).
+
+    reg [35:0] contador_reset;
+    reg [35:0] contador_test;
+    reg dormido;
+    reg enfermo_control;
+    wire enfermo;
+    assign enfermo = enfermo_control | enfermo_sensor;
+  
+* contador_reset y contador_test son contadores de alta precisión.
+* dormido indica si la mascota está durmiendo.
+* enfermo_control controla el estado de enfermedad, y enfermo es una señal combinada que indica si está enfermo en base a enfermo_control o el sensor enfermo_sensor.
+
+      reg muerte;
+      reg flag_jugar;
+      reg flag_dormir;
+      reg flag_time;
+      reg flag_comer;
+      reg flag_test;
+  
+* muerte indica si la mascota ha muerto.
+* Los flags (flag_jugar, flag_dormir, flag_time, flag_comer, flag_test) son usados para prevenir que los eventos se repitan en un solo ciclo de reloj.
+
+INICIALIZACIÓN:
+
+    initial begin
+    hambre <= 3;
+    diversion <= 3;
+    energia <= 3;
+    dormido <= 0;
+    contador_sueno <= 0;
+    contador_diversion <= 0;
+    contador_hambre <= 0;
+    contador_dormir <= 0;
+    contador_reset <= 0;
+    contador_test <= 0;
+    modo <= 0;
+    enfermo_control <= 0;
+    muerte <= 0;
+    flag_jugar <= 0;
+    flag_dormir <= 0;
+    flag_time <= 0;
+    flag_comer <= 0;
+    flag_test <= 0;
+    end
+    
+Esta parte inicializa los registros en valores predeterminados. La mascota comienza con hambre, diversión y energía en nivel 3, y no está dormida ni enferma. También se ponen a 0 todos los contadores y flags.
+
+ESTADOS PREDEFINIDOS:
+
+    localparam FELIZ = 0;
+    localparam HAMBRIENTO = 1;
+    localparam CANSADO = 2;
+    localparam ABURRIDO = 3;
+    localparam ENFERMO = 4;
+    localparam DORMIDO = 5;
+    localparam MUERTO = 6;
+    
+Define varios estados predefinidos: FELIZ, HAMBRIENTO, CANSADO, ABURRIDO, ENFERMO, DORMIDO, y MUERTO. Estos son los diferentes estados en los que puede estar la mascota.
+Lógica combinacional para el estado
+
+    always @(*) begin
+      if(!muerte) begin
+    if(diversion < 2 & energia < 2 & hambre < 2) begin
+      estado <= 6;  // MUERTO
+    end else if (enfermo) begin
+      estado <= 4;  // ENFERMO
+    end else if (dormido) begin
+      estado <= 5;  // DORMIDO
+    end else if (energia < 2) begin
+      estado <= 2;  // CANSADO
+    end else if (diversion < 2) begin
+      estado <= 3;  // ABURRIDO
+    end else if (hambre < 2) begin
+      estado <= 1;  // HAMBRIENTO
+    end else begin
+      estado <= 0;  // FELIZ
+    end
+    end else begin
+    estado <= 6;  // MUERTO
+    end
+    end
+    
+Determina el estado de la mascota basándose en varios factores. Si tiene hambre, poca energía y poca diversión, la mascota muere. Si está enferma o dormida, su estado cambia respectivamente. Si tiene energía baja, hambre o aburrimiento, el estado se ajusta según esos parámetros.
+
+BLOQUE SECUENCIAL DE ACTUALIZACIÓN:
+
+    always @(posedge clk) begin
+    if(secondpassed) begin
+    flag_time <= 1;
+    if(!flag_time) begin
+      if (!modo & !muerte) begin // Actualiza contadores de hambre, diversión y energía
+      
+Aquí se actualizan los contadores y los niveles de los parámetros cada vez que secondpassed se activa, lo cual indica que ha pasado un segundo. Por ejemplo, si un contador llega a un cierto valor (como contador_diversion), se reduce el nivel de diversión.
+
+También se controla el modo de juego, se reinician los contadores si es necesario, y se verifica si los botones de acción (boton_comer, boton_jugar, boton_dormir) han sido presionados para modificar el estado de la mascota.
+
+Este es un esquema general del funcionamiento. La lógica se organiza para que, dependiendo de las señales recibidas (como botones y paso del tiempo), los parámetros internos cambien, ajustando el estado de la mascota virtual. 
+
 
 
 
