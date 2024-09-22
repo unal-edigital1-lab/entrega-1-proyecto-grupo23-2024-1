@@ -112,7 +112,116 @@ end
 
 Cuando los datos están disponibles y el control indica que se deben leer, se almacenan en el registro correspondiente, y el módulo deja de estar apto para recibir más datos. Si idle es igual a 0, el registro sck se niega; sin embargo, si sck es 1, se actualiza spi_mosi para enviar los datos almacenados. El contador tiene 3 bits, por lo que idle se establecerá en 1 cuando el contador alcance 111. Cuando idle es 1, se eleva el registro sck para indicar que se debe enviar el último dato.
 
+### controlador de la pantalla
 
+El módulo del controlador de la pantalla será responsable de gestionar la carga de varias secuencias de inicialización y el envío de datos hacia la pantalla. Incluirá una secuencia de reinicio, cuatro secuencias de inicialización, y una secuencia de configuración de dirección que permitirá obtener y mostrar la imagen deseada.
+
+Para obtener estas secuencias, el grupo utilizó un analizador de señales junto con el software Logic 2, extrayendo las señales mediante un Arduino con una librería previamente implementada. Este proceso permitió capturar y analizar las secuencias necesarias para el correcto funcionamiento del controlador de la pantalla.
+
+#### START_RESET
+
+
+!()[]
+
+```verilog
+START_RESET: begin
+				case (step_reset)
+				0: begin
+					spi_sck_reg <= 1;
+					if(delay_counter == DELAY_10ms)begin //es 60 ms 
+						delay_counter <= 0;
+						step_reset <= 1;
+					end
+					else begin
+						delay_counter <= delay_counter + 1;
+					end
+				end
+				1: begin
+					spi_reset <= 0;
+					if(delay_counter == DELAY_10us)begin
+						delay_counter <= 0;
+						step_reset <= 2;
+					end
+					else begin
+						delay_counter <= delay_counter + 1;
+					end
+				end
+				2: begin
+					spi_dc_reg <= 0;
+					if(delay_counter == DELAY_10us)begin
+						delay_counter <= 0;
+						step_reset <= 3;
+					end
+					else begin
+						delay_counter <= delay_counter + 1;
+					end
+				end
+				3: begin
+					spi_cs_reg <= 0;
+					if(delay_counter == DELAY_10us/2)begin
+						delay_counter <= 0;
+						step_reset <= 4;
+					end
+					else begin
+						delay_counter <= delay_counter + 1;
+					end
+				end	
+				4: begin
+					spi_cs_reg <= 1;
+					if(delay_counter == DELAY_10us)begin
+						delay_counter <= 0;
+						step_reset <= 5;
+					end
+					else begin
+						delay_counter <= delay_counter + 1;
+					end
+				end
+				5: begin
+					spi_sck_reg <= 0;
+					if(delay_counter == DELAY_10us/2)begin
+						delay_counter <= 0;
+						step_reset <= 6;
+					end
+					else begin
+						delay_counter <= delay_counter + 1;
+					end
+				end
+				6: begin
+					spi_reset <= 1;
+					if(delay_counter == DELAY_10us*100)begin
+						delay_counter <= 0;
+						step_reset <= 7;
+					end
+					else begin
+						delay_counter <= delay_counter + 1;
+					end
+				end
+				7:begin
+					spi_reset <= 0;
+					if(delay_counter == DELAY_10ms)begin
+						delay_counter <= 0;
+						step_reset <= 8;
+					end
+					else begin
+						delay_counter <= delay_counter + 1;
+					end
+				end
+				8:begin
+					spi_reset <= 1;
+					if(delay_counter == DELAY_10ms)begin
+						delay_counter <= 0;
+						state <= WAIT;
+						state_next_wait <= SEND_INIT_1;
+						delay_limit <= DELAY_10ms;//50ms
+						step_reset <= 0;
+					end
+					else begin
+						delay_counter <= delay_counter + 1;
+					end
+				end
+				endcase
+
+```
 
 
 ### Implementación Sensor
