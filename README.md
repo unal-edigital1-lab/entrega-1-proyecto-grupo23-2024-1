@@ -264,15 +264,21 @@ rebotado: Se inicia en 0, lo que significa que inicialmente la salida no indica 
 Lógica secuencial
 
 always @(posedge clk) begin
- if (contador == 2500000) begin
+
+  if (contador == 2500000) begin
+    
     if (boton ^ previo) begin
       previo <= boton;
       contador <= 0;
       rebotado <= boton;
     end
+    
   end else begin
+  
     contador <= contador + 1'b1;
+    
   end
+  
 end
 
 EXPLICACIÓN PASO A PASO:
