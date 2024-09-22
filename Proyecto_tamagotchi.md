@@ -677,6 +677,7 @@ Se procede a explicar línea por línea el codigo de control principal:
 
 DEFINICIÓN DEL MÓDULO Y ENTRADAS/SALIDAS
 
+```verilog
     module control_principal(
     input wire clk,
     input wire reset,
@@ -692,7 +693,7 @@ DEFINICIÓN DEL MÓDULO Y ENTRADAS/SALIDAS
     output reg [2:0]estado,
     output reg modo
     );
-    
+```
 EL MÓDULO CONTROL_PRINCIPAL TIENE VARIAS ENTRADAS Y SALIDAS:
 
 ENTRADAS: CLK (reloj), reset (reiniciar el sistema), secondpassed (indica si ha pasado un segundo), boton_dormir, boton_jugar, boton_comer, test y enfermo_sensor.
@@ -703,36 +704,40 @@ Estas entradas/salidas son cables (wire y reg), que representan señales que cam
 
 REGISTROS INTERNOS Y FLAGS
 
+```verilog
     reg [10:0] contador_sueno;
     reg [10:0] contador_diversion;
     reg [10:0] contador_hambre;
     reg [10:0] contador_dormir;
-    
+```
 Estos registros son contadores que se utilizan para medir el tiempo transcurrido desde que comenzó a afectar cada uno de los parámetros de la mascota (hambre, diversión, energía, sueño, etc.).
 
+```verilog
     reg [35:0] contador_reset;
     reg [35:0] contador_test;
     reg dormido;
     reg enfermo_control;
     wire enfermo;
     assign enfermo = enfermo_control | enfermo_sensor;
-  
+```
 * contador_reset y contador_test son contadores de alta precisión.
 * dormido indica si la mascota está durmiendo.
 * enfermo_control controla el estado de enfermedad, y enfermo es una señal combinada que indica si está enfermo en base a enfermo_control o el sensor enfermo_sensor.
 
+```verilog
       reg muerte;
       reg flag_jugar;
       reg flag_dormir;
       reg flag_time;
       reg flag_comer;
       reg flag_test;
-  
+ ``` 
 * muerte indica si la mascota ha muerto.
 * Los flags (flag_jugar, flag_dormir, flag_time, flag_comer, flag_test) son usados para prevenir que los eventos se repitan en un solo ciclo de reloj.
 
 INICIALIZACIÓN:
 
+```verilog
     initial begin
     hambre <= 3;
     diversion <= 3;
@@ -753,11 +758,12 @@ INICIALIZACIÓN:
     flag_comer <= 0;
     flag_test <= 0;
     end
-    
+```  
 Esta parte inicializa los registros en valores predeterminados. La mascota comienza con hambre, diversión y energía en nivel 3, y no está dormida ni enferma. También se ponen a 0 todos los contadores y flags.
 
 ESTADOS PREDEFINIDOS:
 
+```verilog
     localparam FELIZ = 0;
     localparam HAMBRIENTO = 1;
     localparam CANSADO = 2;
@@ -765,10 +771,11 @@ ESTADOS PREDEFINIDOS:
     localparam ENFERMO = 4;
     localparam DORMIDO = 5;
     localparam MUERTO = 6;
-    
+```    
 Define varios estados predefinidos: FELIZ, HAMBRIENTO, CANSADO, ABURRIDO, ENFERMO, DORMIDO, y MUERTO. Estos son los diferentes estados en los que puede estar la mascota.
 Lógica combinacional para el estado
 
+```verilog
     always @(*) begin
       if(!muerte) begin
     if(diversion < 2 & energia < 2 & hambre < 2) begin
@@ -790,17 +797,18 @@ Lógica combinacional para el estado
     estado <= 6;  // MUERTO
     end
     end
-    
+```    
 Determina el estado de la mascota basándose en varios factores. Si tiene hambre, poca energía y poca diversión, la mascota muere. Si está enferma o dormida, su estado cambia respectivamente. Si tiene energía baja, hambre o aburrimiento, el estado se ajusta según esos parámetros.
 
 BLOQUE SECUENCIAL DE ACTUALIZACIÓN:
 
+```verilog
     always @(posedge clk) begin
     if(secondpassed) begin
     flag_time <= 1;
     if(!flag_time) begin
       if (!modo & !muerte) begin // Actualiza contadores de hambre, diversión y energía
-      
+```     
 Aquí se actualizan los contadores y los niveles de los parámetros cada vez que secondpassed se activa, lo cual indica que ha pasado un segundo. Por ejemplo, si un contador llega a un cierto valor (como contador_diversion), se reduce el nivel de diversión.
 
 También se controla el modo de juego, se reinician los contadores si es necesario, y se verifica si los botones de acción (boton_comer, boton_jugar, boton_dormir) han sido presionados para modificar el estado de la mascota.
