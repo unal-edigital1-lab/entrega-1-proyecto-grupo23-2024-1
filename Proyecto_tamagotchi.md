@@ -29,6 +29,10 @@ Este proyecto será guiado por el profesor Ferney Alberto Beltrán Molina, quien
 
 ## Introducción
 
+El proyecto Mascota Virtual (Tamagotchi) está inspirado en los populares dispositivos electrónicos de los años 90, donde los usuarios cuidaban de una mascota digital. Este tipo de mascota requiere atención constante en áreas como alimentación, diversión, descanso y salud, lo que permite simular la experiencia de cuidado y responsabilidad de una mascota real.
+
+En este proyecto, se implementará un sistema que emula una mascota virtual controlada a través de diferentes entradas, como botones para realizar acciones específicas (alimentar, jugar, dormir) y sensores que detectan el estado de la mascota. El sistema también incluye un mecanismo de control del tiempo y de filtrado de señales de entrada (como el anti-rebote de botones), asegurando un comportamiento estable y predecible de la mascota virtual.
+
 ## Proceso
 
 ### Diagrama de Caja Negra
