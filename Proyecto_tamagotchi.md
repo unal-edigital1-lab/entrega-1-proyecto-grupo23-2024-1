@@ -664,9 +664,43 @@ START_RESET: begin
 
 #### Control imagen
 
+Lo primero que se hizo fue ajustar la resolución de la pantalla para poder manejarla de la siguiente manera:
+
+```verilog
+reg [15:0] current_pixel;
+reg transmission_done;
+reg [15:0] contador_pixel;
+
+wire [7:0] modulex;
+wire [4:0] x;
+wire [4:0] y;
+
+wire [7:0] c_pixel_imagen;
+wire [15:0] pixel_actual;
+
+assign modulex = contador_pixel % 220;
+assign x = modulex / 11;
+assign y = contador_pixel / 2420;
+assign c_pixel_imagen = x - 1 + (y - 2) * 13;
+
+
+```
+Donde se escala a una resolución de 20 de largo(x) y 16 de alto(y).
+
+Para probar el funcionamiento de la pantalla, se pintó toda la superficie de rojo, tal como se muestra en la imagen. La pantalla maneja el formato RGB565, configurando todos los píxeles en F800.
+
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/pintadoderojo.jpeg)
 
+
+Para visualizar el área donde irán las caras del tamagotchi, se pintó en rojo el recuadro correspondiente. Esto se hizo utilizando el valor 0xF800 en formato RGB565, asegurando que la sección destaque claramente en la pantalla.
+
 ![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/semipintadoderojo.jpeg)
+
+
+#### Memoria
+
+
+
 
 
 ### IMPLEMENTACIÓN SENSOR:
