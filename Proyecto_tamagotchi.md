@@ -1,4 +1,4 @@
-# Entrega final del proyecto
+# ENTREGA FINAL DEL PROYECTO
 
 -Jhon Michael Valencia Renteria
 
