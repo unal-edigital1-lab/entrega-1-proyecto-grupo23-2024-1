@@ -753,6 +753,105 @@ endmodule
 
 
 ### IMPLEMENTACIÓN SENSOR:
+#### Modulo spi_sensor
+```verilog
+ input clk, 
+ input rst,
+ input miso_sensor,
+ input [7:0]data_1,
+ input [7:0]data_2,
+ input [7:0]data_3,
+ input [2:0]modo,
+ input load_data,
+ output reg cs_sensor,
+ output wire sck_sensor,
+ output reg mosi_sensor,
+ output reg bandera_salud,
+ output reg ready
+);
+```
+El módulo spi_sensor que controla la comunicación se compone 8 entradas y 5 salidas. 
+
+####Las entradas son: 
+
+1) Reloj (clk): Establece la pauta para coordinar la ejecucion de los procesos internos del modulo
+
+2) Reset (rst): Restablece los registros a un valor predeterminado y los procesos que dependen de estos
+
+3) Inputs data_1, data_2 y data_3: Contienen los paquetes de datos con las instrucciones que se enviaran por el mosi al sensor
+
+4) Modo (modo):  Se utiliza decidir si se envian 2 o 3 paquetes de datos de 8 bits
+
+5) Master input slave output (miso_sensor) Recibe las mediciones de temperatura del sensor con valores hexadecimal en binario.
+
+6) Load_data (load): Indica al modulo cuando debe enviarle datos al sensor.
+
+####Las salidas son:
+
+1) Chip select (cs_sensor): Se encarga de informar al sensor que va a empezar a enviar y recibir instrucciones y activa el relog de comunicacion (sck_sensor).
+
+2) Reloj serial(sck_sensor): Indica cuándo los datos deben ser leidos y escritos en sensor para un optmo control de flujo de datos y determina la velocidad de transmision.
+   
+3) Master output slave input (Mosi_sensor): Envia las instrucciones al sensor de configuracion y lectura de datos.
+
+4) Bandera (bandera_salud): Es con el que se establece si la mascota virtual esta saludable o enferma.
+
+5) Señal de confirmacion (Ready): Indica que el modulo esta listo para realizar la comunicación.
+
+#### Declarando los registros, asignando el Relog serial y estableciendo parametros de retardo:
+
+```verilog
+reg [20:0]delay_counter;
+reg[7:0]data_read_send;
+
+reg [1:0]rst_state;
+reg [3:0] rst_counter;
+
+reg hab_sck;
+reg reg_sck;
+
+reg[2:0]chains_sended;
+
+assign sck_sensor = hab_sck&reg_sck;
+
+wire [0:7]data_inverted = data_read_send[7:0];
+
+localparam DELAY_60ms = 93750;
+localparam DELAY_1s = 1562500; // a reloj de 1.562Mhz
+```
+1) reg [20:0]delay_counter:  Es un contador que se utiliza para generar delays (retrasos) en el tiempo
+
+2) reg[7:0]data_read_send: Almacena los datos que serán enviados por la linea (mosi).
+
+3) reg [1:0]rst_state: Almacena el estado de la maquina de estados que controla la comunicación.
+
+4) reg hab_sck: Habilita la activación del reloj para que se alterne.
+
+5) reg reg_sck: Guarda un valor entre 1 y 0 y es quien controla la oscilacion de la señal SCK.
+
+6) reg[2:0]chains_sended: Ayuda a controlar cuándo se ha terminado de enviar o recibir una cadena completa de datos. Dependiendo del modo, puede enviar 2 o 3 datos.
+
+7) Asigna un valor entre 0 y 1 al reloj serial con una puerta logica AND con los registros hab_sck y reg_sck como entradas.
+
+8) Declara los parametros de Delay 60ms y 1s y les asigna un valor que depende las oscilaciones del relog clk.
+
+#### Configuracion inicial del modulo:
+
+```verilog
+initial begin
+		cs_sensor <= 1;
+		mosi_sensor <= 1;
+		reg_sck<= 0;
+		hab_sck<= 1;
+		bandera_salud <= 1;
+		ready <= 0;
+		delay_counter <= 0;
+		data_read_send <= 0;
+		rst_state <= 0;
+		rst_counter <= 0;
+		chains_sended <= 0;
+end
+```
 
 
 
