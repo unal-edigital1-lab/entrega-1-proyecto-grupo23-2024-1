@@ -852,9 +852,9 @@ initial begin
 		chains_sended <= 0;
 end
 ```
+El bloque initial establece los valores iniciales con los que el modulo empezara a trabajar. con cs_sensor en 1 que significa que la comunicacion con el sensor esta desactivada como convencion en la comunicacion SPI, el mosi del sensor se mantiene en 1 cuando no se realiza comunicación tal y como se pudo observar en las pruebas con el analizador logico, reg_sck y hab_sck se les asigna el valor 0 manteniendo asi el relog serial desactivado en 0, la bandera de salud se establece en 1 por que la mascota virtual inicialmente se encuentra saludable, ready se mantiene en 0 ya que el modulo no esta listo para realizar comunicaciones y el delay_counter, el data_read_send, el rst_state, el rst_counter y el chains_sended se mantienen en 0 a la espera de un nuevo valor que los actualice segun lo indiquen posteriormente las maquinas de estado.
 
-
-
+[![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/pintadoderojo.jpeg)](https://postimg.cc/tnJMjf61)
 
 ### IMPLEMENTACIÓN FSM TAMAGOTCHI:
 
