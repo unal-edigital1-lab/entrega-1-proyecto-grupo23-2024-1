@@ -755,7 +755,7 @@ endmodule
 ```
 
 ### IMPLEMENTACIÓN SENSOR:
-## Modulo spi_sensor
+#### Modulo spi_sensor
 ```verilog
  input clk, 
  input rst,
@@ -774,7 +774,7 @@ endmodule
 ```
 El módulo spi_sensor que controla la comunicación se compone 8 entradas y 5 salidas. 
 
-##Las entradas son: 
+####Las entradas son: 
 
 1) Reloj (clk): Establece la pauta para coordinar la ejecucion de los procesos internos del modulo
 
@@ -875,7 +875,32 @@ always @(negedge clk, posedge rst)begin
 
 El bloque Always indica que las acciones en su interior se repiten en cada flanco de bajada de la señal de relog clk o en cada flanco de subida de el reset y en caso en que este se encuentre activo, se le asignan los mismos valores predeterminados a los registros y las salidas que los del bloque initial por lo que con esta accion reiniciamos el modulo.
 
-#### Estado 0 de la maquina controlada por (rst_state) PRECARGA:
+#### Maquina de estados de comunicación:
+```verilog
+		case(rst_state)
+			0: begin
+			
+			   En esta etapa se lleva a cabo el proceso de inicializacion del 
+			   sensor.
+			end
+			1:begin
+				Cuando el módulo entra en este estado, realiza la transmisión y 
+				recepción dedatos hacia el sensor en función del valor de modo.	
+			end
+		2:begin
+			   se finaliza la comunicación desactivando la señal cs_sensor
+			   (poniéndola en alto) y se prepara para volver a realizar
+                           otra transmision y regresando a el estado 1
+		end
+		endcase
+```
+Esta maquina de estados controlada por el registro (rst_state) se compone de 3 etapas que se ejecutan de forma secuencial 
+la primera etapa realiza el proceso de inicializacion de la comunicacion, la segunda etapa a traves de maquinas de estado y
+procesos internos que se explicaran mas a detalle se encarga de llevar a a cabo la comunicación con el sensor y la ultima 
+etapa finaliza la comunicación, reinicia los registros de control y se prepara para volver a el estado 1.
+
+#### Estado 0 de la maquina controlada por (rst_state) INICIALIZACIÓN:
+
 ```verilog
 case(rst_state)
 			0:begin
@@ -920,56 +945,75 @@ Los estados 1 y 2 son estados de transicion cumplen unicamente la funcion de act
 
 El estado 3 da inicio a la comunicación con el sensor cambiando el estado de rst_state a 1, activando (ready) que es la bandera que indica que el modulo esta listo para comunicarse vuelve a dejar el contador (rst_counter) en cero y deshabilita el relog serial.
 
-#### Estado 1 de la maquina controlada por (rst_state) PRECARGA:
-```verilog
-1:begin
-        if(rst_counter == 8)begin
-             //reg_sck <= 1;
-             chains_sended <= 2;
-             rst_counter <= 0;
-             bandera_salud <= (data_read_send > 8'h84)?1'b0:1'b1;
-         end
-         else begin
-            reg_sck <= !reg_sck;
-            if(!reg_sck)begin
-            hab_sck<= 1;
-            cs_sensor <= 0;
-            data_read_send[7-rst_counter] <= miso_sensor;
-            rst_counter <= rst_counter + 1;
-        end
-    end
-end
- 2:begin
-      if(rst_counter == 8)begin
-          reg_sck <= 1;
-          chains_sended <= 3;
-          rst_counter <= 0;
-      end
-      else begin
-         reg_sck <= !reg_sck;
-           if(reg_sck)begin
-              hab_sck<= 1;
-              cs_sensor <= 0;
-              rst_counter <= rst_counter + 1;
-          end
-      end
-  end
-  3:begin
-    if(rst_counter == 8)begin
-        reg_sck <= 1;
-       delay_counter <= 0;
-    end
-    else begin
-    reg_sck <= !reg_sck;
-       if(reg_sck)begin
-          hab_sck<= 1;
-          cs_sensor <= 0;
-          rst_counter <= rst_counter + 1;
-       end
-    end
-end
-```
+#### ¿Como se comunica el sensor?:
 
+Para entender como trabaja el sensor, fue necesario el uso de una tarjeta arduino con un scrip con el codigo de operación del sensor
+que se encuentra disponible en internet y la instalacion de las librerias correspondientes, posteriormente se procedio a conectar el
+sensor a la tarjeta por los respectivos canales de comunicación y en estas conexiones se conecto un analizador logico el cual extrajo 
+las señales y se pudo observar las señales y los intervalos de tiempo entre las instrucciónes.
+
+insertar imagen de la comunicación aqui.
+
+Tal y como se puede observar en la imagen, el sensor se comunica en grupos de 2 y 3 paquetes de 8 bits que en el modulo spi del sensor en la FPGA distinguimos como modos; en cada uno de estos envios la señal SCK oscila de tal manera que sube y se mantiene en alto en 8 ocasiones y en esos mismos intervalos el sensor lee la señal de 8 bits que llega por el canal mosi. Luego se observa un pequeño delay antes de que se repita el proceso una vez mas si se envian 2 paquetes y 2 veces mas si se envian 3 paquetes.
+
+#### Estado 1 de la maquina controlada por (rst_state) TRANSMISION DE DATOS:
+
+```verilog
+if (modo == 3)begin
+	if(delay_counter == DELAY_1s)begin
+		case(chains_sended)
+			0:begin
+				if(ready)begin
+					if(rst_counter == 0)begin
+						data_read_send <= 8'hFA;
+						ready <= 0;
+					end
+				end
+				else begin
+					if(rst_counter == 8)begin
+						reg_sck <= 1;
+						chains_sended <= 1;
+						rst_counter <= 0;
+						mosi_sensor <= 1;
+					end
+					else begin
+						reg_sck <= !reg_sck;
+						if(reg_sck)begin
+							hab_sck<= 1;
+							cs_sensor <= 0;
+							mosi_sensor <= data_inverted[rst_counter];
+							rst_counter <= rst_counter + 1;
+						end
+					end
+				end
+			end
+```
+Como se menciono anteriormente, el registro (modo) verifica si el numero de paquetes enviados sera de a 3 o de a 2, si se realiza de 3, el siguiente paso es esperar 1 segundo e iniciar el case (chains_sended) y las condiciónes que dependen de los registros (ready) y (rst_counter) habian sido establecidos en la etapa anterior para cumplir con estas condiciones, luego de continuar la secuencia se le asigna a (data_read_send) los bits de la dirección de registro interno de el sensor y se desactiva (ready) para continuar con la ejecución.
+
+Despues se alterna el registro que controla las oscilaciones de la señal de relog y cuando este se encuentra en 1, se activa la comunicacion del relog serial (sck_sensor), se baja la señal (cs_sensor) que significa que se inicia la comunicación SPI,  
+posteriormente se envia por medio del mosi_sensor los bits almacenados en (data_read_send) pero para que el envio se realice de forma inversa, se creo el registro (data_inverted) que contiene los mismos bits pero escritos de forma inversa en la casilla del vector de  registro cuya casilla corresponde al valor de (rst_counter) que aumenta cada ciclo de relog.
+
+Una vez se han enviado los 8 bits, (chains_sended) cambia al siguiente estado para continuar la secuencia, (rst_counter) se le asigna el valor 0 para reiniciarlo y mosi se mantiene en alto, tal y como el arduino lo hace.
+```verilog
+Etapa (chains_sended) = 1
+1:begin
+	if(rst_counter == 8)begin
+			//reg_sck <= 1;
+			chains_sended <= 2;
+			rst_counter <= 0;
+			bandera_salud <= (data_read_send > 8'h84)?1'b0:1'b1;
+		end
+		else begin
+			reg_sck <= !reg_sck;
+			if(!reg_sck)begin
+				hab_sck<= 1;
+				cs_sensor <= 0;
+				data_read_send[7-rst_counter] <= miso_sensor;
+				rst_counter <= rst_counter + 1;
+			end
+		end
+end	
+```
 
 ### IMPLEMENTACIÓN FSM TAMAGOTCHI:
 
