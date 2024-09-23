@@ -750,7 +750,7 @@ endmodule
 ```
 
 ### IMPLEMENTACIÓN SENSOR:
-#### Modulo spi_sensor
+## Modulo spi_sensor
 ```verilog
  input clk, 
  input rst,
@@ -769,7 +769,7 @@ endmodule
 ```
 El módulo spi_sensor que controla la comunicación se compone 8 entradas y 5 salidas. 
 
-####Las entradas son: 
+##Las entradas son: 
 
 1) Reloj (clk): Establece la pauta para coordinar la ejecucion de los procesos internos del modulo
 
