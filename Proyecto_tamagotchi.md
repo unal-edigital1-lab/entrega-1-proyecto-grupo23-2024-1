@@ -11,8 +11,8 @@
 -David Valderrama
 
 # PROYECTO TAMAGOTCHI
-
-
+## Video funcionamiento
+[text](https://youtu.be/xxC4w_AxXqo?si=_BjDNCMBIhrSQ2Gv)
 ## Objetivos 
 
 ### Objetivo General:
