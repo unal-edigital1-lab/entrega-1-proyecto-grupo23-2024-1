@@ -1114,8 +1114,13 @@ También se controla el modo de juego, se reinician los contadores si es necesar
 
 Este es un esquema general del funcionamiento. La lógica se organiza para que, dependiendo de las señales recibidas (como botones y paso del tiempo), los parámetros internos cambien, ajustando el estado de la mascota virtual. 
 
+### DIAGRAMDA DE ESTADO DEL CONTROL PRINCIPAL:
 
-## Conclusiones
+![image](https://github.com/user-attachments/assets/cb71dc8a-4c3d-4a3d-9b06-bdc5451f6a5a)
+
+
+## CONCLUSIONES:
+
 
 * Integración exitosa de módulos digitales: A través del desarrollo del proyecto, se logró implementar un sistema que simula el comportamiento de una mascota virtual, integrando módulos que controlan los estados de hambre, diversión, energía y salud. Cada módulo interactúa de forma coherente, logrando una simulación fluida y autónoma de la mascota virtual.
 
