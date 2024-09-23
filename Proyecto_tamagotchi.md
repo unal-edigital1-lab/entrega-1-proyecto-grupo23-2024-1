@@ -873,7 +873,7 @@ always @(negedge clk, posedge rst)begin
 	end
 ```
 
-El bloque Always indica que las acciones en su interior se repiten en cada flanco de bajada de la señal de relog clk o en cada flanco de subida de el reset y en caso en que este se encuentre activo, se le asignan los mismos valores predeterminados a los registros y las salidas que los del bloque initial por lo que con esta accion reiniciamos el modulo.
+El bloque Always indica que las acciones en su interior se repiten en cada flanco de bajada de la señal de reloj clk o en cada flanco de subida de el reset y en caso en que este se encuentre activo, se le asignan los mismos valores predeterminados a los registros y las salidas que los del bloque initial por lo que con esta accion reiniciamos el modulo.
 
 #### Maquina de estados de comunicación:
 ```verilog
@@ -1123,10 +1123,36 @@ Este es un bloque de preparación donde se almacenan los datos para enviarlos co
 	end
 end
 ```
-Al no estar activo el (ready) se procede a realizar la carga de los datos 
+Al no estar activo el (ready) se procede a realizar la carga de los datos alternando la activación del reloj y habilitando el reloj serial y habilitando la comunicación con el sensor al dejar la señal de control (cs_sensor) en 0, la carga se hace desde el data_inverted por que queremos enviar los datos empezando por el bit mas significativo.
+
+Una vez realizado este proceso se continua con la secuencia y se vuelve a utilizar la maquina de estados del (chains_sended) esta vez para realizar la carga de los datos y reiniciar el contador para enviarlos nuevamente por el mosi y avanzar al siguiente estado.
+
+#### ¿Se envian 2 o 3 paquetes?:
+1:begin
+			if(modo == 0)begin
+				rst_state <= 2;
+				rst_counter <= 0;
+			end
+			else begin
+				rst_counter <= 0;
+				data_read_send<= data_3;
+				chains_sended <= 2;
+			end
+   
+Si modo es igual a 0, se entiende que solo eran 2 paquetes de datos y se finalizara la transmision para pasar al siguiente estado de (rst_state) que es preparacion para repetir la medición pero en caso de no ser asi, se entiende que son 3 paquetes de datos por lo que se realiza una tercera carga para enviar por el mosi, luego se pasa al estado 2 del (chains_sended) donde se finaliza la transmision y se pasa al siguiente estado del (rst_state).
+
+#### Estado 2 de (rst_state):
+2:begin
+			cs_sensor <= 1;
+			rst_state <= 1;
+			ready <= 1;
+			hab_sck<= 0;
+			chains_sended <= 0;
+			delay_counter <= 0;
+		end
+Una vez finalizado toda la etapa 1 del (rst_state) el estado 2 deshabilita la comunicacion manteniendo alto  (cs_sensor) y deshabilitando el relog serial y volviendo a el estado 1 para repetir la medición.
 
 
-### IMPLEMENTACIÓN FSM TAMAGOTCHI:
 
 Código control principal:
 
@@ -1134,6 +1160,191 @@ Se implementó un código Verilog es un módulo llamado control_principal, el cu
 
 Se procede a explicar línea por línea el codigo de control principal:
 
+
+
+### controlador del sensor:
+
+Para realizar las mediciones del sensor no solo es necesario un adecuado modulo de comunicación sino que ademas necesitamos
+un modulo con las instrucciones de configuracion inicial del sensor con las direcciones de registro y los datos de carga correspondientes.
+
+```verilog
+module ControlSensor (
+ input clk, 
+ input rst,
+ input miso_sensor,
+ output wire cs_sensor,
+ output wire sck_sensor,
+ output wire mosi_sensor,
+ output wire bandera_salud
+);
+```
+
+1) Reloj (clk): Establece la pauta para coordinar la ejecucion de los procesos internos del modulo
+
+2) Reset (rst): Restablece los registros a un valor predeterminado y los procesos que dependen de estos
+
+3) Master input slave output (miso_sensor) Recibe las mediciones de temperatura del sensor con valores hexadecimal en binario.
+
+####Las salidas son:
+
+1) Chip select (cs_sensor): Se encarga de informar al sensor que va a empezar a enviar y recibir instrucciones y activa el relog de comunicacion (sck_sensor).
+
+2) Reloj serial(sck_sensor): Indica cuándo los datos deben ser leidos y escritos en sensor para un optmo control de flujo de datos y determina la velocidad de transmision.
+   
+3) Master output slave input (Mosi_sensor): Envia las instrucciones al sensor de configuracion y lectura de datos.
+
+4) Bandera (bandera_salud): Es con el que se establece si la mascota virtual esta saludable o enferma.
+
+#### Declarando los registros:
+
+```verilog
+reg [7:0] data_1;
+reg [7:0] data_2;
+reg [7:0] data_3;
+reg [1:0]modo;
+```
+1) reg [7:0] data1, data2 y data3:  Almacenan los datos a enviar al modulo spi_sensor.
+
+2) reg[1:0]: Contiene el modo con el que vamos a trabajar con el sensor, 00 es para envio de 2 paquetes de datos, 01 es para el envio
+   de 3 y 11 es para la lectura de temperatura del sensor.
+   
+3) reg load_data: Indica que los datos están listos para enviarse
+
+4) reg[24:0] INIT_SEQ_1 [0:1]: Banco de registro con las instrucciones de la primera secuencia.
+   
+5) reg[24:0] INIT_SEQ_2 [0:25]: Banco de registros con las instrucciones de la segunda secuencia.
+
+6) reg[2:0]state: Estado actual de la máquina de estados
+
+7) reg [4:0] config_count: controla cuántas secuencias se han enviado
+
+8) reg [31:0] delay_count :Contador que permiten esperar un tiempo determinado antes de pasar al siguiente estado
+
+9)reg [31:0] delay_limit: indica al cuando parar de contar.
+
+#### Estableciendo parametros locales:
+
+```verilog
+localparam START = 0;
+localparam SEND_INIT_1 = 1;
+localparam WAIT = 2;
+localparam SEND_INIT_2 = 3;
+localparam READ = 4;
+
+localparam DELAY_10ms = 15625;
+localparam DELAY_100ms = 156250;
+```
+Los parametros START, SEND_INIT_1, WAIT,  SEND_INIT_2, READ son los estados que controlan la secuencia de envio de datos y 
+localparam DELAY_10ms y localparam DELAY_100ms son retardos en la ejecución.
+
+```verilog
+initial begin
+	data_1 <= 0;
+	data_2 <= 0;
+	data_3 <= 0;
+	modo <= 0;
+	load_data<= 0;
+	state <= 0;
+	config_count <= 0;
+	delay_count <= 0;
+	delay_limit <= 0;
+ ```
+El bloque initial establece los valores iniciales con los que el modulo empezara a trabajar con todos los valores establecidos por defecto en 0 a la espera de estados que los actualice.
+
+wire [24:0] act_config;
+
+assign act_config = (state == 1)? INIT_SEQ_1[config_count]: INIT_SEQ_2[config_count];
+
+
+
+El bloque Always indica que las acciones en su interior se repiten en cada flanco de bajada de la señal de relog clk o en cada flanco de subida de el reset y en caso en que este se encuentre activo, se le asignan los mismos valores predeterminados a los registros y las salidas que los del bloque initial por lo que con esta accion reiniciamos el modulo.
+
+  
+#### Estado 2 de (rst_state):
+Utilizando el analizador logico se pudo observar el proceso de configuración del sensor que el arduino realizaba antes de realizar las mediciones.
+
+colocar imagenes del analizador logico.
+```verilog
+        INIT_SEQ_1 [0] = {1'b0, 8'hD0,8'hFF,8'h00};
+        INIT_SEQ_1 [1] = {1'b0, 8'h60,8'hB6,8'h00};
+	
+	INIT_SEQ_2 [0] = {1'b0, 8'hF3, 8'hFF,8'h00};
+	INIT_SEQ_2 [1] = {1'b1, 8'h88, 8'hFF,8'hFF};
+        INIT_SEQ_2 [2] = {1'b1, 8'h8A, 8'hFF,8'hFF};                     
+        INIT_SEQ_2 [3] = {1'b1, 8'h8C, 8'hFF,8'hFF}; 
+        INIT_SEQ_2 [4] = {1'b1, 8'h8E, 8'hFF,8'hFF};
+        INIT_SEQ_2 [5] = {1'b1, 8'h90, 8'hFF,8'hFF}; 
+        INIT_SEQ_2 [6] = {1'b1, 8'h92, 8'hFF,8'hFF};
+        INIT_SEQ_2 [7] = {1'b1, 8'h94, 8'hFF,8'hFF};
+        INIT_SEQ_2 [8] = {1'b1, 8'h96, 8'hFF,8'hFF};
+        INIT_SEQ_2 [9] = {1'b1, 8'h98, 8'hFF,8'hFF};
+        INIT_SEQ_2 [10] = {1'b1, 8'h9A, 8'hFF,8'hFF};
+        INIT_SEQ_2 [11] = {1'b1, 8'h9C, 8'hFF,8'hFF};
+        INIT_SEQ_2 [12] = {1'b1, 8'h9E, 8'hFF,8'hFF};
+        INIT_SEQ_2 [13] = {1'b0, 8'hA1, 8'hFF,8'h00};
+        INIT_SEQ_2 [14] = {1'b1, 8'hE1, 8'hFF,8'hFF};
+        INIT_SEQ_2 [15] = {1'b0, 8'hE3, 8'hFF,8'h00};
+        INIT_SEQ_2 [16] = {1'b0, 8'hE4, 8'hFF,8'h00};
+        INIT_SEQ_2 [17] = {1'b0, 8'hE5, 8'hFF,8'h00};
+        INIT_SEQ_2 [18] = {1'b0, 8'hE6, 8'hFF,8'h00}; 
+        INIT_SEQ_2 [19] = {1'b0, 8'hE5, 8'hFF,8'h00};
+	INIT_SEQ_2 [20] = {1'b0, 8'hE7, 8'hFF,8'h00};
+	INIT_SEQ_2 [21] = {1'b0, 8'h74, 8'h00,8'h00};
+	INIT_SEQ_2 [22] = {1'b0, 8'h72, 8'h05,8'h00};
+	INIT_SEQ_2 [23] = {1'b0, 8'h75, 8'h00,8'h00};
+	INIT_SEQ_2 [24] = {1'b0, 8'h74, 8'hB7,8'h00};
+ ```
+
+Al revisar los datos enviados por el mosi y compararlos con la tabla de registro del datasheet se crea 2 bancos  de registros con las secuencias de inicialización con cada registro con una longitud de 25 bits con datos en hexadecimal
+
+## Instanciación
+```verilog
+spi_sensor driver_sensor(
+.clk(clk),
+.rst(rst),
+.miso_sensor(miso_sensor),
+.data_1(data_1),
+.data_2(data_2),
+.data_3(data_3),
+.modo(modo),
+.load_data(load_data),
+.cs_sensor(cs_sensor),
+.sck_sensor(sck_sensor),
+.mosi_sensor(mosi_sensor),
+.bandera_salud(bandera_salud),
+.ready(ready)
+);
+```
+
+Este bloque instancia a el modulo spi_sensor y realiza multiples conexiones para transferir comandos, enviar direcciones de registro,
+enviar comandos de control ademas de recibir datos de este modulo.
+```verilog
+Always @(posedge clk, posedge rst)begin
+	if(rst)begin
+		data_1 <= 0;
+		data_2 <= 0;
+		data_3 <= 0;
+		modo <= 0;
+		load_data<= 0;
+		state <= 0;
+		config_count <= 0;
+		delay_count <= 0;
+		delay_limit <= 0;
+	end
+```
+
+El bloque Always indica que las acciones en su interior se repiten en cada flanco de subida de la señal de reloj clk o en cada flanco de subida de el reset y en caso en que este se encuentre activo, se le asignan los mismos valores predeterminados a los registros y las salidas que los del bloque initial por lo que con esta accion reiniciamos el modulo.
+
+
+
+
+
+
+
+
+
+
+### IMPLEMENTACIÓN FSM TAMAGOTCHI:
 DEFINICIÓN DEL MÓDULO Y ENTRADAS/SALIDAS
 
 ```verilog
