@@ -939,7 +939,7 @@ Si al momento de ejecutarse el bloque Always el reset no se encuentra en 1, cont
 Como (rst_counter) se encuentra establecido en 0 por defecto lo primero que hara la maquina de estados es activar reg_sck y esperar 60ms
 y una vez este tiempo haya transcurrido, el contador de tiempo (delay_counter) volvera a 0 y (rst_counter) avanzara hasta el estado siguente.
 
-Colocar aqui imagen de el analizador logico
+![image](https://github.com/user-attachments/assets/7b18c822-a983-4fc8-867b-8af24460dc91)
 
 Los estados 1 y 2 son estados de transicion cumplen unicamente la funcion de activar y desactivar (cs_sensor) emulando lo que el arduino le transmitia a el sensor tal y como se pudo observar con el analizador logico.
 
@@ -952,7 +952,7 @@ que se encuentra disponible en internet y la instalacion de las librerias corres
 sensor a la tarjeta por los respectivos canales de comunicación y en estas conexiones se conecto un analizador logico el cual extrajo 
 las señales y se pudo observar las señales y los intervalos de tiempo entre las instrucciónes.
 
-insertar imagen de la comunicación aqui.
+![image](https://github.com/user-attachments/assets/e1be320b-ad18-45db-8443-c31fcd291ff7)
 
 Tal y como se puede observar en la imagen, el sensor se comunica en grupos de 2 y 3 paquetes de 8 bits que en el modulo spi del sensor en la FPGA distinguimos como modos; en cada uno de estos envios la señal SCK oscila de tal manera que sube y se mantiene en alto en 8 ocasiones y en esos mismos intervalos el sensor lee la señal de 8 bits que llega por el canal mosi. Luego se observa un pequeño delay antes de que se repita el proceso una vez mas si se envian 2 paquetes y 2 veces mas si se envian 3 paquetes.
 
@@ -1128,6 +1128,7 @@ Al no estar activo el (ready) se procede a realizar la carga de los datos altern
 Una vez realizado este proceso se continua con la secuencia y se vuelve a utilizar la maquina de estados del (chains_sended) esta vez para realizar la carga de los datos y reiniciar el contador para enviarlos nuevamente por el mosi y avanzar al siguiente estado.
 
 ### ¿Se envian 2 o 3 paquetes?:
+```verilog
 1:begin
 			if(modo == 0)begin
 				rst_state <= 2;
@@ -1138,10 +1139,11 @@ Una vez realizado este proceso se continua con la secuencia y se vuelve a utiliz
 				data_read_send<= data_3;
 				chains_sended <= 2;
 			end
-   
+   ```
 Si modo es igual a 0, se entiende que solo eran 2 paquetes de datos y se finalizara la transmision para pasar al siguiente estado de (rst_state) que es preparacion para repetir la medición pero en caso de no ser asi, se entiende que son 3 paquetes de datos por lo que se realiza una tercera carga para enviar por el mosi, luego se pasa al estado 2 del (chains_sended) donde se finaliza la transmision y se pasa al siguiente estado del (rst_state).
 
 ### Estado 2 de (rst_state):
+```verilog
 2:begin
 			cs_sensor <= 1;
 			rst_state <= 1;
@@ -1150,8 +1152,8 @@ Si modo es igual a 0, se entiende que solo eran 2 paquetes de datos y se finaliz
 			chains_sended <= 0;
 			delay_counter <= 0;
 		end
+```
 Una vez finalizado toda la etapa 1 del (rst_state) el estado 2 deshabilita la comunicacion manteniendo alto  (cs_sensor) y deshabilitando el relog serial y volviendo a el estado 1 para repetir la medición.
-
 
 
 Código control principal:
@@ -1263,7 +1265,7 @@ Esta conexion transfiere la secuencia de inicio a los registros data_1, data_2 y
 ### Instrucciones de configuracion del sensor:
 Utilizando el analizador logico se pudo observar el proceso de configuración del sensor que el arduino realizaba antes de realizar las mediciones.
 
-colocar imagenes del analizador logico.
+![image](https://github.com/user-attachments/assets/6f04c209-66df-4a74-941a-33fb22812cea)
 
 ```verilog
         INIT_SEQ_1 [0] = {1'b0, 8'hD0,8'hFF,8'h00};
@@ -1418,6 +1420,11 @@ endcase
 En el estado Wait se realiza un delay de 10ms y una vez transcurrido este tiempo, se igualan delay_count y delay_limit a 0, continua la secuencia pasando o a SEND_INIT_2 donde se verifica si el modulo spi_sensor mantiene (ready) en 1 para poder realizar la carga de datos
 y de la misma forma que se cocateno modo establecer con la que se realizaria la comunicacion con el sensor y se carga la información a data_1, data_2 y data_3  25 veces hasta que el sensor queda configurado, retornando al estado de espera pero como ya no se encuentra (delay_limit) a 10 milisegundos de retardo, se cambia al estado READ donde se desactiva la carga de datos y se mantiene en el modo 3 para que el sensor realice automaticamente las lecturas.
 
+### Para finalizar se muestra la simulación en el testbench y su comparacion con el comportamiento del arduino.
+
+![image](https://github.com/user-attachments/assets/f0a09266-78f7-433b-a1a8-ffd34c84194f)
+
+![image](https://github.com/user-attachments/assets/33bc263f-b581-4043-8808-86ec229f017f)
 
 ## IMPLEMENTACIÓN FSM TAMAGOTCHI:
 DEFINICIÓN DEL MÓDULO Y ENTRADAS/SALIDAS
