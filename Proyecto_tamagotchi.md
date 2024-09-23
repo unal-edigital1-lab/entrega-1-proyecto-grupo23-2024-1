@@ -1570,5 +1570,10 @@ Este es un esquema general del funcionamiento. La lógica se organiza para que, 
 
 * Integración exitosa de módulos digitales: A través del desarrollo del proyecto, se logró implementar un sistema que simula el comportamiento de una mascota virtual, integrando módulos que controlan los estados de hambre, diversión, energía y salud. Cada módulo interactúa de forma coherente, logrando una simulación fluida y autónoma de la mascota virtual.
 
+* El uso de el analizador logico fue fundamental para comprender la forma en la que perifericos con protocolos como la pantalla y el sensor se comunican y a partir de ello diseñar los modulos y cargar las configuaciones de inicialización y operación.
+
+* En el proyecto se utilizo muchos de los conceptos vistos en clase y los laboratorios, principalmente las maquinas de estado, los bancos de registro y la instanciación de modulos ademas de permitir profundizar en temas como la comunicacion por protocolos y secuencias de inicialización
+
+
 
 
