@@ -1251,19 +1251,20 @@ initial begin
  ```
 El bloque initial establece los valores iniciales con los que el modulo empezara a trabajar con todos los valores establecidos por defecto en 0 a la espera de estados que los actualice.
 
+```verilog
+
 wire [24:0] act_config;
 
 assign act_config = (state == 1)? INIT_SEQ_1[config_count]: INIT_SEQ_2[config_count];
+```
 
+Esta conexion transfiere la secuencia de inicio a los registros data_1, data_2 y data_3 para que carguen las instrucciones en el sensor.
 
-
-El bloque Always indica que las acciones en su interior se repiten en cada flanco de bajada de la señal de relog clk o en cada flanco de subida de el reset y en caso en que este se encuentre activo, se le asignan los mismos valores predeterminados a los registros y las salidas que los del bloque initial por lo que con esta accion reiniciamos el modulo.
-
-  
-#### Estado 2 de (rst_state):
+#### Instrucciones de configuracion del sensor:
 Utilizando el analizador logico se pudo observar el proceso de configuración del sensor que el arduino realizaba antes de realizar las mediciones.
 
 colocar imagenes del analizador logico.
+
 ```verilog
         INIT_SEQ_1 [0] = {1'b0, 8'hD0,8'hFF,8'h00};
         INIT_SEQ_1 [1] = {1'b0, 8'h60,8'hB6,8'h00};
@@ -1318,6 +1319,8 @@ spi_sensor driver_sensor(
 
 Este bloque instancia a el modulo spi_sensor y realiza multiples conexiones para transferir comandos, enviar direcciones de registro,
 enviar comandos de control ademas de recibir datos de este modulo.
+
+## Inicialización bloque Always y configuración predeterminada del reset:
 ```verilog
 Always @(posedge clk, posedge rst)begin
 	if(rst)begin
@@ -1335,13 +1338,85 @@ Always @(posedge clk, posedge rst)begin
 
 El bloque Always indica que las acciones en su interior se repiten en cada flanco de subida de la señal de reloj clk o en cada flanco de subida de el reset y en caso en que este se encuentre activo, se le asignan los mismos valores predeterminados a los registros y las salidas que los del bloque initial por lo que con esta accion reiniciamos el modulo.
 
+## Maquina de estados, secuencia de inicialización:
 
+```verilog
+else begin
+		case (state)
+			START:begin
+				state <= SEND_INIT_1;
+				load_data <= 0;
+			end
+			SEND_INIT_1:begin
+				if(ready)begin
+					if(config_count == 2)begin
+						state <= WAIT;
+						delay_limit <= DELAY_10ms;
+						delay_count <= 0;
+						config_count <= 0;
+						load_data <= 0;
+					end
+					else begin
+						modo <= {1'b0,act_config[24]};
+						data_1 <= act_config[23:16];
+						data_2 <= act_config[15:8];
+						data_3 <= act_config[7:0];
+						config_count <= config_count + 1;
+						load_data <= 1;
+					end
+				end
+				else begin
+					load_data <= 0;
+				end
+			end
+```
+Si el reset no se mantiene pulsado, Se ejecuta la maquina de estados cuyo registro de control es (state), como state inicia por defecto en 0, comienza su ejecución en START donde se mantiene load_data en 0  se avanza al siguiente estado, en este nuevo estado se lee la entrada (reset) proveniente del modulo spi_sensor, en caso de ser 1 se cocatena el registro (modo) con el bit mas significativo en 1 y el menos significativo dependiente de el valor de el el bit 24 de el act_config que al ser un wire, simplemente transferira el valor de el registro INIT_SEQ_1 [0] [24] y se cargan los grupos de 8 bits de este cable a los registros data_1, data_2 y data_3 y se incrementa el valor de config_count para pasar a el siguiente registro INIT_SEQ_1 [1] y se activa load data para indicar que se esta cargando la información, si (reset) no esta activo se establece load_data en 0 y no se realiza la carga de datos.
 
+Una vez cargados y transferidos se se asignan valores a los registros (delay_limit) y (delay_count) para que esten listos una vez inicie el siguiente estado y se avanza al estado de espera.
 
+## Maquina de estados, Espera y Asignacion la segunda etapa de carga de instrucciones:
 
-
-
-
+```verilog
+	WAIT:begin
+		if(delay_count == delay_limit)begin
+			delay_count <= 0;
+			delay_limit <= 0;
+			state <= (delay_limit == DELAY_10ms)?SEND_INIT_2:READ;
+		end
+		else begin
+			delay_count <= delay_count + 1;
+		end
+	end
+	SEND_INIT_2:begin
+		if(ready)begin
+			if(config_count == 25)begin
+				state <= WAIT;
+				delay_limit <= DELAY_100ms;
+				delay_count <= 0;
+				config_count <= 0;
+				load_data <= 0;
+			end
+			else begin
+				modo <= {1'b0,act_config[24]};
+				data_1 <= act_config[23:16];
+				data_2 <= act_config[15:8];
+				data_3 <= act_config[7:0];
+				config_count <= config_count + 1;
+				load_data <= 1;
+			end
+		end
+		else begin
+			load_data <= 0;
+		end
+	end
+	READ:begin
+		load_data <= 0;
+		modo <= 2'b11;
+	end
+endcase
+```
+En el estado Wait se realiza un delay de 10ms y una vez transcurrido este tiempo, se igualan delay_count y delay_limit a 0, continua la secuencia pasando o a SEND_INIT_2 donde se verifica si el modulo spi_sensor mantiene (ready) en 1 para poder realizar la carga de datos
+y de la misma forma que se cocateno modo establecer con la que se realizaria la comunicacion con el sensor y se carga la información a data_1, data_2 y data_3  25 veces hasta que el sensor queda configurado, retornando al estado de espera pero como ya no se encuentra (delay_limit) a 10 milisegundos de retardo, se cambia al estado READ donde se desactiva la carga de datos y se mantiene en el modo 3 para que el sensor realice automaticamente las lecturas.
 
 
 ### IMPLEMENTACIÓN FSM TAMAGOTCHI:
