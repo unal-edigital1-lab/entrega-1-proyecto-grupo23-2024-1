@@ -957,6 +957,8 @@ insertar imagen de la comunicación aqui.
 Tal y como se puede observar en la imagen, el sensor se comunica en grupos de 2 y 3 paquetes de 8 bits que en el modulo spi del sensor en la FPGA distinguimos como modos; en cada uno de estos envios la señal SCK oscila de tal manera que sube y se mantiene en alto en 8 ocasiones y en esos mismos intervalos el sensor lee la señal de 8 bits que llega por el canal mosi. Luego se observa un pequeño delay antes de que se repita el proceso una vez mas si se envian 2 paquetes y 2 veces mas si se envian 3 paquetes.
 
 #### Estado 1 de la maquina controlada por (rst_state) TRANSMISION DE DATOS:
+#### Modo = 3:
+#### Maquina de estados interna controlada por (chains_sended) = 0:
 
 ```verilog
 if (modo == 3)begin
@@ -994,6 +996,8 @@ Despues se alterna el registro que controla las oscilaciones de la señal de rel
 posteriormente se envia por medio del mosi_sensor los bits almacenados en (data_read_send) pero para que el envio se realice de forma inversa, se creo el registro (data_inverted) que contiene los mismos bits pero escritos de forma inversa en la casilla del vector de  registro cuya casilla corresponde al valor de (rst_counter) que aumenta cada ciclo de relog.
 
 Una vez se han enviado los 8 bits, (chains_sended) cambia al siguiente estado para continuar la secuencia, (rst_counter) se le asigna el valor 0 para reiniciarlo y mosi se mantiene en alto, tal y como el arduino lo hace.
+
+#### Recepcion y almacenamiento de medición (chains_sended) = 1:
 ```verilog
 Etapa (chains_sended) = 1
 1:begin
@@ -1010,10 +1014,117 @@ Etapa (chains_sended) = 1
 				cs_sensor <= 0;
 				data_read_send[7-rst_counter] <= miso_sensor;
 				rst_counter <= rst_counter + 1;
-			end
-		end
+                 end
+         end
 end	
 ```
+
+
+En este fragmento de codigo se recibe la informacion proveniente de los registros internos de el sensor midiendo la temperatura y se almacenan desde el bit mas significativo primero hasta el menos significativo, una vez se ha cargado el registro, el contador se reinicia y se asigna un valor a la bandera con un condicional indicando que si el dato almacenado es mayor a 30 grados escrito en hexadecimal, indique que la mascota esta enferma y envie dicho dato al modulo de la maquina de estados general llamado TamaguchiUpdate y continue la secuencia cambiando (chains_sended)
+
+#### Intervalo de inactividad (chains_sended) = 2 y 3:
+```verilog
+	2:begin
+		if(rst_counter == 8)begin
+				reg_sck <= 1;
+				chains_sended <= 3;
+				rst_counter <= 0;
+			end
+			else begin
+				reg_sck <= !reg_sck;
+				if(reg_sck)begin
+					hab_sck<= 1;
+					cs_sensor <= 0;
+					rst_counter <= rst_counter + 1;
+				end
+			end
+	end
+	3:begin
+		if(rst_counter == 8)begin
+				reg_sck <= 1;
+				rst_counter <= 0;
+			end
+			else begin
+				reg_sck <= !reg_sck;
+				if(reg_sck)begin
+					hab_sck<= 1;
+					cs_sensor <= 0;
+					rst_counter <= rst_counter + 1;
+				end
+			end
+```
+En esta etapa no se realiza transmision o recepcion de informacion, solo se espera el paso de los ciclos de relog para luego mantener
+reg_sck en alto, reiniciar el contador y pasar a el siguiente estado de (chains_sended <= 3) para realizar el mismo proceso de delay y finaliza el case (chains_sended).
+
+#### Delay de 1 segundo (delay_counter < DELAY_1s):
+```verilog
+else begin
+	delay_counter <= delay_counter +1; //
+	cs_sensor <= 1;
+	hab_sck<= 0;
+	reg_sck <= 1;
+	rst_counter <= 0;
+	chains_sended <= 0;
+	ready <= 1;
+end
+```
+Mientras no haya transcurrido el segundo de delay entre mediciones, el contador simplemente aumentara y se deshabilitara el relog serial
+y cuando se cumpla dicha condición la maquina de estados de la cadena se iniciara en 0.
+
+#### Modo 2:
+```verilog
+else begin
+	if(ready == 1)begin
+		if(load_data == 1)begin
+			data_read_send <= data_1; 
+			ready <= 0;
+			rst_counter <= 0;
+		end
+	end
+```
+Este es un bloque de preparación donde se almacenan los datos para enviarlos con 2 condiciones donde es necesario que este activa la señal (ready), este se encuentra activo por los bloques anteriores asi que al inicializarse este bloque se lleva a cabo el proceso de carga de datos donde se carga el registro (data_read_send) con la información de (data_1) provenientes del modulo de control y luego se desactiva el (ready) para ejecutar la siguiente accion.
+
+```verilog
+	else begin
+		if(rst_counter == 8)begin
+			reg_sck <= 1;
+			case (chains_sended)
+				0:begin
+					rst_counter <= 0;
+					data_read_send  <= data_2;
+					chains_sended <= 1;
+				end
+				1:begin
+					if(modo == 0)begin
+						rst_state <= 2;
+						rst_counter <= 0;
+					end
+					else begin
+						rst_counter <= 0;
+						data_read_send<= data_3;
+						chains_sended <= 2;
+					end
+				end
+				2:begin
+					rst_state <= 2;
+					rst_counter <= 0;
+				end
+			endcase
+		end
+		else begin
+			reg_sck <= !reg_sck;
+			if(reg_sck)begin
+				hab_sck<= 1;
+				cs_sensor <= 0;
+				mosi_sensor <= data_inverted[rst_counter];
+				rst_counter <= rst_counter + 1;
+			end
+		end
+	end
+end
+```
+Al no estar activo el (ready) se procede a realizar la carga de los datos 
+
 
 ### IMPLEMENTACIÓN FSM TAMAGOTCHI:
 
