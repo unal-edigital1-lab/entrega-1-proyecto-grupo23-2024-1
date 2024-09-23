@@ -227,6 +227,8 @@ Se resume el funcionamiento del código el cual es el siguiente:
 ### Implemetación Pantalla ili9225
 #### Spi_Master
 
+![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/spipantalladiagrama.png)
+
 ```verilog
 module spi_master#(parameter DATA_SIZE = 9)(
     input wire  clk,
