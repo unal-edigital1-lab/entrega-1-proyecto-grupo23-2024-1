@@ -749,9 +749,6 @@ endmodule
 
 ```
 
-
-
-
 ### IMPLEMENTACIÓN SENSOR:
 #### Modulo spi_sensor
 ```verilog
@@ -854,7 +851,120 @@ end
 ```
 El bloque initial establece los valores iniciales con los que el modulo empezara a trabajar. con cs_sensor en 1 que significa que la comunicacion con el sensor esta desactivada como convencion en la comunicacion SPI, el mosi del sensor se mantiene en 1 cuando no se realiza comunicación tal y como se pudo observar en las pruebas con el analizador logico, reg_sck y hab_sck se les asigna el valor 0 manteniendo asi el relog serial desactivado en 0, la bandera de salud se establece en 1 por que la mascota virtual inicialmente se encuentra saludable, ready se mantiene en 0 ya que el modulo no esta listo para realizar comunicaciones y el delay_counter, el data_read_send, el rst_state, el rst_counter y el chains_sended se mantienen en 0 a la espera de un nuevo valor que los actualice segun lo indiquen posteriormente las maquinas de estado.
 
-[](https://postimg.cc/tnJMjf61)
+#### Bloque always y reset:
+```verilog
+always @(negedge clk, posedge rst)begin
+	if(rst)begin
+		cs_sensor <= 1;
+		mosi_sensor <= 1;
+		bandera_salud <= 1;
+		ready <= 0;
+		delay_counter <= 0;
+		data_read_send <= 0;
+		rst_state <= 0;
+		reg_sck<= 0;
+		hab_sck<= 1;
+		chains_sended <= 0;
+	end
+```
+
+El bloque Always indica que las acciones en su interior se repiten en cada flanco de bajada de la señal de relog clk o en cada flanco de subida de el reset y en caso en que este se encuentre activo, se le asignan los mismos valores predeterminados a los registros y las salidas que los del bloque initial por lo que con esta accion reiniciamos el modulo.
+
+#### Estado 0 de la maquina controlada por (rst_state) PRECARGA:
+```verilog
+case(rst_state)
+			0:begin
+				case(rst_counter)
+					0:begin
+						reg_sck <=1;
+						if(delay_counter == DELAY_60ms)begin
+							rst_counter <= 1;
+							delay_counter <= 0;
+						end
+						else begin
+							delay_counter <= delay_counter + 1;
+						end
+					end
+					1:begin
+						cs_sensor <= 0;
+						rst_counter <= 2;
+					end
+					2:begin
+						cs_sensor <= 1;
+						rst_counter<= 3;
+					end
+					3:begin
+						rst_state <= 1;
+						ready <= 1;
+						rst_counter<= 0;
+						reg_sck <= 1;
+						hab_sck<= 0;
+					end
+				endcase
+			end
+```
+
+Si al momento de ejecutarse el bloque Always el reset no se encuentra en 1, continua con el siguiente subbloque que es una maquina de estados controlado por el registro (rst_counter) cuya función es habilitar de forma secuencial las diferentes etapas de comunicación con el sensor, en este caso comienza con el estado cero que es previo a la activacion de la comunicación el cual posee otros subloques con  otra maquina de estados interna controlada por el registro (rst_counter).
+
+Como (rst_counter) se encuentra establecido en 0 por defecto lo primero que hara la maquina de estados es activar reg_sck y esperar 60ms
+y una vez este tiempo haya transcurrido, el contador de tiempo (delay_counter) volvera a 0 y (rst_counter) avanzara hasta el estado siguente.
+
+Colocar aqui imagen de el analizador logico
+
+Los estados 1 y 2 son estados de transicion cumplen unicamente la funcion de activar y desactivar (cs_sensor) emulando lo que el arduino le transmitia a el sensor tal y como se pudo observar con el analizador logico.
+
+El estado 3 da inicio a la comunicación con el sensor cambiando el estado de rst_state a 1, activando (ready) que es la bandera que indica que el modulo esta listo para comunicarse vuelve a dejar el contador (rst_counter) en cero y deshabilita el relog serial.
+
+#### Estado 1 de la maquina controlada por (rst_state) PRECARGA:
+```verilog
+1:begin
+        if(rst_counter == 8)begin
+             //reg_sck <= 1;
+             chains_sended <= 2;
+             rst_counter <= 0;
+             bandera_salud <= (data_read_send > 8'h84)?1'b0:1'b1;
+         end
+         else begin
+            reg_sck <= !reg_sck;
+            if(!reg_sck)begin
+            hab_sck<= 1;
+            cs_sensor <= 0;
+            data_read_send[7-rst_counter] <= miso_sensor;
+            rst_counter <= rst_counter + 1;
+        end
+    end
+end
+ 2:begin
+      if(rst_counter == 8)begin
+          reg_sck <= 1;
+          chains_sended <= 3;
+          rst_counter <= 0;
+      end
+      else begin
+         reg_sck <= !reg_sck;
+           if(reg_sck)begin
+              hab_sck<= 1;
+              cs_sensor <= 0;
+              rst_counter <= rst_counter + 1;
+          end
+      end
+  end
+  3:begin
+    if(rst_counter == 8)begin
+        reg_sck <= 1;
+       delay_counter <= 0;
+    end
+    else begin
+    reg_sck <= !reg_sck;
+       if(reg_sck)begin
+          hab_sck<= 1;
+          cs_sensor <= 0;
+          rst_counter <= rst_counter + 1;
+       end
+    end
+end
+```
+
 
 ### IMPLEMENTACIÓN FSM TAMAGOTCHI:
 
