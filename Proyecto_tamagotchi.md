@@ -322,6 +322,9 @@ Cuando los datos están disponibles y el control indica que se deben leer, se al
 
 ### controlador de la pantalla
 
+
+![](https://github.com/unal-edigital1-lab/entrega-1-proyecto-grupo23-2024-1/blob/main/imagenes/controlilidiagrama.png)
+
 El módulo del controlador de la pantalla será responsable de gestionar la carga de varias secuencias de inicialización y el envío de datos hacia la pantalla. Incluirá una secuencia de reinicio, cuatro secuencias de inicialización, y una secuencia de configuración de dirección que permitirá obtener y mostrar la imagen deseada.
 
 Para obtener estas secuencias, el grupo utilizó un analizador de señales junto con el software Logic 2, extrayendo las señales mediante un Arduino con una librería previamente implementada. Este proceso permitió capturar y analizar las secuencias necesarias para el correcto funcionamiento del controlador de la pantalla.
